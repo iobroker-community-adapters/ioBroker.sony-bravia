@@ -1,73 +1,84 @@
 <html>
 
-<!-- these 4 files always have to be included -->
-<link rel="stylesheet" type="text/css" href="../../lib/css/themes/jquery-ui/redmond/jquery-ui.min.css"/>
-<script type="text/javascript" src="../../lib/js/jquery-1.11.1.min.js"></script>
-<script type="text/javascript" src="../../socket.io/socket.io.js"></script>
-<script type="text/javascript" src="../../lib/js/jquery-ui-1.10.3.full.min.js"></script>
+    <!-- these 4 files always have to be included -->
+    <link rel="stylesheet" type="text/css" href="../../lib/css/themes/jquery-ui/redmond/jquery-ui.min.css"/>
+    <script type="text/javascript" src="../../lib/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../../socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="../../lib/js/jquery-ui-1.10.3.full.min.js"></script>
 
-<!-- these two file always have to be included -->
-<link rel="stylesheet" type="text/css" href="../../css/adapter.css"/>
-<script type="text/javascript" src="../../js/translate.js"></script>
-<script type="text/javascript" src="../../js/adapter-settings.js"></script>
-<script type="text/javascript" src="words.js"></script>
+    <!-- these two file always have to be included -->
+    <link rel="stylesheet" type="text/css" href="../../css/adapter.css"/>
+    <script type="text/javascript" src="../../js/translate.js"></script>
+    <script type="text/javascript" src="../../js/adapter-settings.js"></script>
+    <script type="text/javascript" src="words.js"></script>
 
-<!-- you have to define 2 functions in the global scope: -->
-<script type="text/javascript">
+    <!-- you have to define 2 functions in the global scope: -->
+    <script type="text/javascript">
 
-    // the function loadSettings has to exist ...
-    function load(settings, onChange) {
-        // example: select elements with id=key and class=value and insert value
-        for (var key in settings) {
+        // the function loadSettings has to exist ...
+        function load(settings, onChange) {
             // example: select elements with id=key and class=value and insert value
-            var value = $('#' + key + '.value');
-            if (value.attr('type') === 'checkbox') {
-                value.prop('checked', settings[key]).change(function () {
-                    onChange();
-		});
-            } else {
-                value.val(settings[key]).change(function () {
-                    onChange();
-		}).keyup(function () {
-                    $(this).trigger('change');
-		});
+            for (var key in settings) {
+                // example: select elements with id=key and class=value and insert value
+                var value = $('#' + key + '.value');
+                if (value.attr('type') === 'checkbox') {
+                    value.prop('checked', settings[key]).change(function () {
+                        onChange();
+                    });
+                } else {
+                    value.val(settings[key]).change(function () {
+                        onChange();
+                    }).keyup(function () {
+                        $(this).trigger('change');
+                    });
+                }
             }
+            // Signal to admin, that no changes yet
+            onChange(false);
         }
-        // Signal to admin, that no changes yet
-        onChange(false);
-    }
 
-    // ... and the function save has to exist.
-    // you have to make sure the callback is called with the settings object as first param!
-    function save(callback) {
-        // example: select elements with class=value and build settings object
-        var obj = {};
-        $('.value').each(function () {
-            var $this = $(this);
-            if ($this.attr('type') === 'checkbox') {
-                obj[$this.attr('id')] = $this.prop('checked');
-            } else {
-                obj[$this.attr('id')] = $this.val();
-            }
-        });
-        callback(obj);
-    }
-</script>
+        // ... and the function save has to exist.
+        // you have to make sure the callback is called with the settings object as first param!
+        function save(callback) {
+            // example: select elements with class=value and build settings object
+            var obj = {};
+            $('.value').each(function () {
+                var $this = $(this);
+                if ($this.attr('type') === 'checkbox') {
+                    obj[$this.attr('id')] = $this.prop('checked');
+                } else {
+                    obj[$this.attr('id')] = $this.val();
+                }
+            });
+            callback(obj);
+        }
+    </script>
 
-<!-- you have to put your config page in a div with id adapter-container -->
-<div id="adapter-container">
+    <!-- you have to put your config page in a div with id adapter-container -->
+    <div id="adapter-container">
 
-    <table><tr>
-        <td><img src="sony-bravia.png"/></td>
-        <td><h3 class="translate">Settings</h3></td>
-    </tr></table>
-    <p>
-        <span><label for="ip" class="translate">IP</label></span><input class="value" id="ip" placeholder="192.168.x.x" type="text" size="15" maxlength="15"/><br/>
-        <span><label for="psk" class="translate">PSK Key</label></span><input class="value" id="psk" type="text" size="6" maxlength="4"/>
-    </p>
+        <table>
+            <tr>
+                <td><img src="sony-bravia.png"/></td>
+                <td><h3 class="translate">Settings</h3></td>
+            </tr>
+        </table>
 
-    <p class="translate">on save adapter restarts with new config immediately</p>
+        <table>
+            <tr>
+                <td><label for="ip" class="translate">IP</label></td>
+                <td class="admin-icon"></td>
+                <td><input class="value" id="ip" placeholder="192.168.x.x" type="text" size="15" maxlength="15"/></td>
+            </tr>
+            <tr>
+                <td><label for="psk" class="translate">PSK Key</label></td>
+                <td class="admin-icon"></td>
+                <td><input class="value" id="psk" type="text" size="6" maxlength="4"/></td>
+            </tr>
+        </table>
 
-</div>
+        <p class="translate">on save adapter restarts with new config immediately</p>
+
+    </div>
 
 </html>

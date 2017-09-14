@@ -25,7 +25,7 @@
         "mode": "daemon",
         "icon": "sony-bravia.png",
         "enabled": true,
-        "extIcon": "https://raw.githubusercontent.com/ldittmar81/ioBroker.sony-bravia/master/admin/template.png",
+        "extIcon": "https://raw.githubusercontent.com/ldittmar81/ioBroker.sony-bravia/master/admin/sony-bravia.png",
         "keywords": ["sony","bravia","smart-tv"],
         "readme": "https://github.com/ldittmar81/ioBroker.sony-bravia/blob/master/README.md",
         "loglevel": "info",
@@ -56,7 +56,7 @@
             "type": "state",
             "common": {
                 "name": "Power on",
-                "role": "button.power",
+                "role": "button",
                 "type": "boolean",
                 "read": false,
                 "write": true
@@ -752,7 +752,7 @@
             "type": "state",
             "common": {
                 "name": "Stop",
-                "role": "button.stop",
+                "role": "button",
                 "type": "boolean",
                 "read": false,
                 "write": true
@@ -764,7 +764,7 @@
             "type": "state",
             "common": {
                 "name": "Pause",
-                "role": "button.pause",
+                "role": "button",
                 "type": "boolean",
                 "read": false,
                 "write": true
@@ -776,7 +776,7 @@
             "type": "state",
             "common": {
                 "name": "Play",
-                "role": "button.play",
+                "role": "button",
                 "type": "boolean",
                 "read": false,
                 "write": true
