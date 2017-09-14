@@ -1,0 +1,1435 @@
+{
+    "common": {
+        "name": "sony-bravia",
+        "version": "0.0.1",
+        "news": {            
+            "0.0.1": {
+                "en": "initial adapter",
+                "de": "Initiale Version",
+                "ru": "Первоначальный адаптер",
+                "pt": "Versão inicial",
+                "fr": "Version initiale",
+                "nl": "Eerste release"
+            }
+        },
+        "title": "Sony Bravia Smart-TV Adapter",
+        "desc": {
+            "en": "ioBroker Sony Bravia Smart-TV Adapter",
+            "de": "ioBroker Sony Bravia Smart-TV Adapter",
+            "ru": "ioBroker Sony Bravia Smart-TV драйвер как образец",
+            "pt": "Sony Bravia Smart-TV adaptador para o ioBroker",
+            "fr": "ioBroker adaptateur Sony Bravia Smart-TV",
+            "nl": "ioBroker Sony Bravia Smart-TV Adapter"
+        },
+        "platform": "Javascript/Node.js",
+        "mode": "daemon",
+        "icon": "sony-bravia.png",
+        "enabled": true,
+        "extIcon": "https://raw.githubusercontent.com/ldittmar81/ioBroker.sony-bravia/master/admin/template.png",
+        "keywords": ["sony","bravia","smart-tv"],
+        "readme": "https://github.com/ldittmar81/ioBroker.sony-bravia/blob/master/README.md",
+        "loglevel": "info",
+        "type": "media"
+    },
+    "native": {
+        "ip": "",
+        "psk": ""
+    },
+    "objects": [],
+    "instanceObjects": [
+        {
+            "_id": "connected",
+            "type": "state",
+            "common": {
+                "name": "Sony Bravia TV connected",
+                "type": "boolean",
+                "role": "indicator.connected",
+                "read": true,
+                "write": false,
+                "def": false,
+                "desc": "Is Sony Bravia TV connected?"
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAQAAAAEAAAAuAw==",
+            "type": "state",
+            "common": {
+                "name": "Power on",
+                "role": "button.power",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAQAAAAEAAAAAAw==",
+            "type": "state",
+            "common": {
+                "name": "Num1",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAQAAAAEAAAABAw==",
+            "type": "state",
+            "common": {
+                "name": "Num2",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAQAAAAEAAAACAw==",
+            "type": "state",
+            "common": {
+                "name": "Num3",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAQAAAAEAAAADAw==",
+            "type": "state",
+            "common": {
+                "name": "Num4",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAQAAAAEAAAAEAw==",
+            "type": "state",
+            "common": {
+                "name": "Num5",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAQAAAAEAAAAFAw==",
+            "type": "state",
+            "common": {
+                "name": "Num6",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAQAAAAEAAAAGAw==",
+            "type": "state",
+            "common": {
+                "name": "Num7",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAQAAAAEAAAAHAw==",
+            "type": "state",
+            "common": {
+                "name": "Num8",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAQAAAAEAAAAIAw==",
+            "type": "state",
+            "common": {
+                "name": "Num9",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAQAAAAEAAAAJAw==",
+            "type": "state",
+            "common": {
+                "name": "Num0",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAQAAAAEAAAAKAw==",
+            "type": "state",
+            "common": {
+                "name": "Num11",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAQAAAAEAAAALAw==",
+            "type": "state",
+            "common": {
+                "name": "Num12",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAQAAAAEAAAALAw==",
+            "type": "state",
+            "common": {
+                "name": "Enter",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAQAAAAEAAAAOAw==",
+            "type": "state",
+            "common": {
+                "name": "GGuide",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAQAAAAEAAAAQAw==",
+            "type": "state",
+            "common": {
+                "name": "ChannelUp",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAQAAAAEAAAARAw==",
+            "type": "state",
+            "common": {
+                "name": "ChannelDown",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAQAAAAEAAAASAw==",
+            "type": "state",
+            "common": {
+                "name": "VolumeUp",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAQAAAAEAAAATAw==",
+            "type": "state",
+            "common": {
+                "name": "VolumeDown",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAQAAAAEAAAAUAw==",
+            "type": "state",
+            "common": {
+                "name": "Mute",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAQAAAAEAAAAVAw==",
+            "type": "state",
+            "common": {
+                "name": "TvPower",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAQAAAAEAAAAXAw==",
+            "type": "state",
+            "common": {
+                "name": "Audio",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAQAAAAEAAAAXAw==",
+            "type": "state",
+            "common": {
+                "name": "MediaAudioTrack",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAQAAAAEAAAAkAw==",
+            "type": "state",
+            "common": {
+                "name": "Tv",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAQAAAAEAAAAlAw==",
+            "type": "state",
+            "common": {
+                "name": "Input",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAQAAAAEAAAAlAw==",
+            "type": "state",
+            "common": {
+                "name": "TvInput",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAQAAAAEAAAAqAw==",
+            "type": "state",
+            "common": {
+                "name": "TvAntennaCable",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAQAAAAEAAAAuAw==",
+            "type": "state",
+            "common": {
+                "name": "WakeUp",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAQAAAAEAAAAvAw==",
+            "type": "state",
+            "common": {
+                "name": "PowerOff",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAQAAAAEAAAAvAw==",
+            "type": "state",
+            "common": {
+                "name": "Sleep",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAQAAAAEAAAAzAw==",
+            "type": "state",
+            "common": {
+                "name": "Right",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAQAAAAEAAAA0Aw==",
+            "type": "state",
+            "common": {
+                "name": "Left",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAQAAAAEAAAA2Aw==",
+            "type": "state",
+            "common": {
+                "name": "SleepTimer",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAQAAAAEAAAA4Aw==",
+            "type": "state",
+            "common": {
+                "name": "Analog2",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAQAAAAEAAAA4Aw==",
+            "type": "state",
+            "common": {
+                "name": "TvAnalog",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAQAAAAEAAAA6Aw==",
+            "type": "state",
+            "common": {
+                "name": "Display",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAQAAAAEAAAA7Aw==",
+            "type": "state",
+            "common": {
+                "name": "Jump",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAQAAAAEAAAA+Aw==",
+            "type": "state",
+            "common": {
+                "name": "PicOff",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAQAAAAEAAAA+Aw==",
+            "type": "state",
+            "common": {
+                "name": "PictureOff",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAQAAAAEAAAA/Aw==",
+            "type": "state",
+            "common": {
+                "name": "Teletext",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAQAAAAEAAABAAw==",
+            "type": "state",
+            "common": {
+                "name": "Video1",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAQAAAAEAAABBAw==",
+            "type": "state",
+            "common": {
+                "name": "Video2",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAQAAAAEAAABDAw==",
+            "type": "state",
+            "common": {
+                "name": "AnalogRgb1",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAQAAAAEAAABgAw==",
+            "type": "state",
+            "common": {
+                "name": "Home",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAQAAAAEAAABjAw==",
+            "type": "state",
+            "common": {
+                "name": "Exit",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAQAAAAEAAABkAw==",
+            "type": "state",
+            "common": {
+                "name": "PictureMode",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAQAAAAEAAABlAw==",
+            "type": "state",
+            "common": {
+                "name": "Confirm",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAQAAAAEAAAB0Aw==",
+            "type": "state",
+            "common": {
+                "name": "Up",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAQAAAAEAAAB1Aw==",
+            "type": "state",
+            "common": {
+                "name": "Down",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAgAAAKQAAAAQAw==",
+            "type": "state",
+            "common": {
+                "name": "ClosedCaption",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAgAAAKQAAAA2Aw==",
+            "type": "state",
+            "common": {
+                "name": "Component1",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAgAAAKQAAAA3Aw==",
+            "type": "state",
+            "common": {
+                "name": "Component2",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAgAAAKQAAAA9Aw==",
+            "type": "state",
+            "common": {
+                "name": "Wide",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAgAAAKQAAABbAw==",
+            "type": "state",
+            "common": {
+                "name": "EPG",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAgAAAKQAAAB3Aw==",
+            "type": "state",
+            "common": {
+                "name": "PAP",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAgAAAJcAAAAMAw==",
+            "type": "state",
+            "common": {
+                "name": "TenKey",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAgAAAJcAAAAQAw==",
+            "type": "state",
+            "common": {
+                "name": "BSCS",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAgAAAJcAAAAVAw==",
+            "type": "state",
+            "common": {
+                "name": "Ddata",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAgAAAJcAAAAYAw==",
+            "type": "state",
+            "common": {
+                "name": "Stop",
+                "role": "button.stop",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAgAAAJcAAAAZAw==",
+            "type": "state",
+            "common": {
+                "name": "Pause",
+                "role": "button.pause",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAgAAAJcAAAAaAw==",
+            "type": "state",
+            "common": {
+                "name": "Play",
+                "role": "button.play",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAgAAAJcAAAAbAw==",
+            "type": "state",
+            "common": {
+                "name": "Rewind",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAgAAAJcAAAAcAw==",
+            "type": "state",
+            "common": {
+                "name": "Forward",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAgAAAJcAAAAdAw==",
+            "type": "state",
+            "common": {
+                "name": "DOT",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAgAAAJcAAAAgAw==",
+            "type": "state",
+            "common": {
+                "name": "Rec",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAgAAAJcAAAAjAw==",
+            "type": "state",
+            "common": {
+                "name": "Return",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAgAAAJcAAAAkAw==",
+            "type": "state",
+            "common": {
+                "name": "Blue",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAgAAAJcAAAAlAw==",
+            "type": "state",
+            "common": {
+                "name": "Red",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAgAAAJcAAAAmAw==",
+            "type": "state",
+            "common": {
+                "name": "Green",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAgAAAJcAAAAnAw==",
+            "type": "state",
+            "common": {
+                "name": "Yellow",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAgAAAJcAAAAoAw==",
+            "type": "state",
+            "common": {
+                "name": "SubTitle",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAgAAAJcAAAArAw==",
+            "type": "state",
+            "common": {
+                "name": "CS",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAgAAAJcAAAAsAw==",
+            "type": "state",
+            "common": {
+                "name": "BS",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAgAAAJcAAAAyAw==",
+            "type": "state",
+            "common": {
+                "name": "Digital",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAgAAAJcAAAA2Aw==",
+            "type": "state",
+            "common": {
+                "name": "Options",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAgAAAJcAAAA4Aw==",
+            "type": "state",
+            "common": {
+                "name": "Media",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAgAAAJcAAAA8Aw==",
+            "type": "state",
+            "common": {
+                "name": "Prev",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAgAAAJcAAAA9Aw==",
+            "type": "state",
+            "common": {
+                "name": "Next",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAgAAAJcAAABKAw==",
+            "type": "state",
+            "common": {
+                "name": "DpadCenter",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAgAAAJcAAABPAw==",
+            "type": "state",
+            "common": {
+                "name": "CursorUp",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAgAAAJcAAABQAw==",
+            "type": "state",
+            "common": {
+                "name": "CursorDown",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAgAAAJcAAABNAw==",
+            "type": "state",
+            "common": {
+                "name": "CursorLeft",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAgAAAJcAAABOAw==",
+            "type": "state",
+            "common": {
+                "name": "CursorRight",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAgAAAJcAAABqAw==",
+            "type": "state",
+            "common": {
+                "name": "ShopRemoteControlForcedDynamic",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAgAAAJcAAAB4Aw==",
+            "type": "state",
+            "common": {
+                "name": "FlashPlus",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAgAAAJcAAAB5Aw==",
+            "type": "state",
+            "common": {
+                "name": "FlashMinus",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAgAAAJcAAAB7Aw==",
+            "type": "state",
+            "common": {
+                "name": "AudioQualityMode",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAgAAAJcAAAB8Aw==",
+            "type": "state",
+            "common": {
+                "name": "DemoMode",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAgAAAHcAAAANAw==",
+            "type": "state",
+            "common": {
+                "name": "Analog",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAgAAAHcAAABNAw==",
+            "type": "state",
+            "common": {
+                "name": "Mode3D",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAgAAAHcAAABSAw==",
+            "type": "state",
+            "common": {
+                "name": "DigitalToggle",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAgAAAHcAAAB7Aw==",
+            "type": "state",
+            "common": {
+                "name": "DemoSurround",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAgAAABoAAAA7Aw==",
+            "type": "state",
+            "common": {
+                "name": "*AD",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAgAAABoAAAA8Aw==",
+            "type": "state",
+            "common": {
+                "name": "AudioMixUp",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAgAAABoAAAA9Aw==",
+            "type": "state",
+            "common": {
+                "name": "AudioMixDown",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAgAAABoAAABVAw==",
+            "type": "state",
+            "common": {
+                "name": "PhotoFrame",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAgAAABoAAABXAw==",
+            "type": "state",
+            "common": {
+                "name": "Tv_Radio",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAgAAABoAAABYAw==",
+            "type": "state",
+            "common": {
+                "name": "SyncMenu",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAgAAABoAAABaAw==",
+            "type": "state",
+            "common": {
+                "name": "Hdmi1",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAgAAABoAAABbAw==",
+            "type": "state",
+            "common": {
+                "name": "Hdmi2",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAgAAABoAAABcAw==",
+            "type": "state",
+            "common": {
+                "name": "Hdmi3",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAgAAABoAAABdAw==",
+            "type": "state",
+            "common": {
+                "name": "Hdmi4",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAgAAABoAAABgAw==",
+            "type": "state",
+            "common": {
+                "name": "TopMenu",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAgAAABoAAABhAw==",
+            "type": "state",
+            "common": {
+                "name": "PopUpMenu",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAgAAABoAAABkAw==",
+            "type": "state",
+            "common": {
+                "name": "OneTouchTimeRec",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAgAAABoAAABlAw==",
+            "type": "state",
+            "common": {
+                "name": "OneTouchView",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAgAAABoAAABzAw==",
+            "type": "state",
+            "common": {
+                "name": "DUX",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAgAAABoAAAB2Aw==",
+            "type": "state",
+            "common": {
+                "name": "FootballMode",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAgAAABoAAAB7Aw==",
+            "type": "state",
+            "common": {
+                "name": "iManual",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAgAAABoAAAB8Aw==",
+            "type": "state",
+            "common": {
+                "name": "Netflix",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAgAAAMQAAAA7Aw==",
+            "type": "state",
+            "common": {
+                "name": "Assists",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAgAAAMQAAABLAw==",
+            "type": "state",
+            "common": {
+                "name": "ActionMenu",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAgAAAMQAAABNAw==",
+            "type": "state",
+            "common": {
+                "name": "Help",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAgAAAMQAAABOAw==",
+            "type": "state",
+            "common": {
+                "name": "TvSatellite",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id":  "AAAAAgAAAMQAAAB+Aw==",
+            "type": "state",
+            "common": {
+                "name": "WirelessSubwoofer",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        }
+    ]
+}
