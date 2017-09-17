@@ -1,8 +1,16 @@
 {
     "common": {
         "name": "sony-bravia",
-        "version": "0.0.1",
-        "news": {            
+        "version": "0.0.5",
+        "news": {
+            "0.0.5": {
+                "en": "Open test phase",
+                "de": "Offene Testphase",
+                "ru": "Открытая тестовая фаза",
+                "pt": "Fase de teste aberta",
+                "fr": "Phase de test ouverte",
+                "nl": "Open testfase"
+            },
             "0.0.1": {
                 "en": "initial adapter",
                 "de": "Initiale Version",
@@ -29,7 +37,7 @@
         "keywords": ["sony","bravia","smart-tv"],
         "readme": "https://github.com/ldittmar81/ioBroker.sony-bravia/blob/master/README.md",
         "loglevel": "info",
-        "type": "media"
+        "type": "multimedia"
     },
     "native": {
         "ip": "",
