@@ -14,10 +14,10 @@
 Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/ldittmar81/ioBroker.sony-bravia?branch=master&svg=true)](https://ci.appveyor.com/project/ldittmar81/ioBroker-sony-bravia/)
 
 
-### A Sony Bravia Smart-TV adapter for ioBroker
+### A Sony Bravia Android Smart-TV adapter for ioBroker
 =================
 
-This is an ioBroker adapter for your Sony Bravia Smart-TV.
+This is an ioBroker adapter for your Sony Bravia Smart-TV with Android OS. Tested with KD-65X8507C.
 
 ##### TV Setup
 * Turn on your TV

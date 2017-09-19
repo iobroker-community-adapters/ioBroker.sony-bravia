@@ -2,7 +2,7 @@
 /*jslint node: true */
 "use strict";
 
-var controller = require('bravia');
+var Controller = require('bravia');
 var ping = require("ping");
 
 // you have to require the utils module and call adapter function
@@ -13,57 +13,32 @@ var utils =    require(__dirname + '/lib/utils'); // Get common adapter utils
 // adapter will be restarted automatically every time as the configuration changed, e.g system.adapter.template.0
 var adapter = utils.adapter('sony-bravia');
 
-var ip, psk, firsttime;
-
-// is called when adapter shuts down - callback has to be called under any circumstances!
-adapter.on('unload', function (callback) {
-    try {
-        adapter.log.info('cleaned everything up...');
-        callback();
-    } catch (e) {
-        callback();
-    }
-});
-
-// is called if a subscribed object changes
-adapter.on('objectChange', function (id, obj) {
-    // Warning, obj can be null if it was deleted
-    adapter.log.info('objectChange ' + id + ' ' + JSON.stringify(obj));
-});
+var isConnected = null;
+var device;
 
 // is called if a subscribed state changes
 adapter.on('stateChange', function (id, state) {    
     if (id && state && !state.ack){
 	id = id.substring(adapter.namespace.length + 1);
-	sendCommand(id);
-    }
-});
-
-// Some message was sent to adapter instance over message box. Used by email, pushover, text2speech, ...
-adapter.on('message', function (obj) {
-    if (typeof obj == 'object' && obj.message) {
-        if (obj.command == 'send') {
-            // e.g. send email or pushover or whatever
-            console.log('send command');
-
-            // Send response in callback if required
-            if (obj.callback) adapter.sendTo(obj.from, obj.command, 'Message received', obj.callback);
-        }
+	device.send(id);
     }
 });
 
 // is called when databases are connected and adapter received configuration.
 // start here!
-adapter.on('ready', function () {
-    main();
-});
+adapter.on('ready', main);
+
+function setConnected(_isConnected) {
+    if (isConnected !== _isConnected) {
+        isConnected = _isConnected;
+        adapter.setState('info.connection', {val: isConnected, ack: true});
+    }
+}
 
 function main() {
 
-    ip = adapter.config.ip;
-    psk = adapter.config.psk;
-    
-    if(ip && psk) {
+    if(adapter.config.ip && adapter.config.ip !== '0.0.0.0' && adapter.config.psk) {
+        device = new Controller(adapter.config.ip, '80', adapter.config.psk);
         // in this template all states changes inside the adapters namespace are subscribed
         adapter.subscribeStates('*');
         checkStatus();
@@ -77,12 +52,7 @@ function main() {
 }
 
 function checkStatus() {
-    ping.sys.probe(ip, function (isAlive) {
-        adapter.setState("connected", {val: isAlive, ack: true});        
+    ping.sys.probe(adapter.config.ip, function (isAlive) {
+        setConnected(isAlive);
     });
-}
-
-function sendCommand(cmd) {
-    var device = new controller(ip, '80', psk);
-    device.send(cmd);
 }
