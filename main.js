@@ -3,7 +3,7 @@
 "use strict";
 
 var Controller = require('bravia');
-var ping = require("ping");
+var ping = require(__dirname + '/lib/ping');
 
 // you have to require the utils module and call adapter function
 var utils =    require(__dirname + '/lib/utils'); // Get common adapter utils
@@ -18,7 +18,7 @@ var device;
 
 // is called if a subscribed state changes
 adapter.on('stateChange', function (id, state) {    
-    if (id && state && !state.ack){
+    if (id && state && !state.ack && isConnected){
 	id = id.substring(adapter.namespace.length + 1);
 	device.send(id);
     }
@@ -52,7 +52,12 @@ function main() {
 }
 
 function checkStatus() {
-    ping.sys.probe(adapter.config.ip, function (isAlive) {
-        setConnected(isAlive);
+    ping.probe(adapter.config.ip, {log: adapter.log.debug}, function (err, result) {
+        if (err) {
+            adapter.log.error(err);
+        }
+        if (result) {
+            setConnected(result.alive);
+        }
     });
 }
