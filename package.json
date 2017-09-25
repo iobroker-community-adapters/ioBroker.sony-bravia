@@ -1,6 +1,6 @@
 {
     "name": "iobroker.sony-bravia",
-    "version": "0.0.6",
+    "version": "0.0.7",
     "description": "ioBroker Sony Bravia Smart-TV Adapter",
     "author": {
         "name": "ldittmar",
@@ -20,7 +20,6 @@
         "url": "https://github.com/ldittmar81/ioBroker.sony-bravia"
     },
     "dependencies": {
-        "bravia": "^1.2.0"
     },
     "devDependencies": {
         "grunt": "^0.4.5",
