@@ -2,7 +2,7 @@
 /*jslint node: true */
 "use strict";
 
-var Controller = require('bravia');
+var Controller = require(__dirname + '/lib/bravia');
 var ping = require(__dirname + '/lib/ping');
 
 // you have to require the utils module and call adapter function
@@ -18,9 +18,9 @@ var device;
 
 // is called if a subscribed state changes
 adapter.on('stateChange', function (id, state) {    
-    if (id && state && !state.ack && isConnected){
-	id = id.substring(adapter.namespace.length + 1);
-	device.send(id);
+    if (id && state && !state.ack){
+	id = id.substring(id.lastIndexOf('.') + 1);
+        device.send(id);
     }
 });
 
@@ -38,7 +38,7 @@ function setConnected(_isConnected) {
 function main() {
 
     if(adapter.config.ip && adapter.config.ip !== '0.0.0.0' && adapter.config.psk) {
-        device = new Controller(adapter.config.ip, '80', adapter.config.psk);
+        device = new Controller(adapter.config.ip, '80', adapter.config.psk, 5000);
         // in this template all states changes inside the adapters namespace are subscribed
         adapter.subscribeStates('*');
         checkStatus();
