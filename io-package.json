@@ -1,8 +1,16 @@
 {
     "common": {
         "name": "sony-bravia",
-        "version": "0.0.8",
+        "version": "0.1.0",
         "news": {
+            "0.1.0": {
+                "en": "Test phase terminated. Adapter enabled.",
+                "de": "Testphase beendet. Adapter freigegeben.",
+                "ru": "Тестовая фаза завершена. Адаптер включен.",
+                "pt": "Fase de teste encerrada. Adaptador habilitado.",
+                "fr": "Phase de test terminée. Adaptateur activé.",
+                "nl": "Testfase beëindigd. Adapter ingeschakeld."
+            },
             "0.0.7": {
                 "en": "Node.j 4.x compatibility",
                 "de": "Kompatibilität zu Node.js 4.x",
