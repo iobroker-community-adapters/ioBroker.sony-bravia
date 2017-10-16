@@ -36,6 +36,7 @@
                 "nl": "Eerste release"
             }
         },
+        "authors": ["ldittmar <iobroker@lmdsoft.de>"],
         "title": "Sony Bravia Smart-TV Adapter",
         "desc": {
             "en": "ioBroker Sony Bravia Smart-TV Adapter",
