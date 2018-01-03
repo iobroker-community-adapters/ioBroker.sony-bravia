@@ -11,7 +11,7 @@ var utils =    require(__dirname + '/lib/utils'); // Get common adapter utils
 // you have to call the adapter function and pass a options object
 // name has to be set and has to be equal to adapters folder name and main file name excluding extension
 // adapter will be restarted automatically every time as the configuration changed, e.g system.adapter.template.0
-var adapter = utils.adapter('sony-bravia');
+var adapter = utils.Adapter('sony-bravia');
 
 var isConnected = null;
 var device;
