@@ -6,7 +6,6 @@
 [![Downloads](https://img.shields.io/npm/dm/iobroker.sony-bravia.svg)](https://www.npmjs.com/package/iobroker.sony-bravia)
 [![Dependency Status](https://img.shields.io/david/ldittmar81/iobroker.sony-bravia.svg)](https://david-dm.org/ldittmar81/iobroker.sony-bravia)
 [![Known Vulnerabilities](https://snyk.io/test/github/ldittmar81/ioBroker.sony-bravia/badge.svg)](https://snyk.io/test/github/ldittmar81/ioBroker.sony-bravia)
-[![bitHound Overall Score](https://www.bithound.io/github/ldittmar81/ioBroker.sony-bravia/badges/score.svg)](https://www.bithound.io/github/ldittmar81/ioBroker.sony-bravia)
 
 [![NPM](https://nodei.co/npm/iobroker.sony-bravia.png?downloads=true)](https://nodei.co/npm/iobroker.sony-bravia/)
 
@@ -25,6 +24,10 @@ This is an ioBroker adapter for your Sony Bravia Smart-TV with Android OS. Teste
 * On the TV go to Settings > Network > Home network setup > IP Control > Authentication > Normal and Pre-Shared Key
 * On the TV go to Settings > Network > Home network setup > Remote device/Renderer > Enter Pre-Shared Key > 0000 (or whatever you want your PSK Key to be)
 * On the TV go to Settings > Network > Home network setup > Remote device/Renderer > Simple IP Control > On
+
+## Feature Requests (please vote oder add new)
+
+[![Feature Requests](http://feathub.com/ldittmar81/ioBroker.sony-bravia?format=svg)](http://feathub.com/ldittmar81/ioBroker.sony-bravia)
 
 ## Changelog
 
