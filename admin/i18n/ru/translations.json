@@ -1,0 +1,13 @@
+{
+  "Go to home network setup": "Перейти к настройке домашней сети",
+  "Go to remote device/Renderer and enter the Pre-Shared Key \"0000\" (or whatever you want your PSK Key to be)": "Перейдите к удаленному устройству / средству визуализации и введите предварительный общий ключ «0000» (или любой другой ключ PSK)",
+  "IP": "IP",
+  "IP Control -> Authentication -> Normal and Pre-Shared Key": "Управление IP -> Аутентификация -> Нормальный и Общий ключ",
+  "On the TV, go to Settings -> Network -> Home network setup": "На телевизоре зайдите в Настройки -> Сеть -> Настройка домашней сети",
+  "PSK Key": "PSK Key",
+  "Set Simple IP Control on": "Установить простое управление IP на",
+  "Set remote device/Renderer on": "Установить удаленное устройство / рендерер на",
+  "TV Setup": "Настройка телевизора",
+  "Turn your TV on": "Включи телевизор",
+  "on save adapter restarts with new config immediately": "При сохранении адаптер перезапускается с новым конфигом немедленно."
+}

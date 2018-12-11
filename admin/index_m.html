@@ -1,0 +1,119 @@
+<html>
+    <head>
+        <!-- these 4 files always have to be included -->
+        <link rel="stylesheet" type="text/css" href="../../lib/css/materialize.css">
+        <link rel="stylesheet" type="text/css" href="../../css/adapter.css"/>
+
+        <script type="text/javascript" src="../../lib/js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="../../socket.io/socket.io.js"></script>
+
+        <!-- these files always have to be included -->
+        <script type="text/javascript" src="../../js/translate.js"></script>
+        <script type="text/javascript" src="../../lib/js/materialize.js"></script>
+        <script type="text/javascript" src="../../js/adapter-settings.js"></script>
+        <script type="text/javascript" src="words.js"></script>
+        <style>
+            .m .col .select-wrapper+label {
+                top: -26px;  
+            }
+            .m span{
+                font-size: 0.9em;
+            }
+        </style>
+        <!-- you have to define 2 functions in the global scope: -->
+        <script type="text/javascript">
+
+            // the function loadSettings has to exist ...
+            function load(settings, onChange) {
+                // example: select elements with id=key and class=value and insert value
+                if (!settings)
+                    return;
+                $('.value').each(function () {
+                    var $key = $(this);
+                    var id = $key.attr('id');
+                    if ($key.attr('type') === 'checkbox') {
+                        // do not call onChange direct, because onChange could expect some arguments
+                        $key.prop('checked', settings[id]).on('change', function () {
+                            onChange();
+                        });
+                    } else {
+                        // do not call onChange direct, because onChange could expect some arguments
+                        $key.val(settings[id]).on('change', function () {
+                            onChange();
+                        }).on('keyup', function () {
+                            onChange();
+                        });
+                    }
+                });
+                onChange(false);
+                M.updateTextFields();  // function Materialize.updateTextFields(); to reinitialize all the Materialize labels on the page if you are dynamically adding inputs.
+            }
+
+            // ... and the function save has to exist.
+            // you have to make sure the callback is called with the settings object as first param!
+            function save(callback) {
+                // example: select elements with class=value and build settings object
+                var obj = {};
+                $('.value').each(function () {
+                    var $this = $(this);
+                    if ($this.attr('type') === 'checkbox') {
+                        obj[$this.attr('id')] = $this.prop('checked');
+                    } else {
+                        obj[$this.attr('id')] = $this.val();
+                    }
+                });
+                callback(obj);
+            }
+        </script>
+    </head>
+    <body>
+        <!-- you have to put your config page in a div with id adapter-container -->
+        <div class="m adapter-container">
+            <div class="row">
+                <!-- Forms are the standard way to receive user inputted data.
+             Learn more http://materializecss.com/forms.html-->
+                <div class="row">
+                    <div class="input-field col s6">
+                        <img src="sony-bravia.png" class="logo">
+                    </div>
+                </div>              
+                <div class="row">
+                    <div class="input-field col s12 m6 l4">
+                        <input class="value" id="ip" type="text" size="15" maxlength="15">
+                        <label for="ip">IP</label>
+                        <span>192.168.x.</span>
+                    </div>
+                      <div class="input-field col s12 m6 l4">
+                        <input class="value" id="psk" type="text" size="15" maxlength="15">
+                        <label class="translate" for="psk">PSK Key</label>
+                        <span class="translate">PSK Key</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12 m6">
+                        <div class="card blue-grey darken-1">
+                            <div class="card-content white-text">
+                                <span class="card-title translate">TV Setup</span>
+                                <ul>
+                                    <li class="translate">Turn your TV on</li>
+                                    <li class="translate">On the TV, go to Settings -> Network -> Home network setup</li>
+                                    <li class="translate">Set remote device/Renderer on</li>
+                                    <li class="translate">Go to home network setup</li> 
+                                    <li class="translate">IP Control -> Authentication -> Normal and Pre-Shared Key</li>
+                                    <li class="translate">Go to remote device/Renderer and enter the Pre-Shared Key "0000" (or whatever you want your PSK Key to be)</li>
+                                    <li class="translate">Set Simple IP Control on</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12">
+                        <p class="translate">on save adapter restarts with new config immediately</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>

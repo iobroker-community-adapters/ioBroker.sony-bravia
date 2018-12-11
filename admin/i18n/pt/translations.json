@@ -1,0 +1,13 @@
+{
+  "Go to home network setup": "Ir para a configuração da rede doméstica",
+  "Go to remote device/Renderer and enter the Pre-Shared Key \"0000\" (or whatever you want your PSK Key to be)": "Ir para dispositivo / renderizador remoto e digite a chave pré-compartilhada \"0000\" (ou qualquer que seja sua chave PSK)",
+  "IP": "IP",
+  "IP Control -> Authentication -> Normal and Pre-Shared Key": "Controle de IP -> Autenticação -> Chave Normal e Pré-Compartilhada",
+  "On the TV, go to Settings -> Network -> Home network setup": "Na TV, vá para Configurações -> Rede -> Configuração da rede doméstica",
+  "PSK Key": "Chave PSK",
+  "Set Simple IP Control on": "Definir controle IP simples em",
+  "Set remote device/Renderer on": "Definir dispositivo / renderizador remoto",
+  "TV Setup": "Configuração de TV",
+  "Turn your TV on": "Ligue sua TV",
+  "on save adapter restarts with new config immediately": "Em salvar adaptador reinicia com nova configuração imediatamente."
+}

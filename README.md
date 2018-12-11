@@ -25,11 +25,10 @@ This is an ioBroker adapter for your Sony Bravia Smart-TV with Android OS. Teste
 * On the TV go to Settings > Network > Home network setup > Remote device/Renderer > Enter Pre-Shared Key > 0000 (or whatever you want your PSK Key to be)
 * On the TV go to Settings > Network > Home network setup > Remote device/Renderer > Simple IP Control > On
 
-## Feature Requests (please vote oder add new)
-
-[![Feature Requests](http://feathub.com/ldittmar81/ioBroker.sony-bravia?format=svg)](http://feathub.com/ldittmar81/ioBroker.sony-bravia)
-
 ## Changelog
+
+### 1.0.0
+* (ldittmar) Support of admin3
 
 #### 0.1.0
 * (ldittmar) Test phase terminated. Adapter enabled.
@@ -43,7 +42,7 @@ This is an ioBroker adapter for your Sony Bravia Smart-TV with Android OS. Teste
 ## License
 The MIT License (MIT)
 
-Copyright (c) 2017 ldittmar <iobroker@lmdsoft.de>
+Copyright (c) 2018 ldittmar <iobroker@lmdsoft.de>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

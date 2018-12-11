@@ -1,15 +1,29 @@
 {
     "common": {
         "name": "sony-bravia",
-        "version": "0.1.0",
+        "version": "1.0.0",
         "news": {
+            "1.0.0": {
+                "en": "Support of admin3",
+                "de": "Unterstützung von admin3",
+                "ru": "Поддержка admin3",
+                "pt": "Suporte de admin3",
+                "nl": "Ondersteuning van admin3",
+                "fr": "Support de admin3",
+                "it": "Supporto di admin3",
+                "es": "Soporte de admin3",
+                "pl": "Wsparcie dla admin3"
+            },
             "0.1.0": {
                 "en": "Test phase terminated. Adapter enabled.",
                 "de": "Testphase beendet. Adapter freigegeben.",
                 "ru": "Тестовая фаза завершена. Адаптер включен.",
                 "pt": "Fase de teste encerrada. Adaptador habilitado.",
                 "fr": "Phase de test terminée. Adaptateur activé.",
-                "nl": "Testfase beëindigd. Adapter ingeschakeld."
+                "nl": "Testfase beëindigd. Adapter ingeschakeld.",
+                "pl": "Faza testowa została zakończona. Adapter włączony.",
+                "it": "Fase di prova terminata Adattatore abilitato.",
+                "es": "Fase de prueba terminada. Adaptador habilitado."
             },
             "0.0.7": {
                 "en": "Node.j 4.x compatibility",
@@ -17,7 +31,10 @@
                 "ru": "Совместимость с Node.js 4.x",
                 "pt": "Compatibilidade com Node.js 4.x",
                 "fr": "Compatibilité avec Node.js 4.x",
-                "nl": "Compatibiliteit met Node.js 4.x"
+                "nl": "Compatibiliteit met Node.js 4.x",
+                "es": "Compatibilidad con Node.j 4.x",
+                "pl": "Zgodność z Node.j 4.x",
+                "it": "Node.j 4.x compatibilità"
             },
             "0.0.5": {
                 "en": "Open test phase",
@@ -25,30 +42,51 @@
                 "ru": "Открытая тестовая фаза",
                 "pt": "Fase de teste aberta",
                 "fr": "Phase de test ouverte",
-                "nl": "Open testfase"
+                "nl": "Open testfase",
+                "it": "Fase di test aperta",
+                "es": "Fase de prueba abierta",
+                "pl": "Otwórz fazę testową"
             },
             "0.0.1": {
-                "en": "initial adapter",
+                "en": "initial version",
                 "de": "Initiale Version",
                 "ru": "Первоначальный адаптер",
                 "pt": "Versão inicial",
                 "fr": "Version initiale",
-                "nl": "Eerste release"
+                "nl": "Eerste release",
+                "it": "Versione iniziale",
+                "es": "Versión inicial",
+                "pl": "początkowa wersja"
             }
         },
         "authors": ["ldittmar <iobroker@lmdsoft.de>"],
         "title": "Sony Bravia Smart-TV Adapter",
-        "desc": {
+        "titleLang": {
             "en": "ioBroker Sony Bravia Smart-TV Adapter",
             "de": "ioBroker Sony Bravia Smart-TV Adapter",
             "ru": "ioBroker Sony Bravia Smart-TV драйвер как образец",
             "pt": "Sony Bravia Smart-TV adaptador para o ioBroker",
             "fr": "ioBroker adaptateur Sony Bravia Smart-TV",
-            "nl": "ioBroker Sony Bravia Smart-TV Adapter"
+            "nl": "ioBroker Sony Bravia Smart-TV Adapter",
+            "it": "ioBroker Adattatore Sony Bravia Smart-TV",
+            "es": "Adaptador de TV inteligente ioBroker Sony Bravia",
+            "pl": "ioBroker Sony Bravia Smart-TV Adapter"
+        },
+        "desc": {
+            "en": "This is an ioBroker adapter for your Sony Bravia Smart-TV with Android OS. Tested with KD-65X8507C.",
+            "de": "Dies ist ein ioBroker-Adapter für Ihr Sony Bravia Smart-TV mit Android-Betriebssystem. Getestet mit KD-65X8507C.",
+            "ru": "Это адаптер ioBroker для вашего Sony Bravia Smart-TV с ОС Android. Протестировано с KD-65X8507C.",
+            "pt": "Este é um adaptador ioBroker para o seu Sony Bravia Smart-TV com sistema operacional Android. Testado com o KD-65X8507C.",
+            "fr": "Ceci est un adaptateur ioBroker pour votre Sony Bravia Smart-TV avec Android OS. Testé avec KD-65X8507C.",
+            "nl": "Dit is een ioBroker-adapter voor uw Sony Bravia Smart-TV met Android OS. Getest met KD-65X8507C.",
+            "it": "Questo è un adattatore ioBroker per il tuo Sony Bravia Smart-TV con sistema operativo Android. Testato con KD-65X8507C.",
+            "es": "Este es un adaptador ioBroker para su Sony Bravia Smart-TV con sistema operativo Android. Probado con KD-65X8507C.",
+            "pl": "Jest to adapter ioBroker do Twojego Sony Bravia Smart-TV z systemem operacyjnym Android. Testowane za pomocą KD-65X8507C."
         },
         "platform": "Javascript/Node.js",
         "mode": "daemon",
         "icon": "sony-bravia.png",
+        "materialize": true,
         "enabled": true,
         "extIcon": "https://raw.githubusercontent.com/ldittmar81/ioBroker.sony-bravia/master/admin/sony-bravia.png",
         "keywords": ["sony","bravia","smart-tv"],

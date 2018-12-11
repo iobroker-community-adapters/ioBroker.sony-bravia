@@ -1,6 +1,6 @@
 {
   "name": "iobroker.sony-bravia",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "ioBroker Sony Bravia Smart-TV Adapter",
   "author": {
     "name": "ldittmar",
@@ -8,12 +8,6 @@
   },
   "homepage": "https://github.com/ldittmar81/ioBroker.sony-bravia",
   "license": "MIT",
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "https://github.com/ldittmar81/ioBroker.sony-bravia/blob/master/LICENSE"
-    }
-  ],
   "keywords": [
     "sony",
     "bravia",
@@ -29,11 +23,7 @@
     "xml2js": "^0.4.17"
   },
   "devDependencies": {
-    "grunt": "^1.0.1",
-    "grunt-replace": "^1.0.1",
-    "grunt-contrib-jshint": "^1.1.0",
-    "grunt-jscs": "^3.0.1",
-    "grunt-http": "^2.2.0",
+    "gulp": "^3.9.1",
     "mocha": "^4.1.0",
     "chai": "^4.1.2"
   },
