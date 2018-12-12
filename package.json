@@ -18,14 +18,14 @@
     "url": "https://github.com/ldittmar81/ioBroker.sony-bravia"
   },
   "dependencies": {
-    "node-ssdp": "^2.8.0",
-    "request": "^2.79.0",
-    "xml2js": "^0.4.17"
+    "node-ssdp": "^2.9.1",
+    "request": "^2.88.0",
+    "xml2js": "^0.4.19"
   },
   "devDependencies": {
-    "gulp": "^3.9.1",
-    "mocha": "^4.1.0",
-    "chai": "^4.1.2"
+    "gulp": "^4.0.0",
+    "chai": "^4.1.2",
+    "mocha": "^4.1.0"
   },
   "main": "main.js",
   "scripts": {
