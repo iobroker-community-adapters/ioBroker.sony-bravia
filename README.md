@@ -1,6 +1,7 @@
-![Logo](admin/sony-bravia.png)
-# ioBroker.sony-bravia
-=================
+<h1>
+  <img src="https://github.com/ldittmar81/ioBroker.sony-bravia/blob/master/admin/sony-bravia.png" width="64"/>
+  ioBroker.sony-bravia
+</h1>
 
 [![NPM version](http://img.shields.io/npm/v/iobroker.sony-bravia.svg)](https://www.npmjs.com/package/iobroker.sony-bravia)
 [![Downloads](https://img.shields.io/npm/dm/iobroker.sony-bravia.svg)](https://www.npmjs.com/package/iobroker.sony-bravia)
@@ -12,13 +13,11 @@
 **Tests:** Linux/Mac: [![Travis-CI](http://img.shields.io/travis/ldittmar81/ioBroker.sony-bravia/master.svg)](https://travis-ci.org/ldittmar81/ioBroker.sony-bravia)
 Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/ldittmar81/ioBroker.sony-bravia?branch=master&svg=true)](https://ci.appveyor.com/project/ldittmar81/ioBroker-sony-bravia/)
 
-
-### A Sony Bravia Android Smart-TV adapter for ioBroker
-=================
+## A Sony Bravia Android Smart-TV adapter for ioBroker
 
 This is an ioBroker adapter for your Sony Bravia Smart-TV with Android OS. Tested with KD-65X8507C.
 
-##### TV Setup
+## TV Setup
 * Turn on your TV
 * On the TV go to Settings > Network > Home network setup > Remote device/Renderer > On
 * On the TV go to Settings > Network > Home network setup > IP Control > Authentication > Normal and Pre-Shared Key
@@ -30,13 +29,13 @@ This is an ioBroker adapter for your Sony Bravia Smart-TV with Android OS. Teste
 ### 1.0.0
 * (ldittmar) Support of admin3
 
-#### 0.1.0
+### 0.1.0
 * (ldittmar) Test phase terminated. Adapter enabled.
 
-#### 0.0.5
+### 0.0.5
 * (ldittmar) Open beta test phase - please test it and give me feedback here as a issue or in the forum http://forum.iobroker.net/viewtopic.php?f=23&t=6406
 
-#### 0.0.1
+### 0.0.1
 * (ldittmar) initial release
 
 ## License
