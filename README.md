@@ -1,5 +1,5 @@
 <h1>
-  <img src="https://github.com/ldittmar81/ioBroker.sony-bravia/blob/master/admin/sony-bravia.png" width="64"/>
+  <img src="https://raw.githubusercontent.com/ldittmar81/ioBroker.sony-bravia/master/admin/sony-bravia.png" width="64"/>
   ioBroker.sony-bravia
 </h1>
 
