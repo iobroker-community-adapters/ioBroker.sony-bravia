@@ -3,29 +3,38 @@
 "use strict";
 
 // you have to require the utils module and call adapter function
-const utils =    require(__dirname + '/lib/utils'); // Get common adapter utils
+const utils = require(__dirname + '/lib/utils'); // Get common adapter utils
 const Controller = require(__dirname + '/lib/bravia');
 const ping = require(__dirname + '/lib/ping');
-
-// you have to call the adapter function and pass a options object
-// name has to be set and has to be equal to adapters folder name and main file name excluding extension
-// adapter will be restarted automatically every time as the configuration changed, e.g system.adapter.template.0
-const adapter = utils.Adapter('sony-bravia');
 
 let isConnected = null;
 let device;
 
-// is called if a subscribed state changes
-adapter.on('stateChange', function (id, state) {    
-    if (id && state && !state.ack){
-	id = id.substring(id.lastIndexOf('.') + 1);
-        device.send(id);
-    }
-});
+// you have to call the adapter function and pass a options object
+// name has to be set and has to be equal to adapters folder name and main file name excluding extension
+// adapter will be restarted automatically every time as the configuration changed, e.g system.adapter.template.0
+let adapter;
+function startAdapter(options) {
+    options = options || {};
+    Object.assign(options, {
+        name: 'sony-bravia'
+    });
+    adapter = new utils.Adapter(options);
 
-// is called when databases are connected and adapter received configuration.
-// start here!
-adapter.on('ready', main);
+    // is called if a subscribed state changes
+    adapter.on('stateChange', function (id, state) {
+        if (id && state && !state.ack) {
+            id = id.substring(id.lastIndexOf('.') + 1);
+            device.send(id);
+        }
+    });
+
+    // is called when databases are connected and adapter received configuration.
+    // start here!
+    adapter.on('ready', main);
+
+    return adapter;
+}
 
 function setConnected(_isConnected) {
     if (isConnected !== _isConnected) {
@@ -36,12 +45,12 @@ function setConnected(_isConnected) {
 
 function main() {
 
-    if(adapter.config.ip && adapter.config.ip !== '0.0.0.0' && adapter.config.psk) {
+    if (adapter.config.ip && adapter.config.ip !== '0.0.0.0' && adapter.config.psk) {
         device = new Controller(adapter.config.ip, '80', adapter.config.psk, 5000);
         // in this template all states changes inside the adapters namespace are subscribed
         adapter.subscribeStates('*');
         checkStatus();
-        
+
         setInterval(checkStatus, 60000);
 
     } else {
@@ -60,3 +69,11 @@ function checkStatus() {
         }
     });
 }
+
+// If started as allInOne/compact mode => return function to create instance
+if (module && module.parent) {
+    module.exports = startAdapter;
+} else {
+    // or start the instance directly
+    startAdapter();
+} 

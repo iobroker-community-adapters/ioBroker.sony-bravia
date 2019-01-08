@@ -3,6 +3,17 @@
         "name": "sony-bravia",
         "version": "1.0.0",
         "news": {
+            "1.0.1": {
+                "en": "compact mode compatibility added",
+                "de": "Kompaktmodus-Kompatibilität hinzugefügt",
+                "ru": "добавлена ​​совместимость с компактным режимом",
+                "pt": "compatibilidade de modo compacto adicionada",
+                "nl": "compatibiliteit met compacte modus toegevoegd",
+                "fr": "Compatibilité en mode compact ajoutée",
+                "it": "aggiunta la compatibilità in modalità compatta",
+                "es": "compatibilidad de modo compacto agregado",
+                "pl": "Dodano kompatybilność w trybie kompaktowym"
+            },
             "1.0.0": {
                 "en": "Support of admin3",
                 "de": "Unterstützung von admin3",
@@ -83,6 +94,7 @@
             "es": "Este es un adaptador ioBroker para su Sony Bravia Smart-TV con sistema operativo Android. Probado con KD-65X8507C.",
             "pl": "Jest to adapter ioBroker do Twojego Sony Bravia Smart-TV z systemem operacyjnym Android. Testowane za pomocą KD-65X8507C."
         },
+        "compact": true,
         "platform": "Javascript/Node.js",
         "mode": "daemon",
         "icon": "sony-bravia.png",
