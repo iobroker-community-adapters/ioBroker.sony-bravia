@@ -13,7 +13,7 @@
                 "it": "aggiunta la compatibilità in modalità compatta",
                 "es": "compatibilidad de modo compacto agregado",
                 "pl": "Dodano kompatybilność w trybie kompaktowym",
-                "zn": "增加了紧凑模式兼容性"
+                "zh-cn": "增加了紧凑模式兼容性"
             },
             "1.0.0": {
                 "en": "Support of admin3",
@@ -25,7 +25,7 @@
                 "it": "Supporto di admin3",
                 "es": "Soporte de admin3",
                 "pl": "Wsparcie dla admin3",
-                "zn": "支持admin3"
+                "zh-cn": "支持admin3"
             },
             "0.1.0": {
                 "en": "Test phase terminated. Adapter enabled.",
@@ -37,7 +37,7 @@
                 "pl": "Faza testowa została zakończona. Adapter włączony.",
                 "it": "Fase di prova terminata Adattatore abilitato.",
                 "es": "Fase de prueba terminada. Adaptador habilitado.",
-                "zn": "测试阶段终止。 启用适配器。"
+                "zh-cn": "测试阶段终止。 启用适配器。"
             },
             "0.0.7": {
                 "en": "Node.j 4.x compatibility",
@@ -49,7 +49,7 @@
                 "es": "Compatibilidad con Node.j 4.x",
                 "pl": "Zgodność z Node.j 4.x",
                 "it": "Node.j 4.x compatibilità",
-                "zn": "Node.j 4.x兼容性"
+                "zh-cn": "Node.j 4.x兼容性"
             },
             "0.0.5": {
                 "en": "Open test phase",
@@ -61,7 +61,7 @@
                 "it": "Fase di test aperta",
                 "es": "Fase de prueba abierta",
                 "pl": "Otwórz fazę testową",
-                "zn": "开放测试阶段"
+                "zh-cn": "开放测试阶段"
             },
             "0.0.1": {
                 "en": "initial version",
@@ -73,7 +73,7 @@
                 "it": "Versione iniziale",
                 "es": "Versión inicial",
                 "pl": "początkowa wersja",
-                "zn": "初始版本"
+                "zh-cn": "初始版本"
             }
         },
         "authors": ["ldittmar <iobroker@lmdsoft.de>"],
@@ -88,7 +88,7 @@
             "it": "ioBroker Adattatore Sony Bravia Smart-TV",
             "es": "Adaptador de TV inteligente ioBroker Sony Bravia",
             "pl": "ioBroker Sony Bravia Smart-TV Adapter",
-            "zn": "ioBroker索尼Bravia智能电视适配器"
+            "zh-cn": "ioBroker索尼Bravia智能电视适配器"
         },
         "desc": {
             "en": "This is an ioBroker adapter for your Sony Bravia Smart-TV with Android OS. Tested with KD-65X8507C.",
@@ -100,7 +100,7 @@
             "it": "Questo è un adattatore ioBroker per il tuo Sony Bravia Smart-TV con sistema operativo Android. Testato con KD-65X8507C.",
             "es": "Este es un adaptador ioBroker para su Sony Bravia Smart-TV con sistema operativo Android. Probado con KD-65X8507C.",
             "pl": "Jest to adapter ioBroker do Twojego Sony Bravia Smart-TV z systemem operacyjnym Android. Testowane za pomocą KD-65X8507C.",
-            "zn": "这是适用于Android OS索尼Bravia智能电视的ioBroker适配器。 用KD-65X8507C测试。"
+            "zh-cn": "这是适用于Android OS索尼Bravia智能电视的ioBroker适配器。 用KD-65X8507C测试。"
         },
         "compact": true,
         "platform": "Javascript/Node.js",
