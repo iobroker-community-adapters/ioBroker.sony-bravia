@@ -11,7 +11,7 @@
 [![NPM](https://nodei.co/npm/iobroker.sony-bravia.png?downloads=true)](https://nodei.co/npm/iobroker.sony-bravia/)
 
 **Tests:** Linux/Mac: [![Travis-CI](http://img.shields.io/travis/ldittmar81/ioBroker.sony-bravia/master.svg)](https://travis-ci.org/ldittmar81/ioBroker.sony-bravia)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/ldittmar81/ioBroker.sony-bravia?branch=master&svg=true)](https://ci.appveyor.com/project/ldittmar81/ioBroker-sony-bravia/)
+Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/ldittmar81/ioBroker.sony-bravia?branch=master&svg=true)](https://ci.appveyor.com/project/ldittmar81/ioBroker-sony-bravia/) [![Greenkeeper badge](https://badges.greenkeeper.io/ldittmar81/ioBroker.sony-bravia.svg)](https://greenkeeper.io/)
 
 ## A Sony Bravia Android Smart-TV adapter for ioBroker
 
