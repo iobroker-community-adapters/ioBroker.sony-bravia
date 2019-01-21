@@ -1,17 +1,18 @@
 <h1>
-  <img src="https://raw.githubusercontent.com/ldittmar81/ioBroker.sony-bravia/master/admin/sony-bravia.png" width="64"/>
+  <img src="https://raw.githubusercontent.com/iobroker-community-adapters/ioBroker.sony-bravia/master/admin/sony-bravia.png" width="64"/>
   ioBroker.sony-bravia
 </h1>
 
 [![NPM version](http://img.shields.io/npm/v/iobroker.sony-bravia.svg)](https://www.npmjs.com/package/iobroker.sony-bravia)
 [![Downloads](https://img.shields.io/npm/dm/iobroker.sony-bravia.svg)](https://www.npmjs.com/package/iobroker.sony-bravia)
-[![Dependency Status](https://img.shields.io/david/ldittmar81/iobroker.sony-bravia.svg)](https://david-dm.org/ldittmar81/iobroker.sony-bravia)
-[![Known Vulnerabilities](https://snyk.io/test/github/ldittmar81/ioBroker.sony-bravia/badge.svg)](https://snyk.io/test/github/ldittmar81/ioBroker.sony-bravia)
+[![Dependency Status](https://img.shields.io/david/iobroker-community-adapters/iobroker.sony-bravia.svg)](https://david-dm.org/iobroker-community-adapters/iobroker.sony-bravia)
+[![Known Vulnerabilities](https://snyk.io/test/github/iobroker-community-adapters/ioBroker.sony-bravia/badge.svg)](https://snyk.io/test/github/iobroker-community-adapters/ioBroker.sony-bravia)
 
 [![NPM](https://nodei.co/npm/iobroker.sony-bravia.png?downloads=true)](https://nodei.co/npm/iobroker.sony-bravia/)
 
-**Tests:** Linux/Mac: [![Travis-CI](http://img.shields.io/travis/ldittmar81/ioBroker.sony-bravia/master.svg)](https://travis-ci.org/ldittmar81/ioBroker.sony-bravia)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/ldittmar81/ioBroker.sony-bravia?branch=master&svg=true)](https://ci.appveyor.com/project/ldittmar81/ioBroker-sony-bravia/) [![Greenkeeper badge](https://badges.greenkeeper.io/ldittmar81/ioBroker.sony-bravia.svg)](https://greenkeeper.io/)
+**Tests:** Linux/Mac: [![Travis-CI](http://img.shields.io/travis/iobroker-community-adapters/ioBroker.sony-bravia/master.svg)](https://travis-ci.org/iobroker-community-adapters/ioBroker.sony-bravia)
+Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/iobroker-community-adapters/ioBroker.sony-bravia?branch=master&svg=true)](https://ci.appveyor.com/project/iobroker-community-adapters/ioBroker-sony-bravia/) 
+[![Greenkeeper badge](https://badges.greenkeeper.io/iobroker-community-adapters/ioBroker.sony-bravia.svg)](https://greenkeeper.io/)
 
 ## A Sony Bravia Android Smart-TV adapter for ioBroker
 

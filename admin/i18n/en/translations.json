@@ -1,13 +1,13 @@
 {
-  "Go to home network setup": "Go to home network setup",
-  "Go to remote device/Renderer and enter the Pre-Shared Key \"0000\" (or whatever you want your PSK Key to be)": "Go to remote device/Renderer and enter the Pre-Shared Key \"0000\" (or whatever you want your PSK Key to be)",
-  "IP": "IP",
-  "IP Control - Authentication - Normal and Pre-Shared Key": "IP Control -> Authentication -> Normal and Pre-Shared Key",
-  "On the TV, go to Settings - Network - Home network setup": "On the TV, go to Settings -> Network -> Home network setup",
-  "PSK Key": "PSK Key",
-  "Set Simple IP Control on": "Set Simple IP Control on",
-  "Set remote device/Renderer on": "Set remote device/Renderer on",
-  "TV Setup": "TV Setup",
-  "Turn your TV on": "Turn your TV on",
-  "on save adapter restarts with new config immediately": "on save adapter restarts with new config immediately"
+    "Go to home network setup": "Go to home network setup",
+    "Go to remote device/Renderer and enter the Pre-Shared Key \"0000\" (or whatever you want your PSK Key to be)": "Go to remote device/Renderer and enter the Pre-Shared Key \"0000\" (or whatever you want your PSK Key to be)",
+    "IP": "IP",
+    "IP Control - Authentication - Normal and Pre-Shared Key": "IP Control -> Authentication -> Normal and Pre-Shared Key",
+    "On the TV, go to Settings - Network - Home network setup": "On the TV, go to Settings -> Network -> Home network setup",
+    "PSK Key": "PSK Key",
+    "Set Simple IP Control on": "Set Simple IP Control on",
+    "Set remote device/Renderer on": "Set remote device/Renderer on",
+    "TV Setup": "TV Setup",
+    "Turn your TV on": "Turn your TV on",
+    "on save adapter restarts with new config immediately": "on save adapter restarts with new config immediately"
 }

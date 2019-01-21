@@ -1,13 +1,13 @@
 {
-  "Go to home network setup": "Aller à la configuration du réseau domestique",
-  "Go to remote device/Renderer and enter the Pre-Shared Key \"0000\" (or whatever you want your PSK Key to be)": "Allez au périphérique / moteur de rendu distant et entrez la clé pré-partagée \"0000\" (ou quelle que soit votre clé PSK)",
-  "IP": "IP",
-  "IP Control - Authentication - Normal and Pre-Shared Key": "Contrôle IP -> Authentification -> Clé normale et pré-partagée",
-  "On the TV, go to Settings - Network - Home network setup": "Sur le téléviseur, sélectionnez Paramètres -> Réseau -> Configuration du réseau domestique.",
-  "PSK Key": "Clé PSK",
-  "Set Simple IP Control on": "Activer le contrôle IP simple",
-  "Set remote device/Renderer on": "Définir le périphérique distant / le rendu sur",
-  "TV Setup": "Configuration TV",
-  "Turn your TV on": "Allumez votre téléviseur",
-  "on save adapter restarts with new config immediately": "Lors de la sauvegarde, l’adaptateur redémarre immédiatement avec la nouvelle configuration."
+    "Go to home network setup": "Aller à la configuration du réseau domestique",
+    "Go to remote device/Renderer and enter the Pre-Shared Key \"0000\" (or whatever you want your PSK Key to be)": "Allez au périphérique / moteur de rendu distant et entrez la clé pré-partagée \"0000\" (ou quelle que soit votre clé PSK)",
+    "IP": "IP",
+    "IP Control - Authentication - Normal and Pre-Shared Key": "Contrôle IP -> Authentification -> Clé normale et pré-partagée",
+    "On the TV, go to Settings - Network - Home network setup": "Sur le téléviseur, sélectionnez Paramètres -> Réseau -> Configuration du réseau domestique.",
+    "PSK Key": "Clé PSK",
+    "Set Simple IP Control on": "Activer le contrôle IP simple",
+    "Set remote device/Renderer on": "Définir le périphérique distant / le rendu sur",
+    "TV Setup": "Configuration TV",
+    "Turn your TV on": "Allumez votre téléviseur",
+    "on save adapter restarts with new config immediately": "Lors de la sauvegarde, l’adaptateur redémarre immédiatement avec la nouvelle configuration."
 }

@@ -1,13 +1,13 @@
 {
-  "Go to home network setup": "Przejdź do konfiguracji sieci domowej",
-  "Go to remote device/Renderer and enter the Pre-Shared Key \"0000\" (or whatever you want your PSK Key to be)": "Przejdź do zdalnego urządzenia / renderera i wprowadź klucz wstępny \"0000\" (lub jakikolwiek jest twój klucz PSK)",
-  "IP": "IP",
-  "IP Control - Authentication - Normal and Pre-Shared Key": "Kontrola IP -> Uwierzytelnianie -> Klucz normalny i wstępny",
-  "On the TV, go to Settings - Network - Home network setup": "W telewizorze przejdź do Ustawienia -> Sieć -> Konfiguracja sieci domowej",
-  "PSK Key": "Klucz PSK",
-  "Set Simple IP Control on": "Włącz włączoną prostą kontrolę IP",
-  "Set remote device/Renderer on": "Ustaw zdalne urządzenie / renderer na",
-  "TV Setup": "Konfiguracja telewizora",
-  "Turn your TV on": "Włącz telewizor",
-  "on save adapter restarts with new config immediately": "Po zapisaniu adapter natychmiast uruchamia się z nową konfiguracją."
+    "Go to home network setup": "Przejdź do konfiguracji sieci domowej",
+    "Go to remote device/Renderer and enter the Pre-Shared Key \"0000\" (or whatever you want your PSK Key to be)": "Przejdź do zdalnego urządzenia / renderera i wprowadź klucz wstępny \"0000\" (lub jakikolwiek jest twój klucz PSK)",
+    "IP": "IP",
+    "IP Control - Authentication - Normal and Pre-Shared Key": "Kontrola IP -> Uwierzytelnianie -> Klucz normalny i wstępny",
+    "On the TV, go to Settings - Network - Home network setup": "W telewizorze przejdź do Ustawienia -> Sieć -> Konfiguracja sieci domowej",
+    "PSK Key": "Klucz PSK",
+    "Set Simple IP Control on": "Włącz włączoną prostą kontrolę IP",
+    "Set remote device/Renderer on": "Ustaw zdalne urządzenie / renderer na",
+    "TV Setup": "Konfiguracja telewizora",
+    "Turn your TV on": "Włącz telewizor",
+    "on save adapter restarts with new config immediately": "Po zapisaniu adapter natychmiast uruchamia się z nową konfiguracją."
 }

@@ -76,7 +76,9 @@
                 "zh-cn": "初始版本"
             }
         },
-        "authors": ["ldittmar <iobroker@lmdsoft.de>"],
+        "authors": [
+            "ldittmar <iobroker@lmdsoft.de>"
+        ],
         "title": "Sony Bravia Smart-TV Adapter",
         "titleLang": {
             "en": "ioBroker Sony Bravia Smart-TV Adapter",
@@ -108,9 +110,13 @@
         "icon": "sony-bravia.png",
         "materialize": true,
         "enabled": true,
-        "extIcon": "https://raw.githubusercontent.com/ldittmar81/ioBroker.sony-bravia/master/admin/sony-bravia.png",
-        "keywords": ["sony","bravia","smart-tv"],
-        "readme": "https://github.com/ldittmar81/ioBroker.sony-bravia/blob/master/README.md",
+        "extIcon": "https://raw.githubusercontent.com/iobroker-community-adapters/ioBroker.sony-bravia/master/admin/sony-bravia.png",
+        "keywords": [
+            "sony",
+            "bravia",
+            "smart-tv"
+        ],
+        "readme": "https://github.com/iobroker-community-adapters/ioBroker.sony-bravia/blob/master/README.md",
         "loglevel": "info",
         "type": "multimedia"
     },
@@ -181,7 +187,7 @@
             "native": {}
         },
         {
-            "_id":  "function.AAAAAQAAAAEAAAAuAw==",
+            "_id": "function.AAAAAQAAAAEAAAAuAw==",
             "type": "state",
             "common": {
                 "name": "Power on",
@@ -193,7 +199,7 @@
             "native": {}
         },
         {
-            "_id":  "channel.AAAAAQAAAAEAAAAAAw==",
+            "_id": "channel.AAAAAQAAAAEAAAAAAw==",
             "type": "state",
             "common": {
                 "name": "Num1",
@@ -205,7 +211,7 @@
             "native": {}
         },
         {
-            "_id":  "channel.AAAAAQAAAAEAAAABAw==",
+            "_id": "channel.AAAAAQAAAAEAAAABAw==",
             "type": "state",
             "common": {
                 "name": "Num2",
@@ -217,7 +223,7 @@
             "native": {}
         },
         {
-            "_id":  "channel.AAAAAQAAAAEAAAACAw==",
+            "_id": "channel.AAAAAQAAAAEAAAACAw==",
             "type": "state",
             "common": {
                 "name": "Num3",
@@ -229,7 +235,7 @@
             "native": {}
         },
         {
-            "_id":  "channel.AAAAAQAAAAEAAAADAw==",
+            "_id": "channel.AAAAAQAAAAEAAAADAw==",
             "type": "state",
             "common": {
                 "name": "Num4",
@@ -241,7 +247,7 @@
             "native": {}
         },
         {
-            "_id":  "channel.AAAAAQAAAAEAAAAEAw==",
+            "_id": "channel.AAAAAQAAAAEAAAAEAw==",
             "type": "state",
             "common": {
                 "name": "Num5",
@@ -253,7 +259,7 @@
             "native": {}
         },
         {
-            "_id":  "channel.AAAAAQAAAAEAAAAFAw==",
+            "_id": "channel.AAAAAQAAAAEAAAAFAw==",
             "type": "state",
             "common": {
                 "name": "Num6",
@@ -265,7 +271,7 @@
             "native": {}
         },
         {
-            "_id":  "channel.AAAAAQAAAAEAAAAGAw==",
+            "_id": "channel.AAAAAQAAAAEAAAAGAw==",
             "type": "state",
             "common": {
                 "name": "Num7",
@@ -277,7 +283,7 @@
             "native": {}
         },
         {
-            "_id":  "channel.AAAAAQAAAAEAAAAHAw==",
+            "_id": "channel.AAAAAQAAAAEAAAAHAw==",
             "type": "state",
             "common": {
                 "name": "Num8",
@@ -289,7 +295,7 @@
             "native": {}
         },
         {
-            "_id":  "channel.AAAAAQAAAAEAAAAIAw==",
+            "_id": "channel.AAAAAQAAAAEAAAAIAw==",
             "type": "state",
             "common": {
                 "name": "Num9",
@@ -301,7 +307,7 @@
             "native": {}
         },
         {
-            "_id":  "channel.AAAAAQAAAAEAAAAJAw==",
+            "_id": "channel.AAAAAQAAAAEAAAAJAw==",
             "type": "state",
             "common": {
                 "name": "Num0",
@@ -313,7 +319,7 @@
             "native": {}
         },
         {
-            "_id":  "channel.AAAAAQAAAAEAAAAKAw==",
+            "_id": "channel.AAAAAQAAAAEAAAAKAw==",
             "type": "state",
             "common": {
                 "name": "Num11",
@@ -325,7 +331,7 @@
             "native": {}
         },
         {
-            "_id":  "channel.AAAAAQAAAAEAAAALAw==",
+            "_id": "channel.AAAAAQAAAAEAAAALAw==",
             "type": "state",
             "common": {
                 "name": "Num12",
@@ -337,7 +343,7 @@
             "native": {}
         },
         {
-            "_id":  "others.AAAAAQAAAAEAAAALAw==",
+            "_id": "others.AAAAAQAAAAEAAAALAw==",
             "type": "state",
             "common": {
                 "name": "Enter",
@@ -349,7 +355,7 @@
             "native": {}
         },
         {
-            "_id":  "info.AAAAAQAAAAEAAAAOAw==",
+            "_id": "info.AAAAAQAAAAEAAAAOAw==",
             "type": "state",
             "common": {
                 "name": "GGuide",
@@ -361,7 +367,7 @@
             "native": {}
         },
         {
-            "_id":  "channel.AAAAAQAAAAEAAAAQAw==",
+            "_id": "channel.AAAAAQAAAAEAAAAQAw==",
             "type": "state",
             "common": {
                 "name": "ChannelUp",
@@ -373,7 +379,7 @@
             "native": {}
         },
         {
-            "_id":  "channel.AAAAAQAAAAEAAAARAw==",
+            "_id": "channel.AAAAAQAAAAEAAAARAw==",
             "type": "state",
             "common": {
                 "name": "ChannelDown",
@@ -385,7 +391,7 @@
             "native": {}
         },
         {
-            "_id":  "function.AAAAAQAAAAEAAAASAw==",
+            "_id": "function.AAAAAQAAAAEAAAASAw==",
             "type": "state",
             "common": {
                 "name": "VolumeUp",
@@ -397,7 +403,7 @@
             "native": {}
         },
         {
-            "_id":  "function.AAAAAQAAAAEAAAATAw==",
+            "_id": "function.AAAAAQAAAAEAAAATAw==",
             "type": "state",
             "common": {
                 "name": "VolumeDown",
@@ -409,7 +415,7 @@
             "native": {}
         },
         {
-            "_id":  "function.AAAAAQAAAAEAAAAUAw==",
+            "_id": "function.AAAAAQAAAAEAAAAUAw==",
             "type": "state",
             "common": {
                 "name": "Mute",
@@ -421,7 +427,7 @@
             "native": {}
         },
         {
-            "_id":  "function.AAAAAQAAAAEAAAAVAw==",
+            "_id": "function.AAAAAQAAAAEAAAAVAw==",
             "type": "state",
             "common": {
                 "name": "TvPower",
@@ -433,7 +439,7 @@
             "native": {}
         },
         {
-            "_id":  "others.AAAAAQAAAAEAAAAXAw==",
+            "_id": "others.AAAAAQAAAAEAAAAXAw==",
             "type": "state",
             "common": {
                 "name": "Audio",
@@ -445,7 +451,7 @@
             "native": {}
         },
         {
-            "_id":  "others.AAAAAQAAAAEAAAAXAw==",
+            "_id": "others.AAAAAQAAAAEAAAAXAw==",
             "type": "state",
             "common": {
                 "name": "MediaAudioTrack",
@@ -457,7 +463,7 @@
             "native": {}
         },
         {
-            "_id":  "others.AAAAAQAAAAEAAAAkAw==",
+            "_id": "others.AAAAAQAAAAEAAAAkAw==",
             "type": "state",
             "common": {
                 "name": "Tv",
@@ -469,7 +475,7 @@
             "native": {}
         },
         {
-            "_id":  "source.AAAAAQAAAAEAAAAlAw==",
+            "_id": "source.AAAAAQAAAAEAAAAlAw==",
             "type": "state",
             "common": {
                 "name": "Input",
@@ -481,7 +487,7 @@
             "native": {}
         },
         {
-            "_id":  "source.AAAAAQAAAAEAAAAlAw==",
+            "_id": "source.AAAAAQAAAAEAAAAlAw==",
             "type": "state",
             "common": {
                 "name": "TvInput",
@@ -493,7 +499,7 @@
             "native": {}
         },
         {
-            "_id":  "source.AAAAAQAAAAEAAAAqAw==",
+            "_id": "source.AAAAAQAAAAEAAAAqAw==",
             "type": "state",
             "common": {
                 "name": "TvAntennaCable",
@@ -505,7 +511,7 @@
             "native": {}
         },
         {
-            "_id":  "others.AAAAAQAAAAEAAAAuAw==",
+            "_id": "others.AAAAAQAAAAEAAAAuAw==",
             "type": "state",
             "common": {
                 "name": "WakeUp",
@@ -517,7 +523,7 @@
             "native": {}
         },
         {
-            "_id":  "function.AAAAAQAAAAEAAAAvAw==",
+            "_id": "function.AAAAAQAAAAEAAAAvAw==",
             "type": "state",
             "common": {
                 "name": "PowerOff",
@@ -529,7 +535,7 @@
             "native": {}
         },
         {
-            "_id":  "others.AAAAAQAAAAEAAAAvAw==",
+            "_id": "others.AAAAAQAAAAEAAAAvAw==",
             "type": "state",
             "common": {
                 "name": "Sleep",
@@ -541,7 +547,7 @@
             "native": {}
         },
         {
-            "_id":  "others.AAAAAQAAAAEAAAAzAw==",
+            "_id": "others.AAAAAQAAAAEAAAAzAw==",
             "type": "state",
             "common": {
                 "name": "Right",
@@ -553,7 +559,7 @@
             "native": {}
         },
         {
-            "_id":  "others.AAAAAQAAAAEAAAA0Aw==",
+            "_id": "others.AAAAAQAAAAEAAAA0Aw==",
             "type": "state",
             "common": {
                 "name": "Left",
@@ -565,7 +571,7 @@
             "native": {}
         },
         {
-            "_id":  "others.AAAAAQAAAAEAAAA2Aw==",
+            "_id": "others.AAAAAQAAAAEAAAA2Aw==",
             "type": "state",
             "common": {
                 "name": "SleepTimer",
@@ -577,7 +583,7 @@
             "native": {}
         },
         {
-            "_id":  "source.AAAAAQAAAAEAAAA4Aw==",
+            "_id": "source.AAAAAQAAAAEAAAA4Aw==",
             "type": "state",
             "common": {
                 "name": "Analog2",
@@ -589,7 +595,7 @@
             "native": {}
         },
         {
-            "_id":  "source.AAAAAQAAAAEAAAA4Aw==",
+            "_id": "source.AAAAAQAAAAEAAAA4Aw==",
             "type": "state",
             "common": {
                 "name": "TvAnalog",
@@ -601,7 +607,7 @@
             "native": {}
         },
         {
-            "_id":  "others.AAAAAQAAAAEAAAA6Aw==",
+            "_id": "others.AAAAAQAAAAEAAAA6Aw==",
             "type": "state",
             "common": {
                 "name": "Display",
@@ -613,7 +619,7 @@
             "native": {}
         },
         {
-            "_id":  "others.AAAAAQAAAAEAAAA7Aw==",
+            "_id": "others.AAAAAQAAAAEAAAA7Aw==",
             "type": "state",
             "common": {
                 "name": "Jump",
@@ -625,7 +631,7 @@
             "native": {}
         },
         {
-            "_id":  "others.AAAAAQAAAAEAAAA+Aw==",
+            "_id": "others.AAAAAQAAAAEAAAA+Aw==",
             "type": "state",
             "common": {
                 "name": "PicOff",
@@ -637,7 +643,7 @@
             "native": {}
         },
         {
-            "_id":  "others.AAAAAQAAAAEAAAA+Aw==",
+            "_id": "others.AAAAAQAAAAEAAAA+Aw==",
             "type": "state",
             "common": {
                 "name": "PictureOff",
@@ -649,7 +655,7 @@
             "native": {}
         },
         {
-            "_id":  "others.AAAAAQAAAAEAAAA/Aw==",
+            "_id": "others.AAAAAQAAAAEAAAA/Aw==",
             "type": "state",
             "common": {
                 "name": "Teletext",
@@ -661,7 +667,7 @@
             "native": {}
         },
         {
-            "_id":  "source.AAAAAQAAAAEAAABAAw==",
+            "_id": "source.AAAAAQAAAAEAAABAAw==",
             "type": "state",
             "common": {
                 "name": "Video1",
@@ -673,7 +679,7 @@
             "native": {}
         },
         {
-            "_id":  "source.AAAAAQAAAAEAAABBAw==",
+            "_id": "source.AAAAAQAAAAEAAABBAw==",
             "type": "state",
             "common": {
                 "name": "Video2",
@@ -685,7 +691,7 @@
             "native": {}
         },
         {
-            "_id":  "source.AAAAAQAAAAEAAABDAw==",
+            "_id": "source.AAAAAQAAAAEAAABDAw==",
             "type": "state",
             "common": {
                 "name": "AnalogRgb1",
@@ -697,7 +703,7 @@
             "native": {}
         },
         {
-            "_id":  "others.AAAAAQAAAAEAAABgAw==",
+            "_id": "others.AAAAAQAAAAEAAABgAw==",
             "type": "state",
             "common": {
                 "name": "Home",
@@ -709,7 +715,7 @@
             "native": {}
         },
         {
-            "_id":  "others.AAAAAQAAAAEAAABjAw==",
+            "_id": "others.AAAAAQAAAAEAAABjAw==",
             "type": "state",
             "common": {
                 "name": "Exit",
@@ -721,7 +727,7 @@
             "native": {}
         },
         {
-            "_id":  "others.AAAAAQAAAAEAAABkAw==",
+            "_id": "others.AAAAAQAAAAEAAABkAw==",
             "type": "state",
             "common": {
                 "name": "PictureMode",
@@ -733,7 +739,7 @@
             "native": {}
         },
         {
-            "_id":  "others.AAAAAQAAAAEAAABlAw==",
+            "_id": "others.AAAAAQAAAAEAAABlAw==",
             "type": "state",
             "common": {
                 "name": "Confirm",
@@ -745,7 +751,7 @@
             "native": {}
         },
         {
-            "_id":  "others.AAAAAQAAAAEAAAB0Aw==",
+            "_id": "others.AAAAAQAAAAEAAAB0Aw==",
             "type": "state",
             "common": {
                 "name": "Up",
@@ -757,7 +763,7 @@
             "native": {}
         },
         {
-            "_id":  "others.AAAAAQAAAAEAAAB1Aw==",
+            "_id": "others.AAAAAQAAAAEAAAB1Aw==",
             "type": "state",
             "common": {
                 "name": "Down",
@@ -769,7 +775,7 @@
             "native": {}
         },
         {
-            "_id":  "others.AAAAAgAAAKQAAAAQAw==",
+            "_id": "others.AAAAAgAAAKQAAAAQAw==",
             "type": "state",
             "common": {
                 "name": "ClosedCaption",
@@ -781,7 +787,7 @@
             "native": {}
         },
         {
-            "_id":  "source.AAAAAgAAAKQAAAA2Aw==",
+            "_id": "source.AAAAAgAAAKQAAAA2Aw==",
             "type": "state",
             "common": {
                 "name": "Component1",
@@ -793,7 +799,7 @@
             "native": {}
         },
         {
-            "_id":  "source.AAAAAgAAAKQAAAA3Aw==",
+            "_id": "source.AAAAAgAAAKQAAAA3Aw==",
             "type": "state",
             "common": {
                 "name": "Component2",
@@ -805,7 +811,7 @@
             "native": {}
         },
         {
-            "_id":  "others.AAAAAgAAAKQAAAA9Aw==",
+            "_id": "others.AAAAAgAAAKQAAAA9Aw==",
             "type": "state",
             "common": {
                 "name": "Wide",
@@ -817,7 +823,7 @@
             "native": {}
         },
         {
-            "_id":  "others.AAAAAgAAAKQAAABbAw==",
+            "_id": "others.AAAAAgAAAKQAAABbAw==",
             "type": "state",
             "common": {
                 "name": "EPG",
@@ -829,7 +835,7 @@
             "native": {}
         },
         {
-            "_id":  "others.AAAAAgAAAKQAAAB3Aw==",
+            "_id": "others.AAAAAgAAAKQAAAB3Aw==",
             "type": "state",
             "common": {
                 "name": "PAP",
@@ -841,7 +847,7 @@
             "native": {}
         },
         {
-            "_id":  "others.AAAAAgAAAJcAAAAMAw==",
+            "_id": "others.AAAAAgAAAJcAAAAMAw==",
             "type": "state",
             "common": {
                 "name": "TenKey",
@@ -853,7 +859,7 @@
             "native": {}
         },
         {
-            "_id":  "others.AAAAAgAAAJcAAAAQAw==",
+            "_id": "others.AAAAAgAAAJcAAAAQAw==",
             "type": "state",
             "common": {
                 "name": "BSCS",
@@ -865,7 +871,7 @@
             "native": {}
         },
         {
-            "_id":  "others.AAAAAgAAAJcAAAAVAw==",
+            "_id": "others.AAAAAgAAAJcAAAAVAw==",
             "type": "state",
             "common": {
                 "name": "Ddata",
@@ -877,7 +883,7 @@
             "native": {}
         },
         {
-            "_id":  "player.AAAAAgAAAJcAAAAYAw==",
+            "_id": "player.AAAAAgAAAJcAAAAYAw==",
             "type": "state",
             "common": {
                 "name": "Stop",
@@ -889,7 +895,7 @@
             "native": {}
         },
         {
-            "_id":  "player.AAAAAgAAAJcAAAAZAw==",
+            "_id": "player.AAAAAgAAAJcAAAAZAw==",
             "type": "state",
             "common": {
                 "name": "Pause",
@@ -901,7 +907,7 @@
             "native": {}
         },
         {
-            "_id":  "player.AAAAAgAAAJcAAAAaAw==",
+            "_id": "player.AAAAAgAAAJcAAAAaAw==",
             "type": "state",
             "common": {
                 "name": "Play",
@@ -913,7 +919,7 @@
             "native": {}
         },
         {
-            "_id":  "player.AAAAAgAAAJcAAAAbAw==",
+            "_id": "player.AAAAAgAAAJcAAAAbAw==",
             "type": "state",
             "common": {
                 "name": "Rewind",
@@ -925,7 +931,7 @@
             "native": {}
         },
         {
-            "_id":  "player.AAAAAgAAAJcAAAAcAw==",
+            "_id": "player.AAAAAgAAAJcAAAAcAw==",
             "type": "state",
             "common": {
                 "name": "Forward",
@@ -937,7 +943,7 @@
             "native": {}
         },
         {
-            "_id":  "others.AAAAAgAAAJcAAAAdAw==",
+            "_id": "others.AAAAAgAAAJcAAAAdAw==",
             "type": "state",
             "common": {
                 "name": "DOT",
@@ -949,7 +955,7 @@
             "native": {}
         },
         {
-            "_id":  "player.AAAAAgAAAJcAAAAgAw==",
+            "_id": "player.AAAAAgAAAJcAAAAgAw==",
             "type": "state",
             "common": {
                 "name": "Rec",
@@ -961,7 +967,7 @@
             "native": {}
         },
         {
-            "_id":  "player.AAAAAgAAAJcAAAAjAw==",
+            "_id": "player.AAAAAgAAAJcAAAAjAw==",
             "type": "state",
             "common": {
                 "name": "Return",
@@ -973,7 +979,7 @@
             "native": {}
         },
         {
-            "_id":  "function.AAAAAgAAAJcAAAAkAw==",
+            "_id": "function.AAAAAgAAAJcAAAAkAw==",
             "type": "state",
             "common": {
                 "name": "Blue",
@@ -985,7 +991,7 @@
             "native": {}
         },
         {
-            "_id":  "function.AAAAAgAAAJcAAAAlAw==",
+            "_id": "function.AAAAAgAAAJcAAAAlAw==",
             "type": "state",
             "common": {
                 "name": "Red",
@@ -997,7 +1003,7 @@
             "native": {}
         },
         {
-            "_id":  "function.AAAAAgAAAJcAAAAmAw==",
+            "_id": "function.AAAAAgAAAJcAAAAmAw==",
             "type": "state",
             "common": {
                 "name": "Green",
@@ -1009,7 +1015,7 @@
             "native": {}
         },
         {
-            "_id":  "function.AAAAAgAAAJcAAAAnAw==",
+            "_id": "function.AAAAAgAAAJcAAAAnAw==",
             "type": "state",
             "common": {
                 "name": "Yellow",
@@ -1021,7 +1027,7 @@
             "native": {}
         },
         {
-            "_id":  "others.AAAAAgAAAJcAAAAoAw==",
+            "_id": "others.AAAAAgAAAJcAAAAoAw==",
             "type": "state",
             "common": {
                 "name": "SubTitle",
@@ -1033,7 +1039,7 @@
             "native": {}
         },
         {
-            "_id":  "others.AAAAAgAAAJcAAAArAw==",
+            "_id": "others.AAAAAgAAAJcAAAArAw==",
             "type": "state",
             "common": {
                 "name": "CS",
@@ -1045,7 +1051,7 @@
             "native": {}
         },
         {
-            "_id":  "others.AAAAAgAAAJcAAAAsAw==",
+            "_id": "others.AAAAAgAAAJcAAAAsAw==",
             "type": "state",
             "common": {
                 "name": "BS",
@@ -1057,7 +1063,7 @@
             "native": {}
         },
         {
-            "_id":  "others.AAAAAgAAAJcAAAAyAw==",
+            "_id": "others.AAAAAgAAAJcAAAAyAw==",
             "type": "state",
             "common": {
                 "name": "Digital",
@@ -1069,7 +1075,7 @@
             "native": {}
         },
         {
-            "_id":  "others.AAAAAgAAAJcAAAA2Aw==",
+            "_id": "others.AAAAAgAAAJcAAAA2Aw==",
             "type": "state",
             "common": {
                 "name": "Options",
@@ -1081,7 +1087,7 @@
             "native": {}
         },
         {
-            "_id":  "others.AAAAAgAAAJcAAAA4Aw==",
+            "_id": "others.AAAAAgAAAJcAAAA4Aw==",
             "type": "state",
             "common": {
                 "name": "Media",
@@ -1093,7 +1099,7 @@
             "native": {}
         },
         {
-            "_id":  "others.AAAAAgAAAJcAAAA8Aw==",
+            "_id": "others.AAAAAgAAAJcAAAA8Aw==",
             "type": "state",
             "common": {
                 "name": "Prev",
@@ -1105,7 +1111,7 @@
             "native": {}
         },
         {
-            "_id":  "others.AAAAAgAAAJcAAAA9Aw==",
+            "_id": "others.AAAAAgAAAJcAAAA9Aw==",
             "type": "state",
             "common": {
                 "name": "Next",
@@ -1117,7 +1123,7 @@
             "native": {}
         },
         {
-            "_id":  "others.AAAAAgAAAJcAAABKAw==",
+            "_id": "others.AAAAAgAAAJcAAABKAw==",
             "type": "state",
             "common": {
                 "name": "DpadCenter",
@@ -1129,7 +1135,7 @@
             "native": {}
         },
         {
-            "_id":  "others.AAAAAgAAAJcAAABPAw==",
+            "_id": "others.AAAAAgAAAJcAAABPAw==",
             "type": "state",
             "common": {
                 "name": "CursorUp",
@@ -1141,7 +1147,7 @@
             "native": {}
         },
         {
-            "_id":  "others.AAAAAgAAAJcAAABQAw==",
+            "_id": "others.AAAAAgAAAJcAAABQAw==",
             "type": "state",
             "common": {
                 "name": "CursorDown",
@@ -1153,7 +1159,7 @@
             "native": {}
         },
         {
-            "_id":  "others.AAAAAgAAAJcAAABNAw==",
+            "_id": "others.AAAAAgAAAJcAAABNAw==",
             "type": "state",
             "common": {
                 "name": "CursorLeft",
@@ -1165,7 +1171,7 @@
             "native": {}
         },
         {
-            "_id":  "others.AAAAAgAAAJcAAABOAw==",
+            "_id": "others.AAAAAgAAAJcAAABOAw==",
             "type": "state",
             "common": {
                 "name": "CursorRight",
@@ -1177,7 +1183,7 @@
             "native": {}
         },
         {
-            "_id":  "others.AAAAAgAAAJcAAABqAw==",
+            "_id": "others.AAAAAgAAAJcAAABqAw==",
             "type": "state",
             "common": {
                 "name": "ShopRemoteControlForcedDynamic",
@@ -1189,7 +1195,7 @@
             "native": {}
         },
         {
-            "_id":  "others.AAAAAgAAAJcAAAB4Aw==",
+            "_id": "others.AAAAAgAAAJcAAAB4Aw==",
             "type": "state",
             "common": {
                 "name": "FlashPlus",
@@ -1201,7 +1207,7 @@
             "native": {}
         },
         {
-            "_id":  "others.AAAAAgAAAJcAAAB5Aw==",
+            "_id": "others.AAAAAgAAAJcAAAB5Aw==",
             "type": "state",
             "common": {
                 "name": "FlashMinus",
@@ -1213,7 +1219,7 @@
             "native": {}
         },
         {
-            "_id":  "others.AAAAAgAAAJcAAAB7Aw==",
+            "_id": "others.AAAAAgAAAJcAAAB7Aw==",
             "type": "state",
             "common": {
                 "name": "AudioQualityMode",
@@ -1225,7 +1231,7 @@
             "native": {}
         },
         {
-            "_id":  "others.AAAAAgAAAJcAAAB8Aw==",
+            "_id": "others.AAAAAgAAAJcAAAB8Aw==",
             "type": "state",
             "common": {
                 "name": "DemoMode",
@@ -1237,7 +1243,7 @@
             "native": {}
         },
         {
-            "_id":  "others.AAAAAgAAAHcAAAANAw==",
+            "_id": "others.AAAAAgAAAHcAAAANAw==",
             "type": "state",
             "common": {
                 "name": "Analog",
@@ -1249,7 +1255,7 @@
             "native": {}
         },
         {
-            "_id":  "others.AAAAAgAAAHcAAABNAw==",
+            "_id": "others.AAAAAgAAAHcAAABNAw==",
             "type": "state",
             "common": {
                 "name": "Mode3D",
@@ -1261,7 +1267,7 @@
             "native": {}
         },
         {
-            "_id":  "others.AAAAAgAAAHcAAABSAw==",
+            "_id": "others.AAAAAgAAAHcAAABSAw==",
             "type": "state",
             "common": {
                 "name": "DigitalToggle",
@@ -1273,7 +1279,7 @@
             "native": {}
         },
         {
-            "_id":  "others.AAAAAgAAAHcAAAB7Aw==",
+            "_id": "others.AAAAAgAAAHcAAAB7Aw==",
             "type": "state",
             "common": {
                 "name": "DemoSurround",
@@ -1285,7 +1291,7 @@
             "native": {}
         },
         {
-            "_id":  "others.AAAAAgAAABoAAAA7Aw==",
+            "_id": "others.AAAAAgAAABoAAAA7Aw==",
             "type": "state",
             "common": {
                 "name": "*AD",
@@ -1297,7 +1303,7 @@
             "native": {}
         },
         {
-            "_id":  "others.AAAAAgAAABoAAAA8Aw==",
+            "_id": "others.AAAAAgAAABoAAAA8Aw==",
             "type": "state",
             "common": {
                 "name": "AudioMixUp",
@@ -1309,7 +1315,7 @@
             "native": {}
         },
         {
-            "_id":  "others.AAAAAgAAABoAAAA9Aw==",
+            "_id": "others.AAAAAgAAABoAAAA9Aw==",
             "type": "state",
             "common": {
                 "name": "AudioMixDown",
@@ -1321,7 +1327,7 @@
             "native": {}
         },
         {
-            "_id":  "others.AAAAAgAAABoAAABVAw==",
+            "_id": "others.AAAAAgAAABoAAABVAw==",
             "type": "state",
             "common": {
                 "name": "PhotoFrame",
@@ -1333,7 +1339,7 @@
             "native": {}
         },
         {
-            "_id":  "source.AAAAAgAAABoAAABXAw==",
+            "_id": "source.AAAAAgAAABoAAABXAw==",
             "type": "state",
             "common": {
                 "name": "Tv_Radio",
@@ -1345,7 +1351,7 @@
             "native": {}
         },
         {
-            "_id":  "others.AAAAAgAAABoAAABYAw==",
+            "_id": "others.AAAAAgAAABoAAABYAw==",
             "type": "state",
             "common": {
                 "name": "SyncMenu",
@@ -1357,7 +1363,7 @@
             "native": {}
         },
         {
-            "_id":  "source.AAAAAgAAABoAAABaAw==",
+            "_id": "source.AAAAAgAAABoAAABaAw==",
             "type": "state",
             "common": {
                 "name": "Hdmi1",
@@ -1369,7 +1375,7 @@
             "native": {}
         },
         {
-            "_id":  "source.AAAAAgAAABoAAABbAw==",
+            "_id": "source.AAAAAgAAABoAAABbAw==",
             "type": "state",
             "common": {
                 "name": "Hdmi2",
@@ -1381,7 +1387,7 @@
             "native": {}
         },
         {
-            "_id":  "source.AAAAAgAAABoAAABcAw==",
+            "_id": "source.AAAAAgAAABoAAABcAw==",
             "type": "state",
             "common": {
                 "name": "Hdmi3",
@@ -1393,7 +1399,7 @@
             "native": {}
         },
         {
-            "_id":  "source.AAAAAgAAABoAAABdAw==",
+            "_id": "source.AAAAAgAAABoAAABdAw==",
             "type": "state",
             "common": {
                 "name": "Hdmi4",
@@ -1405,7 +1411,7 @@
             "native": {}
         },
         {
-            "_id":  "others.AAAAAgAAABoAAABgAw==",
+            "_id": "others.AAAAAgAAABoAAABgAw==",
             "type": "state",
             "common": {
                 "name": "TopMenu",
@@ -1417,7 +1423,7 @@
             "native": {}
         },
         {
-            "_id":  "others.AAAAAgAAABoAAABhAw==",
+            "_id": "others.AAAAAgAAABoAAABhAw==",
             "type": "state",
             "common": {
                 "name": "PopUpMenu",
@@ -1429,7 +1435,7 @@
             "native": {}
         },
         {
-            "_id":  "others.AAAAAgAAABoAAABkAw==",
+            "_id": "others.AAAAAgAAABoAAABkAw==",
             "type": "state",
             "common": {
                 "name": "OneTouchTimeRec",
@@ -1441,7 +1447,7 @@
             "native": {}
         },
         {
-            "_id":  "others.AAAAAgAAABoAAABlAw==",
+            "_id": "others.AAAAAgAAABoAAABlAw==",
             "type": "state",
             "common": {
                 "name": "OneTouchView",
@@ -1453,7 +1459,7 @@
             "native": {}
         },
         {
-            "_id":  "others.AAAAAgAAABoAAABzAw==",
+            "_id": "others.AAAAAgAAABoAAABzAw==",
             "type": "state",
             "common": {
                 "name": "DUX",
@@ -1465,7 +1471,7 @@
             "native": {}
         },
         {
-            "_id":  "others.AAAAAgAAABoAAAB2Aw==",
+            "_id": "others.AAAAAgAAABoAAAB2Aw==",
             "type": "state",
             "common": {
                 "name": "FootballMode",
@@ -1477,7 +1483,7 @@
             "native": {}
         },
         {
-            "_id":  "info.AAAAAgAAABoAAAB7Aw==",
+            "_id": "info.AAAAAgAAABoAAAB7Aw==",
             "type": "state",
             "common": {
                 "name": "iManual",
@@ -1489,7 +1495,7 @@
             "native": {}
         },
         {
-            "_id":  "others.AAAAAgAAABoAAAB8Aw==",
+            "_id": "others.AAAAAgAAABoAAAB8Aw==",
             "type": "state",
             "common": {
                 "name": "Netflix",
@@ -1501,7 +1507,7 @@
             "native": {}
         },
         {
-            "_id":  "info.AAAAAgAAAMQAAAA7Aw==",
+            "_id": "info.AAAAAgAAAMQAAAA7Aw==",
             "type": "state",
             "common": {
                 "name": "Assists",
@@ -1513,7 +1519,7 @@
             "native": {}
         },
         {
-            "_id":  "others.AAAAAgAAAMQAAABLAw==",
+            "_id": "others.AAAAAgAAAMQAAABLAw==",
             "type": "state",
             "common": {
                 "name": "ActionMenu",
@@ -1525,7 +1531,7 @@
             "native": {}
         },
         {
-            "_id":  "info.AAAAAgAAAMQAAABNAw==",
+            "_id": "info.AAAAAgAAAMQAAABNAw==",
             "type": "state",
             "common": {
                 "name": "Help",
@@ -1537,7 +1543,7 @@
             "native": {}
         },
         {
-            "_id":  "source.AAAAAgAAAMQAAABOAw==",
+            "_id": "source.AAAAAgAAAMQAAABOAw==",
             "type": "state",
             "common": {
                 "name": "TvSatellite",
@@ -1549,7 +1555,7 @@
             "native": {}
         },
         {
-            "_id":  "others.AAAAAgAAAMQAAAB+Aw==",
+            "_id": "others.AAAAAgAAAMQAAAB+Aw==",
             "type": "state",
             "common": {
                 "name": "WirelessSubwoofer",

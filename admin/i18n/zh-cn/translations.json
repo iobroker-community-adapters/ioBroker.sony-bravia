@@ -1,13 +1,13 @@
 {
-  "Go to home network setup": "转到家庭网络设置",
-  "Go to remote device/Renderer and enter the Pre-Shared Key \"0000\" (or whatever you want your PSK Key to be)": "转到远程设备/渲染器并输入预共享密钥 \"0000\"（或任何您想要的PSK密钥）",
-  "IP": "IP",
-  "IP Control - Authentication - Normal and Pre-Shared Key": "IP控制 -> 验证 -> 正常和预共享密钥",
-  "On the TV, go to Settings - Network - Home network setup": "在电视上，转到设置 -> 网络 -> 家庭网络设置",
-  "PSK Key": "PSK密钥",
-  "Set Simple IP Control on": "设置简单IP控制",
-  "Set remote device/Renderer on": "设置远程设备/渲染器",
-  "TV Setup": "电视设置",
-  "Turn your TV on": "打开电视",
-  "on save adapter restarts with new config immediately": "保存适配器立即重新启动新配置"
+    "Go to home network setup": "转到家庭网络设置",
+    "Go to remote device/Renderer and enter the Pre-Shared Key \"0000\" (or whatever you want your PSK Key to be)": "转到远程设备/渲染器并输入预共享密钥 \"0000\"（或任何您想要的PSK密钥）",
+    "IP": "IP",
+    "IP Control - Authentication - Normal and Pre-Shared Key": "IP控制 -> 验证 -> 正常和预共享密钥",
+    "On the TV, go to Settings - Network - Home network setup": "在电视上，转到设置 -> 网络 -> 家庭网络设置",
+    "PSK Key": "PSK密钥",
+    "Set Simple IP Control on": "设置简单IP控制",
+    "Set remote device/Renderer on": "设置远程设备/渲染器",
+    "TV Setup": "电视设置",
+    "Turn your TV on": "打开电视",
+    "on save adapter restarts with new config immediately": "保存适配器立即重新启动新配置"
 }
