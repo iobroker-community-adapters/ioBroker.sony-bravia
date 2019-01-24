@@ -9,6 +9,7 @@
 [![Known Vulnerabilities](https://snyk.io/test/github/iobroker-community-adapters/ioBroker.sony-bravia/badge.svg)](https://snyk.io/test/github/iobroker-community-adapters/ioBroker.sony-bravia)
 
 [![NPM](https://nodei.co/npm/iobroker.sony-bravia.png?downloads=true)](https://nodei.co/npm/iobroker.sony-bravia/)
+[![Greenkeeper badge](https://badges.greenkeeper.io/iobroker-community-adapters/ioBroker.sony-bravia.svg)](https://greenkeeper.io/)
 
 **Tests:** Linux/Mac: [![Travis-CI](http://img.shields.io/travis/iobroker-community-adapters/ioBroker.sony-bravia/master.svg)](https://travis-ci.org/iobroker-community-adapters/ioBroker.sony-bravia)
 Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/iobroker-community-adapters/ioBroker.sony-bravia?branch=master&svg=true)](https://ci.appveyor.com/project/iobroker-community-adapters/ioBroker-sony-bravia/) 
