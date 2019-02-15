@@ -79,18 +79,18 @@
         "authors": [
             "ldittmar <iobroker@lmdsoft.de>"
         ],
-        "title": "Sony Bravia Smart-TV Adapter",
+        "title": "Sony Bravia Smart-TV",
         "titleLang": {
-            "en": "ioBroker Sony Bravia Smart-TV Adapter",
-            "de": "ioBroker Sony Bravia Smart-TV Adapter",
-            "ru": "ioBroker Sony Bravia Smart-TV драйвер как образец",
-            "pt": "Sony Bravia Smart-TV adaptador para o ioBroker",
-            "fr": "ioBroker adaptateur Sony Bravia Smart-TV",
-            "nl": "ioBroker Sony Bravia Smart-TV Adapter",
-            "it": "ioBroker Adattatore Sony Bravia Smart-TV",
-            "es": "Adaptador de TV inteligente ioBroker Sony Bravia",
-            "pl": "ioBroker Sony Bravia Smart-TV Adapter",
-            "zh-cn": "ioBroker索尼Bravia智能电视适配器"
+            "en": "Sony Bravia Smart-TV",
+            "de": "Sony Bravia Smart-TV",
+            "ru": "Sony Bravia Smart-TV",
+            "pt": "Sony Bravia Smart-TV",
+            "fr": "Sony Bravia Smart-TV",
+            "nl": "Sony Bravia Smart-TV",
+            "it": "Sony Bravia Smart-TV",
+            "es": "Sony Bravia Smart-TV",
+            "pl": "Sony Bravia Smart-TV",
+            "zh-cn": "索尼Bravia智能电视"
         },
         "desc": {
             "en": "This is an ioBroker adapter for your Sony Bravia Smart-TV with Android OS. Tested with KD-65X8507C.",
@@ -107,6 +107,7 @@
         "compact": true,
         "platform": "Javascript/Node.js",
         "mode": "daemon",
+        "license": "MIT",
         "icon": "sony-bravia.png",
         "materialize": true,
         "enabled": true,
