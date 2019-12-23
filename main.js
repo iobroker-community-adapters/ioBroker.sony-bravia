@@ -94,7 +94,7 @@ function checkStatus() {
 		
 		postRes.on('end', function(){
 			var states = JSON.parse(body);
-			adapter.setState('info.powerStatusActive', {val: (states.result[0].status == 'active' ? 'true' : 'false'), ack: true});
+			adapter.setState('info.powerStatusActive', {val: (states.result[0].status == 'active' ? true : false), ack: true});
 		});
 	});
 	
