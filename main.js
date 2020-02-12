@@ -68,42 +68,46 @@ function checkStatus() {
 
     // Check other read only objects
     // TODO: This should probably be in it's own function
-    var postData = JSON.stringify({
-		'method' : 'getPowerStatus',
-		'params' : [''],
-		'id' : 1,
-		'version' : '1.0'
-	});
+    const postData = JSON.stringify({
+        'method' : 'getPowerStatus',
+        'params' : [''],
+        'id' : 1,
+        'version' : '1.0'
+    });
 
-	var options = {
-		host: adapter.config.ip,
-		port: '80',
-		path: '/sony/system',
-		method: 'POST',
-		headers: {
-			'Content-Type': 'application/x-www-form-urlencoded',
-			'Content-Length': postData.length
-		}
-	};
+    const options = {
+        host: adapter.config.ip,
+        port: '80',
+        path: '/sony/system',
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'Content-Length': postData.length
+        }
+    };
             
-	var postReq = http.request(options, function(postRes){
-		var body = '';
-		postRes.on('data', function(data){
-			body += data;
-		});
-		
-		postRes.on('end', function(){
-			var states = JSON.parse(body);
-			adapter.setState('info.powerStatusActive', {val: (states.result[0].status == 'active' ? true : false), ack: true});
-		});
-	});
-	
-	postReq.on('error', (err) => {
-		console.error(err);
-	});
+    const postReq = http.request(options, function(postRes){
+        let body = '';
+        postRes.on('data', function(data){
+            body += data;
+        });
+        
+        postRes.on('end', function(){
+            try {
+                let states = JSON.parse(body);
+                adapter.setState('info.powerStatusActive', {val: (states.result[0].status == 'active' ? true : false), ack: true});
+            } catch (err) {
+                console.error(err);
+            }
+        });
+    });
+    
+    postReq.on('error', (err) => {
+        console.error(err);
+    });
 
-	postReq.write(postData);
-	postReq.end();
+    postReq.write(postData);
+    postReq.end();
 }
 
 // If started as allInOne/compact mode => return function to create instance
