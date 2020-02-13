@@ -6,6 +6,7 @@
 const utils = require('@iobroker/adapter-core'); // Get common adapter utils
 const Controller = require(__dirname + '/lib/bravia');
 const ping = require(__dirname + '/lib/ping');
+const http = require('http');
 
 let isConnected = null;
 let device;
@@ -47,7 +48,7 @@ function main() {
         adapter.subscribeStates('*');
         checkStatus();
 
-        setInterval(checkStatus, 60000);
+        setInterval(checkStatus, 10000); /* TODO: make this a config variable? */
 
     } else {
         adapter.log.error("Please configure the Sony Bravia adapter");
@@ -64,6 +65,49 @@ function checkStatus() {
             setConnected(result.alive);
         }
     });
+
+    // Check other read only objects
+    // TODO: This should probably be in it's own function
+    const postData = JSON.stringify({
+        'method' : 'getPowerStatus',
+        'params' : [''],
+        'id' : 1,
+        'version' : '1.0'
+    });
+
+    const options = {
+        host: adapter.config.ip,
+        port: '80',
+        path: '/sony/system',
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'Content-Length': postData.length
+        }
+    };
+            
+    const postReq = http.request(options, function(postRes){
+        let body = '';
+        postRes.on('data', function(data){
+            body += data;
+        });
+        
+        postRes.on('end', function(){
+            try {
+                let states = JSON.parse(body);
+                adapter.setState('info.powerStatusActive', {val: (states.result[0].status == 'active' ? true : false), ack: true});
+            } catch (err) {
+                console.error(err);
+            }
+        });
+    });
+    
+    postReq.on('error', (err) => {
+        console.error(err);
+    });
+
+    postReq.write(postData);
+    postReq.end();
 }
 
 // If started as allInOne/compact mode => return function to create instance
