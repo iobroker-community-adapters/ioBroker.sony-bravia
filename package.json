@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "node-ssdp": "^4.0.0",
-    "request": "^2.88.0",
+    "request": "^2.88.2",
     "xml2js": "^0.4.19",
     "@iobroker/adapter-core": "^1.0.3"
   },
