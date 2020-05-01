@@ -21,7 +21,8 @@
     "node-ssdp": "^4.0.0",
     "request": "^2.88.0",
     "xml2js": "^0.4.19",
-    "@iobroker/adapter-core": "^1.0.3"
+    "@iobroker/adapter-core": "^1.0.3",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "gulp": "^4.0.0",
@@ -35,10 +36,13 @@
     "test": "npm run test:package && npm run test:unit",
     "test:package": "mocha test/package --exit",
     "test:unit": "mocha test/unit --exit",
-    "test:integration": "mocha test/integration --exit"
+    "test:integration": "mocha test/integration --exit",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "bugs": {
     "url": "https://github.com/iobroker-community-adapters/ioBroker.sony-bravia/issues"
   },
-  "readmeFilename": "README.md"
+  "readmeFilename": "README.md",
+  "snyk": true
 }
