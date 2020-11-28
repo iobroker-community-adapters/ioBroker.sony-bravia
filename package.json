@@ -1,6 +1,6 @@
 {
   "name": "iobroker.sony-bravia",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "ioBroker Sony Bravia Smart-TV Adapter",
   "author": {
     "name": "ldittmar",
@@ -19,16 +19,16 @@
   },
   "dependencies": {
     "node-ssdp": "^4.0.0",
-    "request": "^2.88.0",
-    "xml2js": "^0.4.19",
-    "@iobroker/adapter-core": "^1.0.3"
+    "request": "^2.88.2",
+    "xml2js": "^0.4.23",
+    "@iobroker/adapter-core": "^2.4.0"
   },
   "devDependencies": {
-    "gulp": "^4.0.0",
-    "chai": "^4.1.2",
-    "mocha": "^6.0.2",
-    "axios": "^0.18.0",
-    "@iobroker/testing": "^1.1.10"
+    "gulp": "^4.0.2",
+    "chai": "^4.2.0",
+    "mocha": "^8.2.1",
+    "axios": "^0.21.0",
+    "@iobroker/testing": "^2.3.0"
   },
   "main": "main.js",
   "scripts": {
