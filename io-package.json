@@ -1,8 +1,20 @@
 {
     "common": {
         "name": "sony-bravia",
-        "version": "1.0.2",
+        "version": "1.0.3",
         "news": {
+            "1.0.3": {
+                "en": "info.powerStatusActive added and other optimizations",
+                "de": "info.powerStatusActive hinzugefügt und andere Optimierungen",
+                "ru": "info.powerStatusActive добавлен и другие оптимизации",
+                "pt": "info.powerStatusActive adicionado e outras otimizações",
+                "nl": "info.powerStatusActive toegevoegd en andere optimalisaties",
+                "fr": "info.powerStatusActive ajouté et autres optimisations",
+                "it": "info.powerStatusActive aggiunto e altre ottimizzazioni",
+                "es": "info.powerStatusActive agregado y otras optimizaciones",
+                "pl": "Dodano info.powerStatusActive i inne optymalizacje",
+                "zh-cn": "已添加info.powerStatusActive和其他优化"
+            },
             "1.0.1": {
                 "en": "compact mode compatibility added",
                 "de": "Kompaktmodus-Kompatibilität hinzugefügt",
@@ -119,7 +131,12 @@
         ],
         "readme": "https://github.com/iobroker-community-adapters/ioBroker.sony-bravia/blob/master/README.md",
         "loglevel": "info",
-        "type": "multimedia"
+        "type": "multimedia",
+        "dependencies": [
+            {
+                "js-controller": ">=2.0.0"
+            }
+        ]
     },
     "native": {
         "ip": "",
