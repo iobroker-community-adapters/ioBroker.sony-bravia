@@ -28,7 +28,7 @@
     "chai": "^4.2.0",
     "mocha": "^8.2.1",
     "axios": "^0.21.0",
-    "@iobroker/testing": "^2.3.0"
+    "@iobroker/testing": "^2.4.0"
   },
   "main": "main.js",
   "scripts": {
