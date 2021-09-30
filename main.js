@@ -14,7 +14,7 @@ let device;
 // you have to call the adapter function and pass a options object
 // name has to be set and has to be equal to adapters folder name and main file name excluding extension
 // adapter will be restarted automatically every time as the configuration changed, e.g system.adapter.template.0
-let adapter;
+let adapter, statusInterval;
 function startAdapter(options) {
     options = options || {};
     Object.assign(options, {
@@ -25,7 +25,15 @@ function startAdapter(options) {
                 device.send(id);
             }
         },
-        ready: main
+        ready: main,
+        unload: (callback) => {
+            try {
+                statusInterval && clearInterval(statusInterval);
+                callback();
+            } catch (e) {
+                callback();
+            }
+        }
     });
 
     adapter = new utils.Adapter(options);
@@ -48,7 +56,7 @@ function main() {
         adapter.subscribeStates('*');
         checkStatus();
 
-        setInterval(checkStatus, 10000); /* TODO: make this a config variable? */
+        statusInterval = setInterval(checkStatus, 10000); /* TODO: make this a config variable? */
 
     } else {
         adapter.log.error("Please configure the Sony Bravia adapter");
@@ -85,13 +93,13 @@ function checkStatus() {
             'Content-Length': postData.length
         }
     };
-            
+
     const postReq = http.request(options, function(postRes){
         let body = '';
         postRes.on('data', function(data){
             body += data;
         });
-        
+
         postRes.on('end', function(){
             try {
                 let states = JSON.parse(body);
@@ -101,7 +109,7 @@ function checkStatus() {
             }
         });
     });
-    
+
     postReq.on('error', (err) => {
         console.error(err);
     });
@@ -116,4 +124,4 @@ if (module && module.parent) {
 } else {
     // or start the instance directly
     startAdapter();
-} 
+}

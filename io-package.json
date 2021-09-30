@@ -1,8 +1,20 @@
 {
     "common": {
         "name": "sony-bravia",
-        "version": "1.0.3",
+        "version": "1.0.4",
         "news": {
+            "1.0.4": {
+                "en": "Librarie update",
+                "de": "Bibliotheks-Update",
+                "ru": "Обновление Librarie",
+                "pt": "Atualização de bibliotecário",
+                "nl": "Bibliotheek-update",
+                "fr": "Mise à jour de la bibliothèque",
+                "it": "Aggiornamento della libreria",
+                "es": "Actualización de la biblioteca",
+                "pl": "Aktualizacja biblioteki",
+                "zh-cn": "图书馆更新"
+            },
             "1.0.3": {
                 "en": "info.powerStatusActive added and other optimizations",
                 "de": "info.powerStatusActive hinzugefügt und andere Optimierungen",
@@ -62,30 +74,6 @@
                 "pl": "Zgodność z Node.j 4.x",
                 "it": "Node.j 4.x compatibilità",
                 "zh-cn": "Node.j 4.x兼容性"
-            },
-            "0.0.5": {
-                "en": "Open test phase",
-                "de": "Offene Testphase",
-                "ru": "Открытая тестовая фаза",
-                "pt": "Fase de teste aberta",
-                "fr": "Phase de test ouverte",
-                "nl": "Open testfase",
-                "it": "Fase di test aperta",
-                "es": "Fase de prueba abierta",
-                "pl": "Otwórz fazę testową",
-                "zh-cn": "开放测试阶段"
-            },
-            "0.0.1": {
-                "en": "initial version",
-                "de": "Initiale Version",
-                "ru": "Первоначальный адаптер",
-                "pt": "Versão inicial",
-                "fr": "Version initiale",
-                "nl": "Eerste release",
-                "it": "Versione iniziale",
-                "es": "Versión inicial",
-                "pl": "początkowa wersja",
-                "zh-cn": "初始版本"
             }
         },
         "authors": [
@@ -132,6 +120,8 @@
         "readme": "https://github.com/iobroker-community-adapters/ioBroker.sony-bravia/blob/master/README.md",
         "loglevel": "info",
         "type": "multimedia",
+        "dataSource": "poll",
+        "connectionType": "local",
         "dependencies": [
             {
                 "js-controller": ">=2.0.0"
