@@ -44,7 +44,7 @@ function startAdapter(options) {
 function setConnected(_isConnected) {
     if (isConnected !== _isConnected) {
         isConnected = _isConnected;
-        adapter.setState('info.connection', {val: isConnected, ack: true});
+        adapter.setState('info.connection', { val: isConnected, ack: true });
     }
 }
 
@@ -58,6 +58,12 @@ function main() {
 
         statusInterval = setInterval(checkStatus, 10000); /* TODO: make this a config variable? */
 
+        device.getInterfaceInformation().then(model => {
+            adapter.setState('info.modelInformation', { val: model, ack: true });
+        }).catch(err => {
+            adapter.log.error(err);
+        });
+
     } else {
         adapter.log.error("Please configure the Sony Bravia adapter");
     }
@@ -65,7 +71,7 @@ function main() {
 }
 
 function checkStatus() {
-    ping.probe(adapter.config.ip, {log: adapter.log.debug}, function (err, result) {
+    ping.probe(adapter.config.ip, { log: adapter.log.debug }, function (err, result) {
         if (err) {
             adapter.log.error(err);
         }
@@ -77,10 +83,10 @@ function checkStatus() {
     // Check other read only objects
     // TODO: This should probably be in it's own function
     const postData = JSON.stringify({
-        'method' : 'getPowerStatus',
-        'params' : [''],
-        'id' : 1,
-        'version' : '1.0'
+        'method': 'getPowerStatus',
+        'params': [''],
+        'id': 1,
+        'version': '1.0'
     });
 
     const options = {
@@ -94,16 +100,16 @@ function checkStatus() {
         }
     };
 
-    const postReq = http.request(options, function(postRes){
+    const postReq = http.request(options, function (postRes) {
         let body = '';
-        postRes.on('data', function(data){
+        postRes.on('data', function (data) {
             body += data;
         });
 
-        postRes.on('end', function(){
+        postRes.on('end', function () {
             try {
                 let states = JSON.parse(body);
-                adapter.setState('info.powerStatusActive', {val: (states.result[0].status == 'active' ? true : false), ack: true});
+                adapter.setState('info.powerStatusActive', { val: (states.result[0].status == 'active' ? true : false), ack: true });
             } catch (err) {
                 console.error(err);
             }
@@ -116,6 +122,12 @@ function checkStatus() {
 
     postReq.write(postData);
     postReq.end();
+
+    device.getPlayingContentInfo().then(content => {
+        adapter.setState('info.playingContentInfo', { val: content, ack: true });
+    }).catch(err => {
+        adapter.log.error(err);
+    });
 }
 
 // If started as allInOne/compact mode => return function to create instance

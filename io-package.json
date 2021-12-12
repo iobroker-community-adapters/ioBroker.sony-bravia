@@ -207,6 +207,30 @@
             "native": {}
         },
         {
+            "_id": "info.modelInformation",
+            "type": "state",
+            "common": {
+                "role": "text",
+                "name": "Model name and informations",
+                "type": "string",
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "info.playingContentInfo",
+            "type": "state",
+            "common": {
+                "role": "text",
+                "name": "Title of the content to be recognized by the user",
+                "type": "string",
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        },
+        {
             "_id": "function.AAAAAQAAAAEAAAAuAw==",
             "type": "state",
             "common": {
