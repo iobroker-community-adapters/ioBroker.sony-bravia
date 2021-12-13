@@ -198,11 +198,11 @@
             "_id": "info.powerStatusActive",
             "type": "state",
             "common": {
-                "role": "indicator.active",
+                "role": "switch",
                 "name": "If TV power status is acive",
                 "type": "boolean",
                 "read": true,
-                "write": false
+                "write": true
             },
             "native": {}
         },

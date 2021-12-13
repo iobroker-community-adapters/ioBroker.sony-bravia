@@ -20,7 +20,9 @@ function startAdapter(options) {
     Object.assign(options, {
         name: 'sony-bravia',
         stateChange: function (id, state) {
-            if (id && state && !state.ack) {
+            if (id.endsWith("info.powerStatusActive") && !state.ack) {
+                device.setPowerStatus(state.val).then(body => setTimeout(() => checkStatus(), 500)).catch(err => adapter.log.error(err));
+            } else if (id && state && !state.ack) {
                 id = id.substring(id.lastIndexOf('.') + 1);
                 device.send(id);
             }
@@ -28,6 +30,7 @@ function startAdapter(options) {
         ready: main,
         unload: (callback) => {
             try {
+                adapter.setState('info.modelInformation', { val: "", ack: true });
                 statusInterval && clearInterval(statusInterval);
                 callback();
             } catch (e) {
@@ -81,47 +84,11 @@ function checkStatus() {
     });
 
     // Check other read only objects
-    // TODO: This should probably be in it's own function
-    const postData = JSON.stringify({
-        'method': 'getPowerStatus',
-        'params': [''],
-        'id': 1,
-        'version': '1.0'
-    });
-
-    const options = {
-        host: adapter.config.ip,
-        port: '80',
-        path: '/sony/system',
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-            'Content-Length': postData.length
-        }
-    };
-
-    const postReq = http.request(options, function (postRes) {
-        let body = '';
-        postRes.on('data', function (data) {
-            body += data;
-        });
-
-        postRes.on('end', function () {
-            try {
-                let states = JSON.parse(body);
-                adapter.setState('info.powerStatusActive', { val: (states.result[0].status == 'active' ? true : false), ack: true });
-            } catch (err) {
-                console.error(err);
-            }
-        });
-    });
-
-    postReq.on('error', (err) => {
-        console.error(err);
-    });
-
-    postReq.write(postData);
-    postReq.end();
+    device.getPowerStatus().then(states => {
+        adapter.setState('info.powerStatusActive', { val: (states.result[0].status == 'active' ? true : false), ack: true });
+    }).catch(err => {
+        adapter.log.error(err);
+    })
 
     device.getPlayingContentInfo().then(content => {
         adapter.setState('info.playingContentInfo', { val: content, ack: true });
