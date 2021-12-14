@@ -151,6 +151,22 @@
             "native": {}
         },
         {
+            "_id": "avContent",
+            "type": "folder",
+            "common": {
+                "name": "AV Contents"
+            },
+            "native": {}
+        },
+        {
+            "_id": "avContent.tv",
+            "type": "channel",
+            "common": {
+                "name": "TV"
+            },
+            "native": {}
+        },
+        {
             "_id": "source",
             "type": "channel",
             "common": {

@@ -6,6 +6,7 @@
 const utils = require('@iobroker/adapter-core'); // Get common adapter utils
 const Controller = require(__dirname + '/lib/bravia');
 const ping = require(__dirname + '/lib/ping');
+// const objectHelper = require('@apollon/iobroker-tools').objectHelper; // Get common adapter utils
 const http = require('http');
 
 let isConnected = null;
@@ -22,7 +23,24 @@ function startAdapter(options) {
         stateChange: function (id, state) {
             if (id.endsWith("info.powerStatusActive") && !state.ack) {
                 device.setPowerStatus(state.val).then(body => setTimeout(() => checkStatus(), 500)).catch(err => adapter.log.error(err));
-            } else if (id && state && !state.ack) {
+            }
+            else if (id.includes("avContent.tv")) {
+                adapter.getState("info.powerStatusActive", (err, powerState) => {
+                    adapter.log.debug(JSON.stringify(powerState));
+                    if (err) {
+                        adapter.log.error(err);
+                    } else {
+                        if (powerState.val) {
+                            var uri = Buffer.from(id.substring(id.lastIndexOf('.') + 1), 'base64').toString('ascii');
+                            adapter.log.debug("Turn over to " + uri);
+                            device.setPlayContent(uri).then(body => setTimeout(() => checkStatus(), 500)).catch(err => adapter.log.error(err));
+                        } else {
+                            adapter.log.info("Device have to turned on select AV Content");
+                        }
+                    }
+                });
+            }
+            else if (id && state && !state.ack) {
                 id = id.substring(id.lastIndexOf('.') + 1);
                 device.send(id);
             }
@@ -63,6 +81,32 @@ function main() {
 
         device.getInterfaceInformation().then(model => {
             adapter.setState('info.modelInformation', { val: model, ack: true });
+        }).catch(err => {
+            adapter.log.error(err);
+        });
+
+        /* TODO: make this a config variable? */
+        device.getContentListTvDvbs(0, 150).then(channels => {
+            if (Array.isArray(channels)) {
+                channels.forEach(channel => {
+                    if (channel.title && channel.title.length > 1) {
+                        adapter.log.debug("Create TV Channel " + channel.title + " at " + channel.uri);
+                        adapter.setObjectNotExists("avContent.tv." + Buffer.from(channel.uri).toString('base64'), {
+                            "type": "state",
+                            "common": {
+                                "name": channel.title,
+                                "role": "button",
+                                "type": "boolean",
+                                "read": false,
+                                "write": true
+                            },
+                            native: {}
+                        });
+                    }
+                });
+            } else {
+                adapter.log.error("Unknown content response " + JSON.stringify(channels));
+            }
         }).catch(err => {
             adapter.log.error(err);
         });
