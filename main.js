@@ -21,28 +21,37 @@ function startAdapter(options) {
     Object.assign(options, {
         name: 'sony-bravia',
         stateChange: function (id, state) {
-            if (id.endsWith("info.powerStatusActive") && !state.ack) {
-                device.setPowerStatus(state.val).then(body => setTimeout(() => checkStatus(), 500)).catch(err => adapter.log.error(err));
-            }
-            else if (id.includes("avContent.tv")) {
-                adapter.getState("info.powerStatusActive", (err, powerState) => {
-                    adapter.log.debug(JSON.stringify(powerState));
-                    if (err) {
-                        adapter.log.error(err);
-                    } else {
-                        if (powerState.val) {
-                            var uri = Buffer.from(id.substring(id.lastIndexOf('.') + 1), 'base64').toString('ascii');
-                            adapter.log.debug("Turn over to " + uri);
-                            device.setPlayContent(uri).then(body => setTimeout(() => checkStatus(), 500)).catch(err => adapter.log.error(err));
+            if (!state.ack) {
+                if (id.endsWith("info.powerStatusActive")) {
+                    device.setPowerStatus(state.val).then(body => setTimeout(() => checkStatus(), 500)).catch(err => adapter.log.error(err));
+                }
+                else if (id.includes(".avContent.")) {
+                    adapter.log.debug(id);
+                    adapter.getState("info.powerStatusActive", (err, powerState) => {
+                        if (err) {
+                            adapter.log.error(err);
                         } else {
-                            adapter.log.info("Device have to turned on select AV Content");
+                            if (powerState.val) {
+                                adapter.getObject(id, (err, obj) => {
+                                    adapter.log.debug(obj);
+                                    if (err) {
+                                        adapter.log.error(err);
+                                    } else {
+                                        var uri = obj.native.uri;
+                                        adapter.log.debug("Turn over to " + uri);
+                                        device.setPlayContent(uri).then(body => setTimeout(() => checkStatus(), 500)).catch(err => adapter.log.error(err));
+                                    }
+                                });
+                            } else {
+                                adapter.log.info("Device have to turned on select AV Content");
+                            }
                         }
-                    }
-                });
-            }
-            else if (id && state && !state.ack) {
-                id = id.substring(id.lastIndexOf('.') + 1);
-                device.send(id);
+                    });
+                }
+                else if (id && state) {
+                    id = id.substring(id.lastIndexOf('.') + 1);
+                    device.send(id);
+                }
             }
         },
         ready: main,
@@ -70,7 +79,6 @@ function setConnected(_isConnected) {
 }
 
 function main() {
-
     if (adapter.config.ip && adapter.config.ip !== '0.0.0.0' && adapter.config.psk) {
         device = new Controller(adapter.config.ip, '80', adapter.config.psk, 5000);
         // in this template all states changes inside the adapters namespace are subscribed
@@ -85,36 +93,66 @@ function main() {
             adapter.log.error(err);
         });
 
-        /* TODO: make this a config variable? */
-        device.getContentListTvDvbs(0, 150).then(channels => {
-            if (Array.isArray(channels)) {
-                channels.forEach(channel => {
-                    if (channel.title && channel.title.length > 1) {
-                        adapter.log.debug("Create TV Channel " + channel.title + " at " + channel.uri);
-                        adapter.setObjectNotExists("avContent.tv." + Buffer.from(channel.uri).toString('base64'), {
-                            "type": "state",
-                            "common": {
-                                "name": channel.title,
-                                "role": "button",
-                                "type": "boolean",
-                                "read": false,
-                                "write": true
-                            },
-                            native: {}
-                        });
-                    }
-                });
-            } else {
-                adapter.log.error("Unknown content response " + JSON.stringify(channels));
-            }
-        }).catch(err => {
-            adapter.log.error(err);
-        });
-
+        createAvContentObjects();
     } else {
         adapter.log.error("Please configure the Sony Bravia adapter");
     }
+}
 
+const toSnakeCase = str =>
+    str &&
+    str.match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]+|[0-9]+/g)
+        .map(x => x.toLowerCase())
+        .join('_');
+
+function createAvContentObjects() {
+    device.getSchemeList().then(scheme => {
+        if (Array.isArray(scheme)) {
+            scheme.forEach(schema => {
+                device.getSourceList(schema.scheme).then(sources => {
+                    if (Array.isArray(sources)) {
+                        sources.forEach(source => {
+                            /* TODO: make this a config variable? */
+                            device.getContentList(0, 150, source.source).then(channels => {
+                                if (Array.isArray(channels)) {
+                                    channels.forEach(channel => {
+                                        if (channel.title && channel.title.length > 1) {
+                                            adapter.log.debug("Create " + schema.scheme + " AV Content " + channel.title + " at " + channel.uri);
+                                            adapter.setObjectNotExists("avContent." + schema.scheme + "." + toSnakeCase(channel.title), {
+                                                "type": "state",
+                                                "common": {
+                                                    "name": channel.title,
+                                                    "role": "button",
+                                                    "type": "boolean",
+                                                    "read": false,
+                                                    "write": true
+                                                },
+                                                native: {
+                                                    "uri": channel.uri
+                                                }
+                                            });
+                                        }
+                                    });
+                                } else {
+                                    adapter.log.error("Content List. Unknown content response " + JSON.stringify(channels));
+                                }
+                            }).catch(err => {
+                                adapter.log.error(err);
+                            });
+                        })
+                    } else {
+                        adapter.log.error("Source List. Unknown content response " + JSON.stringify(sources));
+                    }
+                }).catch(err => {
+                    adapter.log.error(err);
+                });
+            });
+        } else {
+            adapter.log.error("Scheme List. Unknown content response " + JSON.stringify(scheme));
+        }
+    }).catch(err => {
+        adapter.log.error(err);
+    });
 }
 
 function checkStatus() {

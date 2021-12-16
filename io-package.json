@@ -167,6 +167,22 @@
             "native": {}
         },
         {
+            "_id": "avContent.extInput",
+            "type": "channel",
+            "common": {
+                "name": "External Input"
+            },
+            "native": {}
+        },
+        {
+            "_id": "avContent.fav",
+            "type": "channel",
+            "common": {
+                "name": "Favorites"
+            },
+            "native": {}
+        },
+        {
             "_id": "source",
             "type": "channel",
             "common": {
