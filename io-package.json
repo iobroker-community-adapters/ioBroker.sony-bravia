@@ -151,6 +151,34 @@
             "native": {}
         },
         {
+            "_id": "appControl",
+            "type": "folder",
+            "common": {
+                "name": "App Steuerung"
+            },
+            "native": {}
+        },
+        {
+            "_id": "appControl.app",
+            "type": "channel",
+            "common": {
+                "name": "Applications"
+            },
+            "native": {}
+        },
+        {
+            "_id": "appControl.terminateApps",
+            "type": "state",
+            "common": {
+                "name": "Terminate Applications",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
             "_id": "avContent",
             "type": "folder",
             "common": {

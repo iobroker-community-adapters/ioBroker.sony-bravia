@@ -26,26 +26,18 @@ function startAdapter(options) {
                     device.setPowerStatus(state.val).then(body => setTimeout(() => checkStatus(), 500)).catch(err => adapter.log.error(err));
                 }
                 else if (id.includes(".avContent.")) {
-                    adapter.log.debug(id);
-                    adapter.getState("info.powerStatusActive", (err, powerState) => {
-                        if (err) {
-                            adapter.log.error(err);
-                        } else {
-                            if (powerState.val) {
-                                adapter.getObject(id, (err, obj) => {
-                                    adapter.log.debug(obj);
-                                    if (err) {
-                                        adapter.log.error(err);
-                                    } else {
-                                        var uri = obj.native.uri;
-                                        adapter.log.debug("Turn over to " + uri);
-                                        device.setPlayContent(uri).then(body => setTimeout(() => checkStatus(), 500)).catch(err => adapter.log.error(err));
-                                    }
-                                });
-                            } else {
-                                adapter.log.info("Device have to turned on select AV Content");
-                            }
-                        }
+                    turnOverIfPowerIsActiv(id, uri => {
+                        device.setPlayContent(uri).then(body => setTimeout(() => checkStatus(), 500)).catch(err => adapter.log.error(err));
+                    });
+                }
+                else if (id.includes(".appControl.terminateApps")) {
+                    ifPowerIsActiv(() => {
+                        device.terminateApps().then(body => setTimeout(() => checkStatus(), 1000)).catch(err => adapter.log.error(err));
+                    });
+                }
+                else if (id.includes(".appControl.app.")) {
+                    turnOverIfPowerIsActiv(id, uri => {
+                        device.setActiveApp(uri).then(body => setTimeout(() => checkStatus(), 2000)).catch(err => adapter.log.error(err));
                     });
                 }
                 else if (id && state) {
@@ -94,9 +86,38 @@ function main() {
         });
 
         createAvContentObjects();
+        createAppObjects();
     } else {
         adapter.log.error("Please configure the Sony Bravia adapter");
     }
+}
+
+function turnOverIfPowerIsActiv(id, turnOverCall) {
+    ifPowerIsActiv(() => {
+        adapter.getObject(id, (err, obj) => {
+            if (err) {
+                adapter.log.error(err);
+            } else {
+                var uri = obj.native.uri;
+                adapter.log.debug("Turn over to " + uri);
+                turnOverCall(uri);
+            }
+        });
+    })
+}
+
+function ifPowerIsActiv(callback) {
+    adapter.getState("info.powerStatusActive", (err, powerState) => {
+        if (err) {
+            adapter.log.error(err);
+        } else {
+            if (powerState.val) {
+                callback();
+            } else {
+                adapter.log.info("Device have to turned on");
+            }
+        }
+    });
 }
 
 const toSnakeCase = str =>
@@ -104,6 +125,35 @@ const toSnakeCase = str =>
     str.match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]+|[0-9]+/g)
         .map(x => x.toLowerCase())
         .join('_');
+
+function createAppObjects() {
+    device.getApplicationList().then(apps => {
+        if (Array.isArray(apps)) {
+            apps.forEach(app => {
+                if (app.title && app.title.length > 1) {
+                    adapter.log.debug("Create App " + app.title + " at " + app.uri);
+                    adapter.setObjectNotExists("appControl.app." + toSnakeCase(app.title), {
+                        "type": "state",
+                        "common": {
+                            "name": app.title,
+                            "role": "button",
+                            "type": "boolean",
+                            "read": false,
+                            "write": true
+                        },
+                        native: {
+                            "uri": app.uri
+                        }
+                    });
+                }
+            });
+        } else {
+            adapter.log.error("Application List. Unknown content response " + JSON.stringify(scheme));
+        }
+    }).catch(err => {
+        adapter.log.error(err);
+    });
+}
 
 function createAvContentObjects() {
     device.getSchemeList().then(scheme => {
