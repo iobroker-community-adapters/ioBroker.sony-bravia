@@ -151,6 +151,66 @@
             "native": {}
         },
         {
+            "_id": "appControl",
+            "type": "folder",
+            "common": {
+                "name": "App Steuerung"
+            },
+            "native": {}
+        },
+        {
+            "_id": "appControl.app",
+            "type": "channel",
+            "common": {
+                "name": "Applications"
+            },
+            "native": {}
+        },
+        {
+            "_id": "appControl.terminateApps",
+            "type": "state",
+            "common": {
+                "name": "Terminate Applications",
+                "role": "button",
+                "type": "boolean",
+                "read": false,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id": "avContent",
+            "type": "folder",
+            "common": {
+                "name": "AV Contents"
+            },
+            "native": {}
+        },
+        {
+            "_id": "avContent.tv",
+            "type": "channel",
+            "common": {
+                "name": "TV"
+            },
+            "native": {}
+        },
+        {
+            "_id": "avContent.extInput",
+            "type": "channel",
+            "common": {
+                "name": "External Input"
+            },
+            "native": {}
+        },
+        {
+            "_id": "avContent.fav",
+            "type": "channel",
+            "common": {
+                "name": "Favorites"
+            },
+            "native": {}
+        },
+        {
             "_id": "source",
             "type": "channel",
             "common": {
@@ -198,9 +258,33 @@
             "_id": "info.powerStatusActive",
             "type": "state",
             "common": {
-                "role": "indicator.active",
+                "role": "switch",
                 "name": "If TV power status is acive",
                 "type": "boolean",
+                "read": true,
+                "write": true
+            },
+            "native": {}
+        },
+        {
+            "_id": "info.modelInformation",
+            "type": "state",
+            "common": {
+                "role": "text",
+                "name": "Model name and informations",
+                "type": "string",
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "info.playingContentInfo",
+            "type": "state",
+            "common": {
+                "role": "text",
+                "name": "Title of the content to be recognized by the user",
+                "type": "string",
                 "read": true,
                 "write": false
             },
