@@ -15,7 +15,7 @@ let device;
 // you have to call the adapter function and pass a options object
 // name has to be set and has to be equal to adapters folder name and main file name excluding extension
 // adapter will be restarted automatically every time as the configuration changed, e.g system.adapter.template.0
-let adapter, statusInterval;
+let adapter, statusInterval, powerStatusTimeout, playContentTimeout, terminateAppsTimeout, activeAppTimeout;
 function startAdapter(options) {
     options = options || {};
     Object.assign(options, {
@@ -23,21 +23,21 @@ function startAdapter(options) {
         stateChange: function (id, state) {
             if (!state.ack) {
                 if (id.endsWith("info.powerStatusActive")) {
-                    device.setPowerStatus(state.val).then(body => setTimeout(() => checkStatus(), 500)).catch(err => adapter.log.error(err));
+                    device.setPowerStatus(state.val).then(body => powerStatusTimeout = setTimeout(() => checkStatus(), 500)).catch(err => adapter.log.error(err));
                 }
                 else if (id.includes(".avContent.")) {
                     turnOverIfPowerIsActiv(id, uri => {
-                        device.setPlayContent(uri).then(body => setTimeout(() => checkStatus(), 500)).catch(err => adapter.log.error(err));
+                        device.setPlayContent(uri).then(body => playContentTimeout = setTimeout(() => checkStatus(), 500)).catch(err => adapter.log.error(err));
                     });
                 }
                 else if (id.includes(".appControl.terminateApps")) {
                     ifPowerIsActiv(() => {
-                        device.terminateApps().then(body => setTimeout(() => checkStatus(), 1000)).catch(err => adapter.log.error(err));
+                        device.terminateApps().then(body => terminateAppsTimeout = setTimeout(() => checkStatus(), 1000)).catch(err => adapter.log.error(err));
                     });
                 }
                 else if (id.includes(".appControl.app.")) {
                     turnOverIfPowerIsActiv(id, uri => {
-                        device.setActiveApp(uri).then(body => setTimeout(() => checkStatus(), 2000)).catch(err => adapter.log.error(err));
+                        device.setActiveApp(uri).then(body => activeAppTimeout = setTimeout(() => checkStatus(), 2000)).catch(err => adapter.log.error(err));
                     });
                 }
                 else if (id && state) {
@@ -51,6 +51,10 @@ function startAdapter(options) {
             try {
                 adapter.setState('info.modelInformation', { val: "", ack: true });
                 statusInterval && clearInterval(statusInterval);
+                powerStatusTimeout && clearTimeout(powerStatusTimeout);
+                playContentTimeout && clearTimeout(playContentTimeout);
+                terminateAppsTimeout && clearTimeout(terminateAppsTimeout);
+                activeAppTimeout && clearTimeout(activeAppTimeout);
                 callback();
             } catch (e) {
                 callback();
@@ -98,7 +102,7 @@ function turnOverIfPowerIsActiv(id, turnOverCall) {
             if (err) {
                 adapter.log.error(err);
             } else {
-                var uri = obj.native.uri;
+                const uri = obj.native.uri;
                 adapter.log.debug("Turn over to " + uri);
                 turnOverCall(uri);
             }
