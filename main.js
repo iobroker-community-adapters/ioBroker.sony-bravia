@@ -191,7 +191,7 @@ function createAvContentObjects() {
                                     adapter.log.error("Content List. Unknown content response " + JSON.stringify(channels));
                                 }
                             }).catch(err => {
-                                adapter.log.warn("ContentList " + err);
+                                adapter.log.error("ContentList " + err);
                             });
                         })
                     } else {
