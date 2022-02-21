@@ -155,7 +155,7 @@ function createAppObjects() {
             adapter.log.error("Application List. Unknown content response " + JSON.stringify(scheme));
         }
     }).catch(err => {
-        adapter.log.error(err);
+        adapter.log.error("ApplicationList " + err);
     });
 }
 
@@ -191,45 +191,51 @@ function createAvContentObjects() {
                                     adapter.log.error("Content List. Unknown content response " + JSON.stringify(channels));
                                 }
                             }).catch(err => {
-                                adapter.log.error(err);
+                                adapter.log.error("ContentList " + err);
                             });
                         })
                     } else {
                         adapter.log.error("Source List. Unknown content response " + JSON.stringify(sources));
                     }
                 }).catch(err => {
-                    adapter.log.error(err);
+                    adapter.log.error("SourceList " + err);
                 });
             });
         } else {
             adapter.log.error("Scheme List. Unknown content response " + JSON.stringify(scheme));
         }
     }).catch(err => {
-        adapter.log.error(err);
+        adapter.log.error("SchemeList " + err);
     });
 }
 
 function checkStatus() {
     ping.probe(adapter.config.ip, { log: adapter.log.debug }, function (err, result) {
         if (err) {
-            adapter.log.error(err);
+            adapter.log.info("ping cannot be executed " + err);
+            setConnected(false);
         }
         if (result) {
             setConnected(result.alive);
+
+            if (result.alive) {
+                // Check other read only objects
+                device.getPowerStatus().then(states => {
+                    adapter.setState('info.powerStatusActive', { val: (states.result[0].status == 'active' ? true : false), ack: true });
+                }).catch(err => {
+                    adapter.log.error("powerStatus cannot be determined " + err);
+                })
+
+                device.getPlayingContentInfo().then(content => {
+                    adapter.setState('info.playingContentInfo', { val: content, ack: true });
+                }).catch(err => {
+                    adapter.log.error("contentInfo cannot be determined " + err);
+                });
+            } else {
+                adapter.setState('info.powerStatusActive', { val: false, ack: true });
+                adapter.setState('info.playingContentInfo', { val: "", ack: true });
+            }
         }
-    });
-
-    // Check other read only objects
-    device.getPowerStatus().then(states => {
-        adapter.setState('info.powerStatusActive', { val: (states.result[0].status == 'active' ? true : false), ack: true });
-    }).catch(err => {
-        adapter.log.error(err);
-    })
-
-    device.getPlayingContentInfo().then(content => {
-        adapter.setState('info.playingContentInfo', { val: content, ack: true });
-    }).catch(err => {
-        adapter.log.error(err);
     });
 }
 
