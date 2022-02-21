@@ -1,8 +1,20 @@
 {
     "common": {
         "name": "sony-bravia",
-        "version": "1.0.4",
+        "version": "1.0.5",
         "news": {
+            "1.0.5": {
+                "en": "Fix for content list request for older api versions",
+                "de": "Fix für Inhaltslistenanfrage für ältere API-Versionen",
+                "ru": "Исправлен запрос списка контента для старых версий API.",
+                "pt": "Correção para solicitação de lista de conteúdo para versões de API mais antigas",
+                "nl": "Oplossing voor verzoek om inhoudslijst voor oudere api-versies",
+                "fr": "Correction de la demande de liste de contenu pour les anciennes versions d'API",
+                "it": "Risolto il problema con la richiesta dell'elenco dei contenuti per le versioni precedenti dell'API",
+                "es": "Arreglo para la solicitud de lista de contenido para versiones anteriores de API",
+                "pl": "Poprawka dotycząca żądania listy treści dla starszych wersji interfejsu API",
+                "zh-cn": "修复旧 api 版本的内容列表请求"
+            },
             "1.0.4": {
                 "en": "Librarie update",
                 "de": "Bibliotheks-Update",
