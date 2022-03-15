@@ -15,7 +15,7 @@ let device;
 // you have to call the adapter function and pass a options object
 // name has to be set and has to be equal to adapters folder name and main file name excluding extension
 // adapter will be restarted automatically every time as the configuration changed, e.g system.adapter.template.0
-let adapter, statusInterval, powerStatusTimeout, playContentTimeout, terminateAppsTimeout, activeAppTimeout;
+let adapter, statusInterval, powerStatusTimeout, playContentTimeout, terminateAppsTimeout, activeAppTimeout, volumeMuteTimeout, volumeSetTimeout;
 function startAdapter(options) {
     options = options || {};
     Object.assign(options, {
@@ -40,6 +40,14 @@ function startAdapter(options) {
                         device.setActiveApp(uri).then(body => activeAppTimeout = setTimeout(() => checkStatus(), 2000)).catch(err => adapter.log.error(err));
                     });
                 }
+                else if (id.includes(".audio.volume.") && id.endsWith("mute")) {
+                    device.setMute(state.val).then(body => volumeMuteTimeout = setTimeout(() => checkStatus(), 2000)).catch(err => adapter.log.error(err));
+                }
+                else if (id.includes(".audio.volume.") && id.endsWith("volume")) {
+                    turnVolume(id, target => {
+                        device.setVolume(target, state.val).then(body => volumeSetTimeout = setTimeout(() => checkStatus(), 2000)).catch(err => adapter.log.error(err));
+                    });
+                }
                 else if (id && state) {
                     id = id.substring(id.lastIndexOf('.') + 1);
                     device.send(id);
@@ -55,6 +63,8 @@ function startAdapter(options) {
                 playContentTimeout && clearTimeout(playContentTimeout);
                 terminateAppsTimeout && clearTimeout(terminateAppsTimeout);
                 activeAppTimeout && clearTimeout(activeAppTimeout);
+                volumeMuteTimeout && clearTimeout(volumeMuteTimeout);
+                volumeSetTimeout && clearTimeout(volumeSetTimeout);
                 callback();
             } catch (e) {
                 callback();
@@ -105,6 +115,20 @@ function turnOverIfPowerIsActiv(id, turnOverCall) {
                 const uri = obj.native.uri;
                 adapter.log.debug("Turn over to " + uri);
                 turnOverCall(uri);
+            }
+        });
+    })
+}
+
+function turnVolume(id, targetCall) {
+    ifPowerIsActiv(() => {
+        adapter.getObject(id, (err, obj) => {
+            if (err) {
+                adapter.log.error(err);
+            } else {
+                const target = obj.native.target;
+                adapter.log.debug("Controll volumne " + target);
+                targetCall(target);
             }
         });
     })
@@ -232,6 +256,58 @@ function checkStatus() {
                 }).catch(err => {
                     adapter.setState('info.playingContentInfo', { val: "", ack: true });
                     adapter.log.info("contentInfo cannot be determined " + err);
+                });
+
+                device.getVolumeInformation().then(setups => {
+                    if (Array.isArray(setups)) {
+                        setups.forEach(setup => {
+                            if (Array.isArray(setup)) {
+                                setup.forEach(audio => {
+                                    if (audio.target && audio.target.length > 1) {
+                                        adapter.setObjectNotExists("audio.volume." + toSnakeCase(audio.target), {
+                                            "type": "channel",
+                                            "common": {
+                                                "name": audio.target
+                                            },
+                                            native: {}
+                                        });
+                                        adapter.setObjectNotExists("audio.volume." + toSnakeCase(audio.target) + ".volume", {
+                                            "type": "state",
+                                            "common": {
+                                                "name": "Volumen",
+                                                "role": "state",
+                                                "type": "string",
+                                                "read": true,
+                                                "write": true
+                                            },
+                                            native: {
+                                                "target": audio.target
+                                            }
+                                        });
+                                        adapter.setState("audio.volume." + toSnakeCase(audio.target) + ".volume", { val: audio.volume.toString(), ack: true });
+                                        adapter.setObjectNotExists("audio.volume." + toSnakeCase(audio.target) + ".mute", {
+                                            "type": "state",
+                                            "common": {
+                                                "name": "Stumm",
+                                                "role": "switch",
+                                                "type": "boolean",
+                                                "read": true,
+                                                "write": true
+                                            },
+                                            native: {
+                                                "target": audio.target
+                                            }
+                                        });
+                                        adapter.setState("audio.volume." + toSnakeCase(audio.target) + ".mute", { val: audio.mute, ack: true });
+                                    }
+                                });
+                            }
+                        });
+                    } else {
+                        adapter.log.error("Volume Information. Unknown content response " + JSON.stringify(audios));
+                    }
+                }).catch(err => {
+                    adapter.log.info("volumeInformation cannot be determined " + err);
                 });
             } else {
                 adapter.setState('info.powerStatusActive', { val: false, ack: true });

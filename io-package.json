@@ -138,7 +138,8 @@
             {
                 "js-controller": ">=2.0.0"
             }
-        ]
+        ],
+        "installedFrom": "iobroker.sony-bravia@1.0.5"
     },
     "native": {
         "ip": "",
@@ -159,6 +160,22 @@
             "type": "channel",
             "common": {
                 "name": "TV channel"
+            },
+            "native": {}
+        },
+        {
+            "_id": "audio",
+            "type": "folder",
+            "common": {
+                "name": "Audio"
+            },
+            "native": {}
+        },
+        {
+            "_id": "audio.volume",
+            "type": "device",
+            "common": {
+                "name": "Volumen"
             },
             "native": {}
         },

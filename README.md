@@ -27,6 +27,9 @@ This is an ioBroker adapter for your Sony Bravia Smart-TV with Android OS. Teste
 
 ## Changelog
 
+### **WORK IN PROGRESS**
+* (ThomasBra) Audio volume/mute controll
+
 ### 1.0.5
 * (ThomasBra) Fix for content list request for older api versions
 
