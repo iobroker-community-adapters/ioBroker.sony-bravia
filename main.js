@@ -240,6 +240,8 @@ function checkStatus() {
             setConnected(false);
         }
         if (result) {
+            adapter.log.debug("Ping result: " + JSON.stringify(result));
+
             setConnected(result.alive);
 
             if (result.alive) {
