@@ -223,13 +223,15 @@ function checkStatus() {
                 device.getPowerStatus().then(states => {
                     adapter.setState('info.powerStatusActive', { val: (states.result[0].status == 'active' ? true : false), ack: true });
                 }).catch(err => {
-                    adapter.log.error("powerStatus cannot be determined " + err);
+                    adapter.setState('info.powerStatusActive', { val: false, ack: true });
+                    adapter.log.info("powerStatus cannot be determined " + err);
                 })
 
                 device.getPlayingContentInfo().then(content => {
                     adapter.setState('info.playingContentInfo', { val: content, ack: true });
                 }).catch(err => {
-                    adapter.log.error("contentInfo cannot be determined " + err);
+                    adapter.setState('info.playingContentInfo', { val: "", ack: true });
+                    adapter.log.info("contentInfo cannot be determined " + err);
                 });
             } else {
                 adapter.setState('info.powerStatusActive', { val: false, ack: true });
