@@ -138,8 +138,7 @@
             {
                 "js-controller": ">=2.0.0"
             }
-        ],
-        "installedFrom": "iobroker.sony-bravia@1.0.5"
+        ]
     },
     "native": {
         "ip": "",
@@ -175,7 +174,7 @@
             "_id": "audio.volume",
             "type": "device",
             "common": {
-                "name": "Volumen"
+                "name": "Volumes"
             },
             "native": {}
         },
@@ -183,7 +182,7 @@
             "_id": "appControl",
             "type": "folder",
             "common": {
-                "name": "App Steuerung"
+                "name": "App Control"
             },
             "native": {}
         },
@@ -211,7 +210,7 @@
             "_id": "avContent",
             "type": "folder",
             "common": {
-                "name": "AV Contents"
+                "name": "AV Content"
             },
             "native": {}
         },
@@ -243,7 +242,7 @@
             "_id": "source",
             "type": "channel",
             "common": {
-                "name": "Signalquelle"
+                "name": "Source"
             },
             "native": {}
         },
@@ -251,7 +250,7 @@
             "_id": "function",
             "type": "channel",
             "common": {
-                "name": "Hauptfunktionen"
+                "name": "Main functions"
             },
             "native": {}
         },
@@ -259,7 +258,7 @@
             "_id": "player",
             "type": "channel",
             "common": {
-                "name": "Abspielfunktionen"
+                "name": "Play Controls"
             },
             "native": {}
         },
@@ -300,7 +299,7 @@
             "type": "state",
             "common": {
                 "role": "text",
-                "name": "Model name and informations",
+                "name": "Model name and information",
                 "type": "string",
                 "read": true,
                 "write": false
