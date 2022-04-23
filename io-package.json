@@ -134,11 +134,17 @@
         "type": "multimedia",
         "dataSource": "poll",
         "connectionType": "local",
+        "tier": "2",
         "dependencies": [
             {
                 "js-controller": ">=2.0.0"
             }
-        ]
+        ],
+        "plugins": {
+            "sentry": {
+                "dsn": "https://75d833308143465fb10a0bca4adf3c6a@sentry.iobroker.net/192"
+            }
+        }
     },
     "native": {
         "ip": "",

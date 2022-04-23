@@ -22,7 +22,7 @@ function startAdapter(options) {
     Object.assign(options, {
         name: 'sony-bravia',
         stateChange: function (id, state) {
-            if (!state.ack) {
+            if (state && !state.ack) {
                 if (id.endsWith("info.powerStatusActive")) {
                     device.setPowerStatus(state.val).then(body => powerStatusTimeout = setTimeout(() => checkStatus(), 500)).catch(err => adapter.log.error(err));
                 }
@@ -58,7 +58,6 @@ function startAdapter(options) {
         ready: main,
         unload: (callback) => {
             try {
-                adapter.setState('info.modelInformation', { val: "", ack: true });
                 statusInterval && clearInterval(statusInterval);
                 powerStatusTimeout && clearTimeout(powerStatusTimeout);
                 playContentTimeout && clearTimeout(playContentTimeout);
@@ -66,6 +65,7 @@ function startAdapter(options) {
                 activeAppTimeout && clearTimeout(activeAppTimeout);
                 volumeMuteTimeout && clearTimeout(volumeMuteTimeout);
                 volumeSetTimeout && clearTimeout(volumeSetTimeout);
+                adapter.setState('info.modelInformation', { val: "", ack: true });
                 callback();
             } catch (e) {
                 callback();

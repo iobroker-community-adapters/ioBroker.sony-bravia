@@ -1,18 +1,17 @@
-<h1>
-  <img src="https://raw.githubusercontent.com/iobroker-community-adapters/ioBroker.sony-bravia/master/admin/sony-bravia.png" width="64"/>
-  ioBroker.sony-bravia
-</h1>
+![Logo](admin/sony-bravia.png)
 
-![Number of Installations](http://iobroker.live/badges/sony-bravia-installed.svg) ![Number of Installations](http://iobroker.live/badges/sony-bravia-stable.svg) [![NPM version](http://img.shields.io/npm/v/iobroker.sony-bravia.svg)](https://www.npmjs.com/package/iobroker.sony-bravia)
+# ioBroker.sony-bravia
+
+![Number of Installations](http://iobroker.live/badges/sony-bravia-installed.svg)
+![Number of Installations](http://iobroker.live/badges/sony-bravia-stable.svg)
+[![NPM version](http://img.shields.io/npm/v/iobroker.sony-bravia.svg)](https://www.npmjs.com/package/iobroker.sony-bravia)
+
+![Test and Release](https://github.com/iobroker-community-adapters/iobroker.sony-bravia/workflows/Test%20and%20Release/badge.svg)
+[![Translation status](https://weblate.iobroker.net/widgets/adapters/-/sony-bravia/svg-badge.svg)](https://weblate.iobroker.net/engage/adapters/?utm_source=widget)
 [![Downloads](https://img.shields.io/npm/dm/iobroker.sony-bravia.svg)](https://www.npmjs.com/package/iobroker.sony-bravia)
-[![Dependency Status](https://img.shields.io/david/iobroker-community-adapters/iobroker.sony-bravia.svg)](https://david-dm.org/iobroker-community-adapters/iobroker.sony-bravia)
-[![Known Vulnerabilities](https://snyk.io/test/github/iobroker-community-adapters/ioBroker.sony-bravia/badge.svg)](https://snyk.io/test/github/iobroker-community-adapters/ioBroker.sony-bravia)
 
-[![NPM](https://nodei.co/npm/iobroker.sony-bravia.png?downloads=true)](https://nodei.co/npm/iobroker.sony-bravia/)
+**This adapter uses Sentry libraries to automatically report exceptions and code errors to the developers.** For more details and for information how to disable the error reporting see [Sentry-Plugin Documentation](https://github.com/ioBroker/plugin-sentry#plugin-sentry)! Sentry reporting is used starting with js-controller 3.0.
 
-**Tests:** Linux/Mac: [![Travis-CI](http://img.shields.io/travis/iobroker-community-adapters/ioBroker.sony-bravia/master.svg)](https://travis-ci.org/iobroker-community-adapters/ioBroker.sony-bravia)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/iobroker-community-adapters/ioBroker.sony-bravia?branch=master&svg=true)](https://ci.appveyor.com/project/iobroker-community-adapters/ioBroker-sony-bravia/) 
-[![Greenkeeper badge](https://badges.greenkeeper.io/iobroker-community-adapters/ioBroker.sony-bravia.svg)](https://greenkeeper.io/)
 
 ## A Sony Bravia Android Smart-TV adapter for ioBroker
 
@@ -28,8 +27,9 @@ This is an ioBroker adapter for your Sony Bravia Smart-TV with Android OS. Teste
 ## Changelog
 
 ### **WORK IN PROGRESS**
-* (ThomasBra) Audio volume/mute controll
+* (ThomasBra) Audio volume/mute control
 * (ThomasBra) value lists for AV Contents
+* (Apollon77) Add Sentry error reporting
 
 ### 1.0.5
 * (ThomasBra) Fix for content list request for older api versions
