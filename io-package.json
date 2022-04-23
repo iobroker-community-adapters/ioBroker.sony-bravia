@@ -1,1708 +1,1708 @@
 {
-    "common": {
-        "name": "sony-bravia",
-        "version": "1.0.5",
-        "news": {
-            "1.0.5": {
-                "en": "Fix for content list request for older api versions",
-                "de": "Fix für Inhaltslistenanfrage für ältere API-Versionen",
-                "ru": "Исправлен запрос списка контента для старых версий API.",
-                "pt": "Correção para solicitação de lista de conteúdo para versões de API mais antigas",
-                "nl": "Oplossing voor verzoek om inhoudslijst voor oudere api-versies",
-                "fr": "Correction de la demande de liste de contenu pour les anciennes versions d'API",
-                "it": "Risolto il problema con la richiesta dell'elenco dei contenuti per le versioni precedenti dell'API",
-                "es": "Arreglo para la solicitud de lista de contenido para versiones anteriores de API",
-                "pl": "Poprawka dotycząca żądania listy treści dla starszych wersji interfejsu API",
-                "zh-cn": "修复旧 api 版本的内容列表请求"
-            },
-            "1.0.4": {
-                "en": "Librarie update",
-                "de": "Bibliotheks-Update",
-                "ru": "Обновление Librarie",
-                "pt": "Atualização de bibliotecário",
-                "nl": "Bibliotheek-update",
-                "fr": "Mise à jour de la bibliothèque",
-                "it": "Aggiornamento della libreria",
-                "es": "Actualización de la biblioteca",
-                "pl": "Aktualizacja biblioteki",
-                "zh-cn": "图书馆更新"
-            },
-            "1.0.3": {
-                "en": "info.powerStatusActive added and other optimizations",
-                "de": "info.powerStatusActive hinzugefügt und andere Optimierungen",
-                "ru": "info.powerStatusActive добавлен и другие оптимизации",
-                "pt": "info.powerStatusActive adicionado e outras otimizações",
-                "nl": "info.powerStatusActive toegevoegd en andere optimalisaties",
-                "fr": "info.powerStatusActive ajouté et autres optimisations",
-                "it": "info.powerStatusActive aggiunto e altre ottimizzazioni",
-                "es": "info.powerStatusActive agregado y otras optimizaciones",
-                "pl": "Dodano info.powerStatusActive i inne optymalizacje",
-                "zh-cn": "已添加info.powerStatusActive和其他优化"
-            },
-            "1.0.1": {
-                "en": "compact mode compatibility added",
-                "de": "Kompaktmodus-Kompatibilität hinzugefügt",
-                "ru": "добавлена ​​совместимость с компактным режимом",
-                "pt": "compatibilidade de modo compacto adicionada",
-                "nl": "compatibiliteit met compacte modus toegevoegd",
-                "fr": "Compatibilité en mode compact ajoutée",
-                "it": "aggiunta la compatibilità in modalità compatta",
-                "es": "compatibilidad de modo compacto agregado",
-                "pl": "Dodano kompatybilność w trybie kompaktowym",
-                "zh-cn": "增加了紧凑模式兼容性"
-            },
-            "1.0.0": {
-                "en": "Support of admin3",
-                "de": "Unterstützung von admin3",
-                "ru": "Поддержка admin3",
-                "pt": "Suporte de admin3",
-                "nl": "Ondersteuning van admin3",
-                "fr": "Support de admin3",
-                "it": "Supporto di admin3",
-                "es": "Soporte de admin3",
-                "pl": "Wsparcie dla admin3",
-                "zh-cn": "支持admin3"
-            },
-            "0.1.0": {
-                "en": "Test phase terminated. Adapter enabled.",
-                "de": "Testphase beendet. Adapter freigegeben.",
-                "ru": "Тестовая фаза завершена. Адаптер включен.",
-                "pt": "Fase de teste encerrada. Adaptador habilitado.",
-                "fr": "Phase de test terminée. Adaptateur activé.",
-                "nl": "Testfase beëindigd. Adapter ingeschakeld.",
-                "pl": "Faza testowa została zakończona. Adapter włączony.",
-                "it": "Fase di prova terminata Adattatore abilitato.",
-                "es": "Fase de prueba terminada. Adaptador habilitado.",
-                "zh-cn": "测试阶段终止。 启用适配器。"
-            },
-            "0.0.7": {
-                "en": "Node.j 4.x compatibility",
-                "de": "Kompatibilität zu Node.js 4.x",
-                "ru": "Совместимость с Node.js 4.x",
-                "pt": "Compatibilidade com Node.js 4.x",
-                "fr": "Compatibilité avec Node.js 4.x",
-                "nl": "Compatibiliteit met Node.js 4.x",
-                "es": "Compatibilidad con Node.j 4.x",
-                "pl": "Zgodność z Node.j 4.x",
-                "it": "Node.j 4.x compatibilità",
-                "zh-cn": "Node.j 4.x兼容性"
-            }
-        },
-        "authors": [
-            "ldittmar <iobroker@lmdsoft.de>"
-        ],
-        "title": "Sony Bravia Smart-TV",
-        "titleLang": {
-            "en": "Sony Bravia Smart-TV",
-            "de": "Sony Bravia Smart-TV",
-            "ru": "Sony Bravia Smart-TV",
-            "pt": "Sony Bravia Smart-TV",
-            "fr": "Sony Bravia Smart-TV",
-            "nl": "Sony Bravia Smart-TV",
-            "it": "Sony Bravia Smart-TV",
-            "es": "Sony Bravia Smart-TV",
-            "pl": "Sony Bravia Smart-TV",
-            "zh-cn": "索尼Bravia智能电视"
-        },
-        "desc": {
-            "en": "This is an ioBroker adapter for your Sony Bravia Smart-TV with Android OS. Tested with KD-65X8507C.",
-            "de": "Dies ist ein ioBroker-Adapter für Ihr Sony Bravia Smart-TV mit Android-Betriebssystem. Getestet mit KD-65X8507C.",
-            "ru": "Это адаптер ioBroker для вашего Sony Bravia Smart-TV с ОС Android. Протестировано с KD-65X8507C.",
-            "pt": "Este é um adaptador ioBroker para o seu Sony Bravia Smart-TV com sistema operacional Android. Testado com o KD-65X8507C.",
-            "fr": "Ceci est un adaptateur ioBroker pour votre Sony Bravia Smart-TV avec Android OS. Testé avec KD-65X8507C.",
-            "nl": "Dit is een ioBroker-adapter voor uw Sony Bravia Smart-TV met Android OS. Getest met KD-65X8507C.",
-            "it": "Questo è un adattatore ioBroker per il tuo Sony Bravia Smart-TV con sistema operativo Android. Testato con KD-65X8507C.",
-            "es": "Este es un adaptador ioBroker para su Sony Bravia Smart-TV con sistema operativo Android. Probado con KD-65X8507C.",
-            "pl": "Jest to adapter ioBroker do Twojego Sony Bravia Smart-TV z systemem operacyjnym Android. Testowane za pomocą KD-65X8507C.",
-            "zh-cn": "这是适用于Android OS索尼Bravia智能电视的ioBroker适配器。 用KD-65X8507C测试。"
-        },
-        "compact": true,
-        "platform": "Javascript/Node.js",
-        "mode": "daemon",
-        "license": "MIT",
-        "icon": "sony-bravia.png",
-        "materialize": true,
-        "enabled": true,
-        "extIcon": "https://raw.githubusercontent.com/iobroker-community-adapters/ioBroker.sony-bravia/master/admin/sony-bravia.png",
-        "keywords": [
-            "sony",
-            "bravia",
-            "smart-tv"
-        ],
-        "readme": "https://github.com/iobroker-community-adapters/ioBroker.sony-bravia/blob/master/README.md",
-        "loglevel": "info",
-        "type": "multimedia",
-        "dataSource": "poll",
-        "connectionType": "local",
-        "tier": "2",
-        "dependencies": [
-            {
-                "js-controller": ">=2.0.0"
-            }
-        ],
-        "plugins": {
-            "sentry": {
-                "dsn": "https://75d833308143465fb10a0bca4adf3c6a@sentry.iobroker.net/192"
-            }
-        }
+  "common": {
+    "name": "sony-bravia",
+    "version": "1.0.6",
+    "news": {
+      "1.0.6": {
+        "en": "Audio volume/mute control\nvalue lists for AV Contents\nAdd Sentry error reporting",
+        "de": "Lautstärkeregelung/Stummschaltung\nWertelisten für AV-Inhalte\nSentry-Fehlerberichterstattung hinzugefügt",
+        "ru": "Регулятор громкости/отключения звука\nсписки значений для AV-контента\nДобавить отчеты об ошибках Sentry",
+        "pt": "Volume de áudio/controle de mudo\nlistas de valores para conteúdo AV\nAdicionar relatório de erros do Sentinela",
+        "nl": "Audio volume/mute controle\nwaardelijsten voor AV-inhoud\nVoeg Sentry-foutrapportage toe",
+        "fr": "Contrôle du volume/muet audio\nlistes de valeurs pour contenu AV\nAjouter un rapport d'erreur Sentry",
+        "it": "Controllo volume/mute audio\nliste di valori per Contenuti AV\nAggiungi la segnalazione degli errori di sentinella",
+        "es": "Volumen de audio/control de silencio\nlistas de valores para contenidos AV\nAgregar informe de errores de Sentry",
+        "pl": "Regulacja głośności/wyciszania dźwięku\nlisty wartości dla zawartości AV\nDodaj raportowanie błędów Sentry",
+        "zh-cn": "音频音量/静音控制\nAV 内容的价值列表\n添加哨兵错误报告"
+      },
+      "1.0.5": {
+        "en": "Fix for content list request for older api versions",
+        "de": "Fix für Inhaltslistenanfrage für ältere API-Versionen",
+        "ru": "Исправлен запрос списка контента для старых версий API.",
+        "pt": "Correção para solicitação de lista de conteúdo para versões de API mais antigas",
+        "nl": "Oplossing voor verzoek om inhoudslijst voor oudere api-versies",
+        "fr": "Correction de la demande de liste de contenu pour les anciennes versions d'API",
+        "it": "Risolto il problema con la richiesta dell'elenco dei contenuti per le versioni precedenti dell'API",
+        "es": "Arreglo para la solicitud de lista de contenido para versiones anteriores de API",
+        "pl": "Poprawka dotycząca żądania listy treści dla starszych wersji interfejsu API",
+        "zh-cn": "修复旧 api 版本的内容列表请求"
+      },
+      "1.0.4": {
+        "en": "Librarie update",
+        "de": "Bibliotheks-Update",
+        "ru": "Обновление Librarie",
+        "pt": "Atualização de bibliotecário",
+        "nl": "Bibliotheek-update",
+        "fr": "Mise à jour de la bibliothèque",
+        "it": "Aggiornamento della libreria",
+        "es": "Actualización de la biblioteca",
+        "pl": "Aktualizacja biblioteki",
+        "zh-cn": "图书馆更新"
+      },
+      "1.0.3": {
+        "en": "info.powerStatusActive added and other optimizations",
+        "de": "info.powerStatusActive hinzugefügt und andere Optimierungen",
+        "ru": "info.powerStatusActive добавлен и другие оптимизации",
+        "pt": "info.powerStatusActive adicionado e outras otimizações",
+        "nl": "info.powerStatusActive toegevoegd en andere optimalisaties",
+        "fr": "info.powerStatusActive ajouté et autres optimisations",
+        "it": "info.powerStatusActive aggiunto e altre ottimizzazioni",
+        "es": "info.powerStatusActive agregado y otras optimizaciones",
+        "pl": "Dodano info.powerStatusActive i inne optymalizacje",
+        "zh-cn": "已添加info.powerStatusActive和其他优化"
+      },
+      "1.0.1": {
+        "en": "compact mode compatibility added",
+        "de": "Kompaktmodus-Kompatibilität hinzugefügt",
+        "ru": "добавлена ​​совместимость с компактным режимом",
+        "pt": "compatibilidade de modo compacto adicionada",
+        "nl": "compatibiliteit met compacte modus toegevoegd",
+        "fr": "Compatibilité en mode compact ajoutée",
+        "it": "aggiunta la compatibilità in modalità compatta",
+        "es": "compatibilidad de modo compacto agregado",
+        "pl": "Dodano kompatybilność w trybie kompaktowym",
+        "zh-cn": "增加了紧凑模式兼容性"
+      },
+      "1.0.0": {
+        "en": "Support of admin3",
+        "de": "Unterstützung von admin3",
+        "ru": "Поддержка admin3",
+        "pt": "Suporte de admin3",
+        "nl": "Ondersteuning van admin3",
+        "fr": "Support de admin3",
+        "it": "Supporto di admin3",
+        "es": "Soporte de admin3",
+        "pl": "Wsparcie dla admin3",
+        "zh-cn": "支持admin3"
+      },
+      "0.1.0": {
+        "en": "Test phase terminated. Adapter enabled.",
+        "de": "Testphase beendet. Adapter freigegeben.",
+        "ru": "Тестовая фаза завершена. Адаптер включен.",
+        "pt": "Fase de teste encerrada. Adaptador habilitado.",
+        "fr": "Phase de test terminée. Adaptateur activé.",
+        "nl": "Testfase beëindigd. Adapter ingeschakeld.",
+        "pl": "Faza testowa została zakończona. Adapter włączony.",
+        "it": "Fase di prova terminata Adattatore abilitato.",
+        "es": "Fase de prueba terminada. Adaptador habilitado.",
+        "zh-cn": "测试阶段终止。 启用适配器。"
+      }
     },
-    "native": {
-        "ip": "",
-        "psk": ""
+    "authors": [
+      "ldittmar <iobroker@lmdsoft.de>"
+    ],
+    "title": "Sony Bravia Smart-TV",
+    "titleLang": {
+      "en": "Sony Bravia Smart-TV",
+      "de": "Sony Bravia Smart-TV",
+      "ru": "Sony Bravia Smart-TV",
+      "pt": "Sony Bravia Smart-TV",
+      "fr": "Sony Bravia Smart-TV",
+      "nl": "Sony Bravia Smart-TV",
+      "it": "Sony Bravia Smart-TV",
+      "es": "Sony Bravia Smart-TV",
+      "pl": "Sony Bravia Smart-TV",
+      "zh-cn": "索尼Bravia智能电视"
     },
-    "objects": [],
-    "instanceObjects": [
-        {
-            "_id": "info",
-            "type": "channel",
-            "common": {
-                "name": "Information"
-            },
-            "native": {}
-        },
-        {
-            "_id": "channel",
-            "type": "channel",
-            "common": {
-                "name": "TV channel"
-            },
-            "native": {}
-        },
-        {
-            "_id": "audio",
-            "type": "folder",
-            "common": {
-                "name": "Audio"
-            },
-            "native": {}
-        },
-        {
-            "_id": "audio.volume",
-            "type": "device",
-            "common": {
-                "name": "Volumes"
-            },
-            "native": {}
-        },
-        {
-            "_id": "appControl",
-            "type": "folder",
-            "common": {
-                "name": "App Control"
-            },
-            "native": {}
-        },
-        {
-            "_id": "appControl.app",
-            "type": "channel",
-            "common": {
-                "name": "Applications"
-            },
-            "native": {}
-        },
-        {
-            "_id": "appControl.terminateApps",
-            "type": "state",
-            "common": {
-                "name": "Terminate Applications",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "avContent",
-            "type": "folder",
-            "common": {
-                "name": "AV Content"
-            },
-            "native": {}
-        },
-        {
-            "_id": "avContent.tv",
-            "type": "channel",
-            "common": {
-                "name": "TV"
-            },
-            "native": {}
-        },
-        {
-            "_id": "avContent.extInput",
-            "type": "channel",
-            "common": {
-                "name": "External Input"
-            },
-            "native": {}
-        },
-        {
-            "_id": "avContent.fav",
-            "type": "channel",
-            "common": {
-                "name": "Favorites"
-            },
-            "native": {}
-        },
-        {
-            "_id": "source",
-            "type": "channel",
-            "common": {
-                "name": "Source"
-            },
-            "native": {}
-        },
-        {
-            "_id": "function",
-            "type": "channel",
-            "common": {
-                "name": "Main functions"
-            },
-            "native": {}
-        },
-        {
-            "_id": "player",
-            "type": "channel",
-            "common": {
-                "name": "Play Controls"
-            },
-            "native": {}
-        },
-        {
-            "_id": "others",
-            "type": "channel",
-            "common": {
-                "name": "Others"
-            },
-            "native": {}
-        },
-        {
-            "_id": "info.connection",
-            "type": "state",
-            "common": {
-                "role": "indicator.connected",
-                "name": "If connected to TV",
-                "type": "boolean",
-                "read": true,
-                "write": false
-            },
-            "native": {}
-        },
-        {
-            "_id": "info.powerStatusActive",
-            "type": "state",
-            "common": {
-                "role": "switch",
-                "name": "If TV power status is acive",
-                "type": "boolean",
-                "read": true,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "info.modelInformation",
-            "type": "state",
-            "common": {
-                "role": "text",
-                "name": "Model name and information",
-                "type": "string",
-                "read": true,
-                "write": false
-            },
-            "native": {}
-        },
-        {
-            "_id": "info.playingContentInfo",
-            "type": "state",
-            "common": {
-                "role": "text",
-                "name": "Title of the content to be recognized by the user",
-                "type": "string",
-                "read": true,
-                "write": false
-            },
-            "native": {}
-        },
-        {
-            "_id": "function.AAAAAQAAAAEAAAAuAw==",
-            "type": "state",
-            "common": {
-                "name": "Power on",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "channel.AAAAAQAAAAEAAAAAAw==",
-            "type": "state",
-            "common": {
-                "name": "Num1",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "channel.AAAAAQAAAAEAAAABAw==",
-            "type": "state",
-            "common": {
-                "name": "Num2",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "channel.AAAAAQAAAAEAAAACAw==",
-            "type": "state",
-            "common": {
-                "name": "Num3",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "channel.AAAAAQAAAAEAAAADAw==",
-            "type": "state",
-            "common": {
-                "name": "Num4",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "channel.AAAAAQAAAAEAAAAEAw==",
-            "type": "state",
-            "common": {
-                "name": "Num5",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "channel.AAAAAQAAAAEAAAAFAw==",
-            "type": "state",
-            "common": {
-                "name": "Num6",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "channel.AAAAAQAAAAEAAAAGAw==",
-            "type": "state",
-            "common": {
-                "name": "Num7",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "channel.AAAAAQAAAAEAAAAHAw==",
-            "type": "state",
-            "common": {
-                "name": "Num8",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "channel.AAAAAQAAAAEAAAAIAw==",
-            "type": "state",
-            "common": {
-                "name": "Num9",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "channel.AAAAAQAAAAEAAAAJAw==",
-            "type": "state",
-            "common": {
-                "name": "Num0",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "channel.AAAAAQAAAAEAAAAKAw==",
-            "type": "state",
-            "common": {
-                "name": "Num11",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "channel.AAAAAQAAAAEAAAALAw==",
-            "type": "state",
-            "common": {
-                "name": "Num12",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "others.AAAAAQAAAAEAAAALAw==",
-            "type": "state",
-            "common": {
-                "name": "Enter",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "info.AAAAAQAAAAEAAAAOAw==",
-            "type": "state",
-            "common": {
-                "name": "GGuide",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "channel.AAAAAQAAAAEAAAAQAw==",
-            "type": "state",
-            "common": {
-                "name": "ChannelUp",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "channel.AAAAAQAAAAEAAAARAw==",
-            "type": "state",
-            "common": {
-                "name": "ChannelDown",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "function.AAAAAQAAAAEAAAASAw==",
-            "type": "state",
-            "common": {
-                "name": "VolumeUp",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "function.AAAAAQAAAAEAAAATAw==",
-            "type": "state",
-            "common": {
-                "name": "VolumeDown",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "function.AAAAAQAAAAEAAAAUAw==",
-            "type": "state",
-            "common": {
-                "name": "Mute",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "function.AAAAAQAAAAEAAAAVAw==",
-            "type": "state",
-            "common": {
-                "name": "TvPower",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "others.AAAAAQAAAAEAAAAXAw==",
-            "type": "state",
-            "common": {
-                "name": "Audio",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "others.AAAAAQAAAAEAAAAXAw==",
-            "type": "state",
-            "common": {
-                "name": "MediaAudioTrack",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "others.AAAAAQAAAAEAAAAkAw==",
-            "type": "state",
-            "common": {
-                "name": "Tv",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "source.AAAAAQAAAAEAAAAlAw==",
-            "type": "state",
-            "common": {
-                "name": "Input",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "source.AAAAAQAAAAEAAAAlAw==",
-            "type": "state",
-            "common": {
-                "name": "TvInput",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "source.AAAAAQAAAAEAAAAqAw==",
-            "type": "state",
-            "common": {
-                "name": "TvAntennaCable",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "others.AAAAAQAAAAEAAAAuAw==",
-            "type": "state",
-            "common": {
-                "name": "WakeUp",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "function.AAAAAQAAAAEAAAAvAw==",
-            "type": "state",
-            "common": {
-                "name": "PowerOff",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "others.AAAAAQAAAAEAAAAvAw==",
-            "type": "state",
-            "common": {
-                "name": "Sleep",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "others.AAAAAQAAAAEAAAAzAw==",
-            "type": "state",
-            "common": {
-                "name": "Right",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "others.AAAAAQAAAAEAAAA0Aw==",
-            "type": "state",
-            "common": {
-                "name": "Left",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "others.AAAAAQAAAAEAAAA2Aw==",
-            "type": "state",
-            "common": {
-                "name": "SleepTimer",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "source.AAAAAQAAAAEAAAA4Aw==",
-            "type": "state",
-            "common": {
-                "name": "Analog2",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "source.AAAAAQAAAAEAAAA4Aw==",
-            "type": "state",
-            "common": {
-                "name": "TvAnalog",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "others.AAAAAQAAAAEAAAA6Aw==",
-            "type": "state",
-            "common": {
-                "name": "Display",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "others.AAAAAQAAAAEAAAA7Aw==",
-            "type": "state",
-            "common": {
-                "name": "Jump",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "others.AAAAAQAAAAEAAAA+Aw==",
-            "type": "state",
-            "common": {
-                "name": "PicOff",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "others.AAAAAQAAAAEAAAA+Aw==",
-            "type": "state",
-            "common": {
-                "name": "PictureOff",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "others.AAAAAQAAAAEAAAA/Aw==",
-            "type": "state",
-            "common": {
-                "name": "Teletext",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "source.AAAAAQAAAAEAAABAAw==",
-            "type": "state",
-            "common": {
-                "name": "Video1",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "source.AAAAAQAAAAEAAABBAw==",
-            "type": "state",
-            "common": {
-                "name": "Video2",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "source.AAAAAQAAAAEAAABDAw==",
-            "type": "state",
-            "common": {
-                "name": "AnalogRgb1",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "others.AAAAAQAAAAEAAABgAw==",
-            "type": "state",
-            "common": {
-                "name": "Home",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "others.AAAAAQAAAAEAAABjAw==",
-            "type": "state",
-            "common": {
-                "name": "Exit",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "others.AAAAAQAAAAEAAABkAw==",
-            "type": "state",
-            "common": {
-                "name": "PictureMode",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "others.AAAAAQAAAAEAAABlAw==",
-            "type": "state",
-            "common": {
-                "name": "Confirm",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "others.AAAAAQAAAAEAAAB0Aw==",
-            "type": "state",
-            "common": {
-                "name": "Up",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "others.AAAAAQAAAAEAAAB1Aw==",
-            "type": "state",
-            "common": {
-                "name": "Down",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "others.AAAAAgAAAKQAAAAQAw==",
-            "type": "state",
-            "common": {
-                "name": "ClosedCaption",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "source.AAAAAgAAAKQAAAA2Aw==",
-            "type": "state",
-            "common": {
-                "name": "Component1",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "source.AAAAAgAAAKQAAAA3Aw==",
-            "type": "state",
-            "common": {
-                "name": "Component2",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "others.AAAAAgAAAKQAAAA9Aw==",
-            "type": "state",
-            "common": {
-                "name": "Wide",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "others.AAAAAgAAAKQAAABbAw==",
-            "type": "state",
-            "common": {
-                "name": "EPG",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "others.AAAAAgAAAKQAAAB3Aw==",
-            "type": "state",
-            "common": {
-                "name": "PAP",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "others.AAAAAgAAAJcAAAAMAw==",
-            "type": "state",
-            "common": {
-                "name": "TenKey",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "others.AAAAAgAAAJcAAAAQAw==",
-            "type": "state",
-            "common": {
-                "name": "BSCS",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "others.AAAAAgAAAJcAAAAVAw==",
-            "type": "state",
-            "common": {
-                "name": "Ddata",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "player.AAAAAgAAAJcAAAAYAw==",
-            "type": "state",
-            "common": {
-                "name": "Stop",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "player.AAAAAgAAAJcAAAAZAw==",
-            "type": "state",
-            "common": {
-                "name": "Pause",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "player.AAAAAgAAAJcAAAAaAw==",
-            "type": "state",
-            "common": {
-                "name": "Play",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "player.AAAAAgAAAJcAAAAbAw==",
-            "type": "state",
-            "common": {
-                "name": "Rewind",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "player.AAAAAgAAAJcAAAAcAw==",
-            "type": "state",
-            "common": {
-                "name": "Forward",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "others.AAAAAgAAAJcAAAAdAw==",
-            "type": "state",
-            "common": {
-                "name": "DOT",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "player.AAAAAgAAAJcAAAAgAw==",
-            "type": "state",
-            "common": {
-                "name": "Rec",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "player.AAAAAgAAAJcAAAAjAw==",
-            "type": "state",
-            "common": {
-                "name": "Return",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "function.AAAAAgAAAJcAAAAkAw==",
-            "type": "state",
-            "common": {
-                "name": "Blue",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "function.AAAAAgAAAJcAAAAlAw==",
-            "type": "state",
-            "common": {
-                "name": "Red",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "function.AAAAAgAAAJcAAAAmAw==",
-            "type": "state",
-            "common": {
-                "name": "Green",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "function.AAAAAgAAAJcAAAAnAw==",
-            "type": "state",
-            "common": {
-                "name": "Yellow",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "others.AAAAAgAAAJcAAAAoAw==",
-            "type": "state",
-            "common": {
-                "name": "SubTitle",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "others.AAAAAgAAAJcAAAArAw==",
-            "type": "state",
-            "common": {
-                "name": "CS",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "others.AAAAAgAAAJcAAAAsAw==",
-            "type": "state",
-            "common": {
-                "name": "BS",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "others.AAAAAgAAAJcAAAAyAw==",
-            "type": "state",
-            "common": {
-                "name": "Digital",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "others.AAAAAgAAAJcAAAA2Aw==",
-            "type": "state",
-            "common": {
-                "name": "Options",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "others.AAAAAgAAAJcAAAA4Aw==",
-            "type": "state",
-            "common": {
-                "name": "Media",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "others.AAAAAgAAAJcAAAA8Aw==",
-            "type": "state",
-            "common": {
-                "name": "Prev",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "others.AAAAAgAAAJcAAAA9Aw==",
-            "type": "state",
-            "common": {
-                "name": "Next",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "others.AAAAAgAAAJcAAABKAw==",
-            "type": "state",
-            "common": {
-                "name": "DpadCenter",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "others.AAAAAgAAAJcAAABPAw==",
-            "type": "state",
-            "common": {
-                "name": "CursorUp",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "others.AAAAAgAAAJcAAABQAw==",
-            "type": "state",
-            "common": {
-                "name": "CursorDown",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "others.AAAAAgAAAJcAAABNAw==",
-            "type": "state",
-            "common": {
-                "name": "CursorLeft",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "others.AAAAAgAAAJcAAABOAw==",
-            "type": "state",
-            "common": {
-                "name": "CursorRight",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "others.AAAAAgAAAJcAAABqAw==",
-            "type": "state",
-            "common": {
-                "name": "ShopRemoteControlForcedDynamic",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "others.AAAAAgAAAJcAAAB4Aw==",
-            "type": "state",
-            "common": {
-                "name": "FlashPlus",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "others.AAAAAgAAAJcAAAB5Aw==",
-            "type": "state",
-            "common": {
-                "name": "FlashMinus",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "others.AAAAAgAAAJcAAAB7Aw==",
-            "type": "state",
-            "common": {
-                "name": "AudioQualityMode",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "others.AAAAAgAAAJcAAAB8Aw==",
-            "type": "state",
-            "common": {
-                "name": "DemoMode",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "others.AAAAAgAAAHcAAAANAw==",
-            "type": "state",
-            "common": {
-                "name": "Analog",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "others.AAAAAgAAAHcAAABNAw==",
-            "type": "state",
-            "common": {
-                "name": "Mode3D",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "others.AAAAAgAAAHcAAABSAw==",
-            "type": "state",
-            "common": {
-                "name": "DigitalToggle",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "others.AAAAAgAAAHcAAAB7Aw==",
-            "type": "state",
-            "common": {
-                "name": "DemoSurround",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "others.AAAAAgAAABoAAAA7Aw==",
-            "type": "state",
-            "common": {
-                "name": "*AD",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "others.AAAAAgAAABoAAAA8Aw==",
-            "type": "state",
-            "common": {
-                "name": "AudioMixUp",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "others.AAAAAgAAABoAAAA9Aw==",
-            "type": "state",
-            "common": {
-                "name": "AudioMixDown",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "others.AAAAAgAAABoAAABVAw==",
-            "type": "state",
-            "common": {
-                "name": "PhotoFrame",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "source.AAAAAgAAABoAAABXAw==",
-            "type": "state",
-            "common": {
-                "name": "Tv_Radio",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "others.AAAAAgAAABoAAABYAw==",
-            "type": "state",
-            "common": {
-                "name": "SyncMenu",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "source.AAAAAgAAABoAAABaAw==",
-            "type": "state",
-            "common": {
-                "name": "Hdmi1",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "source.AAAAAgAAABoAAABbAw==",
-            "type": "state",
-            "common": {
-                "name": "Hdmi2",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "source.AAAAAgAAABoAAABcAw==",
-            "type": "state",
-            "common": {
-                "name": "Hdmi3",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "source.AAAAAgAAABoAAABdAw==",
-            "type": "state",
-            "common": {
-                "name": "Hdmi4",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "others.AAAAAgAAABoAAABgAw==",
-            "type": "state",
-            "common": {
-                "name": "TopMenu",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "others.AAAAAgAAABoAAABhAw==",
-            "type": "state",
-            "common": {
-                "name": "PopUpMenu",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "others.AAAAAgAAABoAAABkAw==",
-            "type": "state",
-            "common": {
-                "name": "OneTouchTimeRec",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "others.AAAAAgAAABoAAABlAw==",
-            "type": "state",
-            "common": {
-                "name": "OneTouchView",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "others.AAAAAgAAABoAAABzAw==",
-            "type": "state",
-            "common": {
-                "name": "DUX",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "others.AAAAAgAAABoAAAB2Aw==",
-            "type": "state",
-            "common": {
-                "name": "FootballMode",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "info.AAAAAgAAABoAAAB7Aw==",
-            "type": "state",
-            "common": {
-                "name": "iManual",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "others.AAAAAgAAABoAAAB8Aw==",
-            "type": "state",
-            "common": {
-                "name": "Netflix",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "info.AAAAAgAAAMQAAAA7Aw==",
-            "type": "state",
-            "common": {
-                "name": "Assists",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "others.AAAAAgAAAMQAAABLAw==",
-            "type": "state",
-            "common": {
-                "name": "ActionMenu",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "info.AAAAAgAAAMQAAABNAw==",
-            "type": "state",
-            "common": {
-                "name": "Help",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "source.AAAAAgAAAMQAAABOAw==",
-            "type": "state",
-            "common": {
-                "name": "TvSatellite",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "others.AAAAAgAAAMQAAAB+Aw==",
-            "type": "state",
-            "common": {
-                "name": "WirelessSubwoofer",
-                "role": "button",
-                "type": "boolean",
-                "read": false,
-                "write": true
-            },
-            "native": {}
-        }
-    ]
+    "desc": {
+      "en": "This is an ioBroker adapter for your Sony Bravia Smart-TV with Android OS. Tested with KD-65X8507C.",
+      "de": "Dies ist ein ioBroker-Adapter für Ihr Sony Bravia Smart-TV mit Android-Betriebssystem. Getestet mit KD-65X8507C.",
+      "ru": "Это адаптер ioBroker для вашего Sony Bravia Smart-TV с ОС Android. Протестировано с KD-65X8507C.",
+      "pt": "Este é um adaptador ioBroker para o seu Sony Bravia Smart-TV com sistema operacional Android. Testado com o KD-65X8507C.",
+      "fr": "Ceci est un adaptateur ioBroker pour votre Sony Bravia Smart-TV avec Android OS. Testé avec KD-65X8507C.",
+      "nl": "Dit is een ioBroker-adapter voor uw Sony Bravia Smart-TV met Android OS. Getest met KD-65X8507C.",
+      "it": "Questo è un adattatore ioBroker per il tuo Sony Bravia Smart-TV con sistema operativo Android. Testato con KD-65X8507C.",
+      "es": "Este es un adaptador ioBroker para su Sony Bravia Smart-TV con sistema operativo Android. Probado con KD-65X8507C.",
+      "pl": "Jest to adapter ioBroker do Twojego Sony Bravia Smart-TV z systemem operacyjnym Android. Testowane za pomocą KD-65X8507C.",
+      "zh-cn": "这是适用于Android OS索尼Bravia智能电视的ioBroker适配器。 用KD-65X8507C测试。"
+    },
+    "compact": true,
+    "platform": "Javascript/Node.js",
+    "mode": "daemon",
+    "license": "MIT",
+    "icon": "sony-bravia.png",
+    "materialize": true,
+    "enabled": true,
+    "extIcon": "https://raw.githubusercontent.com/iobroker-community-adapters/ioBroker.sony-bravia/master/admin/sony-bravia.png",
+    "keywords": [
+      "sony",
+      "bravia",
+      "smart-tv"
+    ],
+    "readme": "https://github.com/iobroker-community-adapters/ioBroker.sony-bravia/blob/master/README.md",
+    "loglevel": "info",
+    "type": "multimedia",
+    "dataSource": "poll",
+    "connectionType": "local",
+    "tier": "2",
+    "dependencies": [
+      {
+        "js-controller": ">=2.0.0"
+      }
+    ],
+    "plugins": {
+      "sentry": {
+        "dsn": "https://75d833308143465fb10a0bca4adf3c6a@sentry.iobroker.net/192"
+      }
+    }
+  },
+  "native": {
+    "ip": "",
+    "psk": ""
+  },
+  "objects": [],
+  "instanceObjects": [
+    {
+      "_id": "info",
+      "type": "channel",
+      "common": {
+        "name": "Information"
+      },
+      "native": {}
+    },
+    {
+      "_id": "channel",
+      "type": "channel",
+      "common": {
+        "name": "TV channel"
+      },
+      "native": {}
+    },
+    {
+      "_id": "audio",
+      "type": "folder",
+      "common": {
+        "name": "Audio"
+      },
+      "native": {}
+    },
+    {
+      "_id": "audio.volume",
+      "type": "device",
+      "common": {
+        "name": "Volumes"
+      },
+      "native": {}
+    },
+    {
+      "_id": "appControl",
+      "type": "folder",
+      "common": {
+        "name": "App Control"
+      },
+      "native": {}
+    },
+    {
+      "_id": "appControl.app",
+      "type": "channel",
+      "common": {
+        "name": "Applications"
+      },
+      "native": {}
+    },
+    {
+      "_id": "appControl.terminateApps",
+      "type": "state",
+      "common": {
+        "name": "Terminate Applications",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "avContent",
+      "type": "folder",
+      "common": {
+        "name": "AV Content"
+      },
+      "native": {}
+    },
+    {
+      "_id": "avContent.tv",
+      "type": "channel",
+      "common": {
+        "name": "TV"
+      },
+      "native": {}
+    },
+    {
+      "_id": "avContent.extInput",
+      "type": "channel",
+      "common": {
+        "name": "External Input"
+      },
+      "native": {}
+    },
+    {
+      "_id": "avContent.fav",
+      "type": "channel",
+      "common": {
+        "name": "Favorites"
+      },
+      "native": {}
+    },
+    {
+      "_id": "source",
+      "type": "channel",
+      "common": {
+        "name": "Source"
+      },
+      "native": {}
+    },
+    {
+      "_id": "function",
+      "type": "channel",
+      "common": {
+        "name": "Main functions"
+      },
+      "native": {}
+    },
+    {
+      "_id": "player",
+      "type": "channel",
+      "common": {
+        "name": "Play Controls"
+      },
+      "native": {}
+    },
+    {
+      "_id": "others",
+      "type": "channel",
+      "common": {
+        "name": "Others"
+      },
+      "native": {}
+    },
+    {
+      "_id": "info.connection",
+      "type": "state",
+      "common": {
+        "role": "indicator.connected",
+        "name": "If connected to TV",
+        "type": "boolean",
+        "read": true,
+        "write": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "info.powerStatusActive",
+      "type": "state",
+      "common": {
+        "role": "switch",
+        "name": "If TV power status is acive",
+        "type": "boolean",
+        "read": true,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "info.modelInformation",
+      "type": "state",
+      "common": {
+        "role": "text",
+        "name": "Model name and information",
+        "type": "string",
+        "read": true,
+        "write": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "info.playingContentInfo",
+      "type": "state",
+      "common": {
+        "role": "text",
+        "name": "Title of the content to be recognized by the user",
+        "type": "string",
+        "read": true,
+        "write": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "function.AAAAAQAAAAEAAAAuAw==",
+      "type": "state",
+      "common": {
+        "name": "Power on",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "channel.AAAAAQAAAAEAAAAAAw==",
+      "type": "state",
+      "common": {
+        "name": "Num1",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "channel.AAAAAQAAAAEAAAABAw==",
+      "type": "state",
+      "common": {
+        "name": "Num2",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "channel.AAAAAQAAAAEAAAACAw==",
+      "type": "state",
+      "common": {
+        "name": "Num3",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "channel.AAAAAQAAAAEAAAADAw==",
+      "type": "state",
+      "common": {
+        "name": "Num4",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "channel.AAAAAQAAAAEAAAAEAw==",
+      "type": "state",
+      "common": {
+        "name": "Num5",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "channel.AAAAAQAAAAEAAAAFAw==",
+      "type": "state",
+      "common": {
+        "name": "Num6",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "channel.AAAAAQAAAAEAAAAGAw==",
+      "type": "state",
+      "common": {
+        "name": "Num7",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "channel.AAAAAQAAAAEAAAAHAw==",
+      "type": "state",
+      "common": {
+        "name": "Num8",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "channel.AAAAAQAAAAEAAAAIAw==",
+      "type": "state",
+      "common": {
+        "name": "Num9",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "channel.AAAAAQAAAAEAAAAJAw==",
+      "type": "state",
+      "common": {
+        "name": "Num0",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "channel.AAAAAQAAAAEAAAAKAw==",
+      "type": "state",
+      "common": {
+        "name": "Num11",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "channel.AAAAAQAAAAEAAAALAw==",
+      "type": "state",
+      "common": {
+        "name": "Num12",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "others.AAAAAQAAAAEAAAALAw==",
+      "type": "state",
+      "common": {
+        "name": "Enter",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "info.AAAAAQAAAAEAAAAOAw==",
+      "type": "state",
+      "common": {
+        "name": "GGuide",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "channel.AAAAAQAAAAEAAAAQAw==",
+      "type": "state",
+      "common": {
+        "name": "ChannelUp",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "channel.AAAAAQAAAAEAAAARAw==",
+      "type": "state",
+      "common": {
+        "name": "ChannelDown",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "function.AAAAAQAAAAEAAAASAw==",
+      "type": "state",
+      "common": {
+        "name": "VolumeUp",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "function.AAAAAQAAAAEAAAATAw==",
+      "type": "state",
+      "common": {
+        "name": "VolumeDown",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "function.AAAAAQAAAAEAAAAUAw==",
+      "type": "state",
+      "common": {
+        "name": "Mute",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "function.AAAAAQAAAAEAAAAVAw==",
+      "type": "state",
+      "common": {
+        "name": "TvPower",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "others.AAAAAQAAAAEAAAAXAw==",
+      "type": "state",
+      "common": {
+        "name": "Audio",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "others.AAAAAQAAAAEAAAAXAw==",
+      "type": "state",
+      "common": {
+        "name": "MediaAudioTrack",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "others.AAAAAQAAAAEAAAAkAw==",
+      "type": "state",
+      "common": {
+        "name": "Tv",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "source.AAAAAQAAAAEAAAAlAw==",
+      "type": "state",
+      "common": {
+        "name": "Input",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "source.AAAAAQAAAAEAAAAlAw==",
+      "type": "state",
+      "common": {
+        "name": "TvInput",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "source.AAAAAQAAAAEAAAAqAw==",
+      "type": "state",
+      "common": {
+        "name": "TvAntennaCable",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "others.AAAAAQAAAAEAAAAuAw==",
+      "type": "state",
+      "common": {
+        "name": "WakeUp",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "function.AAAAAQAAAAEAAAAvAw==",
+      "type": "state",
+      "common": {
+        "name": "PowerOff",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "others.AAAAAQAAAAEAAAAvAw==",
+      "type": "state",
+      "common": {
+        "name": "Sleep",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "others.AAAAAQAAAAEAAAAzAw==",
+      "type": "state",
+      "common": {
+        "name": "Right",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "others.AAAAAQAAAAEAAAA0Aw==",
+      "type": "state",
+      "common": {
+        "name": "Left",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "others.AAAAAQAAAAEAAAA2Aw==",
+      "type": "state",
+      "common": {
+        "name": "SleepTimer",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "source.AAAAAQAAAAEAAAA4Aw==",
+      "type": "state",
+      "common": {
+        "name": "Analog2",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "source.AAAAAQAAAAEAAAA4Aw==",
+      "type": "state",
+      "common": {
+        "name": "TvAnalog",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "others.AAAAAQAAAAEAAAA6Aw==",
+      "type": "state",
+      "common": {
+        "name": "Display",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "others.AAAAAQAAAAEAAAA7Aw==",
+      "type": "state",
+      "common": {
+        "name": "Jump",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "others.AAAAAQAAAAEAAAA+Aw==",
+      "type": "state",
+      "common": {
+        "name": "PicOff",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "others.AAAAAQAAAAEAAAA+Aw==",
+      "type": "state",
+      "common": {
+        "name": "PictureOff",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "others.AAAAAQAAAAEAAAA/Aw==",
+      "type": "state",
+      "common": {
+        "name": "Teletext",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "source.AAAAAQAAAAEAAABAAw==",
+      "type": "state",
+      "common": {
+        "name": "Video1",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "source.AAAAAQAAAAEAAABBAw==",
+      "type": "state",
+      "common": {
+        "name": "Video2",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "source.AAAAAQAAAAEAAABDAw==",
+      "type": "state",
+      "common": {
+        "name": "AnalogRgb1",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "others.AAAAAQAAAAEAAABgAw==",
+      "type": "state",
+      "common": {
+        "name": "Home",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "others.AAAAAQAAAAEAAABjAw==",
+      "type": "state",
+      "common": {
+        "name": "Exit",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "others.AAAAAQAAAAEAAABkAw==",
+      "type": "state",
+      "common": {
+        "name": "PictureMode",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "others.AAAAAQAAAAEAAABlAw==",
+      "type": "state",
+      "common": {
+        "name": "Confirm",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "others.AAAAAQAAAAEAAAB0Aw==",
+      "type": "state",
+      "common": {
+        "name": "Up",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "others.AAAAAQAAAAEAAAB1Aw==",
+      "type": "state",
+      "common": {
+        "name": "Down",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "others.AAAAAgAAAKQAAAAQAw==",
+      "type": "state",
+      "common": {
+        "name": "ClosedCaption",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "source.AAAAAgAAAKQAAAA2Aw==",
+      "type": "state",
+      "common": {
+        "name": "Component1",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "source.AAAAAgAAAKQAAAA3Aw==",
+      "type": "state",
+      "common": {
+        "name": "Component2",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "others.AAAAAgAAAKQAAAA9Aw==",
+      "type": "state",
+      "common": {
+        "name": "Wide",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "others.AAAAAgAAAKQAAABbAw==",
+      "type": "state",
+      "common": {
+        "name": "EPG",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "others.AAAAAgAAAKQAAAB3Aw==",
+      "type": "state",
+      "common": {
+        "name": "PAP",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "others.AAAAAgAAAJcAAAAMAw==",
+      "type": "state",
+      "common": {
+        "name": "TenKey",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "others.AAAAAgAAAJcAAAAQAw==",
+      "type": "state",
+      "common": {
+        "name": "BSCS",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "others.AAAAAgAAAJcAAAAVAw==",
+      "type": "state",
+      "common": {
+        "name": "Ddata",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "player.AAAAAgAAAJcAAAAYAw==",
+      "type": "state",
+      "common": {
+        "name": "Stop",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "player.AAAAAgAAAJcAAAAZAw==",
+      "type": "state",
+      "common": {
+        "name": "Pause",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "player.AAAAAgAAAJcAAAAaAw==",
+      "type": "state",
+      "common": {
+        "name": "Play",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "player.AAAAAgAAAJcAAAAbAw==",
+      "type": "state",
+      "common": {
+        "name": "Rewind",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "player.AAAAAgAAAJcAAAAcAw==",
+      "type": "state",
+      "common": {
+        "name": "Forward",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "others.AAAAAgAAAJcAAAAdAw==",
+      "type": "state",
+      "common": {
+        "name": "DOT",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "player.AAAAAgAAAJcAAAAgAw==",
+      "type": "state",
+      "common": {
+        "name": "Rec",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "player.AAAAAgAAAJcAAAAjAw==",
+      "type": "state",
+      "common": {
+        "name": "Return",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "function.AAAAAgAAAJcAAAAkAw==",
+      "type": "state",
+      "common": {
+        "name": "Blue",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "function.AAAAAgAAAJcAAAAlAw==",
+      "type": "state",
+      "common": {
+        "name": "Red",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "function.AAAAAgAAAJcAAAAmAw==",
+      "type": "state",
+      "common": {
+        "name": "Green",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "function.AAAAAgAAAJcAAAAnAw==",
+      "type": "state",
+      "common": {
+        "name": "Yellow",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "others.AAAAAgAAAJcAAAAoAw==",
+      "type": "state",
+      "common": {
+        "name": "SubTitle",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "others.AAAAAgAAAJcAAAArAw==",
+      "type": "state",
+      "common": {
+        "name": "CS",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "others.AAAAAgAAAJcAAAAsAw==",
+      "type": "state",
+      "common": {
+        "name": "BS",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "others.AAAAAgAAAJcAAAAyAw==",
+      "type": "state",
+      "common": {
+        "name": "Digital",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "others.AAAAAgAAAJcAAAA2Aw==",
+      "type": "state",
+      "common": {
+        "name": "Options",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "others.AAAAAgAAAJcAAAA4Aw==",
+      "type": "state",
+      "common": {
+        "name": "Media",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "others.AAAAAgAAAJcAAAA8Aw==",
+      "type": "state",
+      "common": {
+        "name": "Prev",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "others.AAAAAgAAAJcAAAA9Aw==",
+      "type": "state",
+      "common": {
+        "name": "Next",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "others.AAAAAgAAAJcAAABKAw==",
+      "type": "state",
+      "common": {
+        "name": "DpadCenter",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "others.AAAAAgAAAJcAAABPAw==",
+      "type": "state",
+      "common": {
+        "name": "CursorUp",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "others.AAAAAgAAAJcAAABQAw==",
+      "type": "state",
+      "common": {
+        "name": "CursorDown",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "others.AAAAAgAAAJcAAABNAw==",
+      "type": "state",
+      "common": {
+        "name": "CursorLeft",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "others.AAAAAgAAAJcAAABOAw==",
+      "type": "state",
+      "common": {
+        "name": "CursorRight",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "others.AAAAAgAAAJcAAABqAw==",
+      "type": "state",
+      "common": {
+        "name": "ShopRemoteControlForcedDynamic",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "others.AAAAAgAAAJcAAAB4Aw==",
+      "type": "state",
+      "common": {
+        "name": "FlashPlus",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "others.AAAAAgAAAJcAAAB5Aw==",
+      "type": "state",
+      "common": {
+        "name": "FlashMinus",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "others.AAAAAgAAAJcAAAB7Aw==",
+      "type": "state",
+      "common": {
+        "name": "AudioQualityMode",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "others.AAAAAgAAAJcAAAB8Aw==",
+      "type": "state",
+      "common": {
+        "name": "DemoMode",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "others.AAAAAgAAAHcAAAANAw==",
+      "type": "state",
+      "common": {
+        "name": "Analog",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "others.AAAAAgAAAHcAAABNAw==",
+      "type": "state",
+      "common": {
+        "name": "Mode3D",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "others.AAAAAgAAAHcAAABSAw==",
+      "type": "state",
+      "common": {
+        "name": "DigitalToggle",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "others.AAAAAgAAAHcAAAB7Aw==",
+      "type": "state",
+      "common": {
+        "name": "DemoSurround",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "others.AAAAAgAAABoAAAA7Aw==",
+      "type": "state",
+      "common": {
+        "name": "*AD",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "others.AAAAAgAAABoAAAA8Aw==",
+      "type": "state",
+      "common": {
+        "name": "AudioMixUp",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "others.AAAAAgAAABoAAAA9Aw==",
+      "type": "state",
+      "common": {
+        "name": "AudioMixDown",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "others.AAAAAgAAABoAAABVAw==",
+      "type": "state",
+      "common": {
+        "name": "PhotoFrame",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "source.AAAAAgAAABoAAABXAw==",
+      "type": "state",
+      "common": {
+        "name": "Tv_Radio",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "others.AAAAAgAAABoAAABYAw==",
+      "type": "state",
+      "common": {
+        "name": "SyncMenu",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "source.AAAAAgAAABoAAABaAw==",
+      "type": "state",
+      "common": {
+        "name": "Hdmi1",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "source.AAAAAgAAABoAAABbAw==",
+      "type": "state",
+      "common": {
+        "name": "Hdmi2",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "source.AAAAAgAAABoAAABcAw==",
+      "type": "state",
+      "common": {
+        "name": "Hdmi3",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "source.AAAAAgAAABoAAABdAw==",
+      "type": "state",
+      "common": {
+        "name": "Hdmi4",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "others.AAAAAgAAABoAAABgAw==",
+      "type": "state",
+      "common": {
+        "name": "TopMenu",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "others.AAAAAgAAABoAAABhAw==",
+      "type": "state",
+      "common": {
+        "name": "PopUpMenu",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "others.AAAAAgAAABoAAABkAw==",
+      "type": "state",
+      "common": {
+        "name": "OneTouchTimeRec",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "others.AAAAAgAAABoAAABlAw==",
+      "type": "state",
+      "common": {
+        "name": "OneTouchView",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "others.AAAAAgAAABoAAABzAw==",
+      "type": "state",
+      "common": {
+        "name": "DUX",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "others.AAAAAgAAABoAAAB2Aw==",
+      "type": "state",
+      "common": {
+        "name": "FootballMode",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "info.AAAAAgAAABoAAAB7Aw==",
+      "type": "state",
+      "common": {
+        "name": "iManual",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "others.AAAAAgAAABoAAAB8Aw==",
+      "type": "state",
+      "common": {
+        "name": "Netflix",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "info.AAAAAgAAAMQAAAA7Aw==",
+      "type": "state",
+      "common": {
+        "name": "Assists",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "others.AAAAAgAAAMQAAABLAw==",
+      "type": "state",
+      "common": {
+        "name": "ActionMenu",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "info.AAAAAgAAAMQAAABNAw==",
+      "type": "state",
+      "common": {
+        "name": "Help",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "source.AAAAAgAAAMQAAABOAw==",
+      "type": "state",
+      "common": {
+        "name": "TvSatellite",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "others.AAAAAgAAAMQAAAB+Aw==",
+      "type": "state",
+      "common": {
+        "name": "WirelessSubwoofer",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    }
+  ]
 }
