@@ -8,6 +8,7 @@ const Controller = require(__dirname + '/lib/bravia');
 const ping = require(__dirname + '/lib/ping');
 // const objectHelper = require('@apollon/iobroker-tools').objectHelper; // Get common adapter utils
 const http = require('http');
+const { addAbortSignal } = require('stream');
 
 let isConnected = null;
 let device;
@@ -15,7 +16,7 @@ let device;
 // you have to call the adapter function and pass a options object
 // name has to be set and has to be equal to adapters folder name and main file name excluding extension
 // adapter will be restarted automatically every time as the configuration changed, e.g system.adapter.template.0
-let adapter, statusInterval, powerStatusTimeout, playContentTimeout, terminateAppsTimeout, activeAppTimeout;
+let adapter, statusInterval, powerStatusTimeout, playContentTimeout, terminateAppsTimeout, activeAppTimeout, volumeMuteTimeout, volumeSetTimeout;
 function startAdapter(options) {
     options = options || {};
     Object.assign(options, {
@@ -26,7 +27,7 @@ function startAdapter(options) {
                     device.setPowerStatus(state.val).then(body => powerStatusTimeout = setTimeout(() => checkStatus(), 500)).catch(err => adapter.log.error(err));
                 }
                 else if (id.includes(".avContent.")) {
-                    turnOverIfPowerIsActiv(id, uri => {
+                    turnOverIfPowerIsActiv(id, state.val, uri => {
                         device.setPlayContent(uri).then(body => playContentTimeout = setTimeout(() => checkStatus(), 500)).catch(err => adapter.log.error(err));
                     });
                 }
@@ -36,8 +37,16 @@ function startAdapter(options) {
                     });
                 }
                 else if (id.includes(".appControl.app.")) {
-                    turnOverIfPowerIsActiv(id, uri => {
+                    turnOverIfPowerIsActiv(id, state.val, uri => {
                         device.setActiveApp(uri).then(body => activeAppTimeout = setTimeout(() => checkStatus(), 2000)).catch(err => adapter.log.error(err));
+                    });
+                }
+                else if (id.includes(".audio.volume.") && id.endsWith("mute")) {
+                    device.setMute(state.val).then(body => volumeMuteTimeout = setTimeout(() => checkStatus(), 2000)).catch(err => adapter.log.error(err));
+                }
+                else if (id.includes(".audio.volume.") && id.endsWith("volume")) {
+                    turnVolume(id, target => {
+                        device.setVolume(target, state.val).then(body => volumeSetTimeout = setTimeout(() => checkStatus(), 2000)).catch(err => adapter.log.error(err));
                     });
                 }
                 else if (id && state) {
@@ -55,6 +64,8 @@ function startAdapter(options) {
                 playContentTimeout && clearTimeout(playContentTimeout);
                 terminateAppsTimeout && clearTimeout(terminateAppsTimeout);
                 activeAppTimeout && clearTimeout(activeAppTimeout);
+                volumeMuteTimeout && clearTimeout(volumeMuteTimeout);
+                volumeSetTimeout && clearTimeout(volumeSetTimeout);
                 callback();
             } catch (e) {
                 callback();
@@ -96,15 +107,34 @@ function main() {
     }
 }
 
-function turnOverIfPowerIsActiv(id, turnOverCall) {
+function turnOverIfPowerIsActiv(id, value, turnOverCall) {
     ifPowerIsActiv(() => {
         adapter.getObject(id, (err, obj) => {
             if (err) {
                 adapter.log.error(err);
             } else {
-                const uri = obj.native.uri;
+                var uri;
+                if (id.endsWith('Selection')) {
+                    uri = obj.native[value];
+                } else {
+                    uri = obj.native.uri;
+                }
                 adapter.log.debug("Turn over to " + uri);
                 turnOverCall(uri);
+            }
+        });
+    })
+}
+
+function turnVolume(id, targetCall) {
+    ifPowerIsActiv(() => {
+        adapter.getObject(id, (err, obj) => {
+            if (err) {
+                adapter.log.error(err);
+            } else {
+                const target = obj.native.target;
+                adapter.log.debug("Controll volumne " + target);
+                targetCall(target);
             }
         });
     })
@@ -164,39 +194,7 @@ function createAvContentObjects() {
         if (Array.isArray(scheme)) {
             scheme.forEach(schema => {
                 device.getSourceList(schema.scheme).then(sources => {
-                    if (Array.isArray(sources)) {
-                        sources.forEach(source => {
-                            /* TODO: make this a config variable? */
-                            device.getContentList(0, 150, source.source).then(channels => {
-                                if (Array.isArray(channels)) {
-                                    channels.forEach(channel => {
-                                        if (channel.title && channel.title.length > 1) {
-                                            adapter.log.debug("Create " + schema.scheme + " AV Content " + channel.title + " at " + channel.uri);
-                                            adapter.setObjectNotExists("avContent." + schema.scheme + "." + toSnakeCase(channel.title), {
-                                                "type": "state",
-                                                "common": {
-                                                    "name": channel.title,
-                                                    "role": "button",
-                                                    "type": "boolean",
-                                                    "read": false,
-                                                    "write": true
-                                                },
-                                                native: {
-                                                    "uri": channel.uri
-                                                }
-                                            });
-                                        }
-                                    });
-                                } else {
-                                    adapter.log.error("Content List. Unknown content response " + JSON.stringify(channels));
-                                }
-                            }).catch(err => {
-                                adapter.log.error("ContentList " + err);
-                            });
-                        })
-                    } else {
-                        adapter.log.error("Source List. Unknown content response " + JSON.stringify(sources));
-                    }
+                    createAvContentSourceObjects(schema, sources);
                 }).catch(err => {
                     adapter.log.error("SourceList " + err);
                 });
@@ -209,6 +207,58 @@ function createAvContentObjects() {
     });
 }
 
+async function createAvContentSourceObjects(_schema, _sources) {
+    if (Array.isArray(_sources)) {
+        var werteliste = {
+            "type": "state",
+            "common": {
+                "name": "content selection",
+                "type": "string",
+                "role": "state",
+                "read": false,
+                "write": true,
+                "states": {}
+            },
+            "native": {}
+        };
+        for (const source of _sources) {
+            try {
+                var channels = await device.getContentList(0, /* TODO: make this a config variable? */ 150, source.source);
+                if (Array.isArray(channels)) {
+                    channels.forEach(channel => {
+                        if (channel.title && channel.title.length > 1) {
+                            adapter.log.debug("Create " + _schema.scheme + " AV Content " + channel.title + " at " + channel.uri);
+                            var snakeTitle = toSnakeCase(channel.title);
+                            adapter.setObjectNotExists("avContent." + _schema.scheme + "." + snakeTitle, {
+                                "type": "state",
+                                "common": {
+                                    "name": channel.title,
+                                    "role": "button",
+                                    "type": "boolean",
+                                    "read": false,
+                                    "write": true
+                                },
+                                native: {
+                                    "uri": channel.uri
+                                }
+                            });
+                            werteliste.common.states[snakeTitle] = channel.title;
+                            werteliste.native[snakeTitle] = channel.uri;
+                        }
+                    });
+                } else {
+                    adapter.log.error("Content List. Unknown content response " + JSON.stringify(channels));
+                }
+            } catch (err) {
+                adapter.log.error("ContentList " + err);
+            }
+        }
+        adapter.setObject("avContent." + _schema.scheme + "Selection", werteliste);
+    } else {
+        adapter.log.error("Source List. Unknown content response " + JSON.stringify(_sources));
+    }
+}
+
 function checkStatus() {
     ping.probe(adapter.config.ip, { log: adapter.log.debug }, function (err, result) {
         if (err) {
@@ -216,6 +266,8 @@ function checkStatus() {
             setConnected(false);
         }
         if (result) {
+            adapter.log.debug("Ping result: " + JSON.stringify(result));
+
             setConnected(result.alive);
 
             if (result.alive) {
@@ -223,13 +275,72 @@ function checkStatus() {
                 device.getPowerStatus().then(states => {
                     adapter.setState('info.powerStatusActive', { val: (states.result[0].status == 'active' ? true : false), ack: true });
                 }).catch(err => {
-                    adapter.log.error("powerStatus cannot be determined " + err);
+                    adapter.setState('info.powerStatusActive', { val: false, ack: true });
+                    adapter.log.info("powerStatus cannot be determined " + err);
                 })
 
                 device.getPlayingContentInfo().then(content => {
-                    adapter.setState('info.playingContentInfo', { val: content, ack: true });
+                    adapter.log.debug("Aktiv content: " + JSON.stringify(content));
+                    adapter.setState('info.playingContentInfo', { val: content.title, ack: true });
+                    // TODO set StateSelector value
+                    /* const snakeTitle = toSnakeCase(content.title);
+                    const scheme = content.source.substring(0, content.source.lastIndexOf(":"));
+                    adapter.setState("avContent." + scheme + "Selection", { val: snakeTitle, ack: true }); */
                 }).catch(err => {
-                    adapter.log.error("contentInfo cannot be determined " + err);
+                    adapter.setState('info.playingContentInfo', { val: "Illegal State", ack: true });
+                    adapter.log.debug("contentInfo cannot be determined " + JSON.stringify(err));
+                });
+
+                device.getVolumeInformation().then(setups => {
+                    if (Array.isArray(setups)) {
+                        setups.forEach(setup => {
+                            if (Array.isArray(setup)) {
+                                setup.forEach(audio => {
+                                    if (audio.target && audio.target.length > 1) {
+                                        adapter.setObjectNotExists("audio.volume." + toSnakeCase(audio.target), {
+                                            "type": "channel",
+                                            "common": {
+                                                "name": audio.target
+                                            },
+                                            native: {}
+                                        });
+                                        adapter.setObjectNotExists("audio.volume." + toSnakeCase(audio.target) + ".volume", {
+                                            "type": "state",
+                                            "common": {
+                                                "name": "Volumen",
+                                                "role": "state",
+                                                "type": "string",
+                                                "read": true,
+                                                "write": true
+                                            },
+                                            native: {
+                                                "target": audio.target
+                                            }
+                                        });
+                                        adapter.setState("audio.volume." + toSnakeCase(audio.target) + ".volume", { val: audio.volume.toString(), ack: true });
+                                        adapter.setObjectNotExists("audio.volume." + toSnakeCase(audio.target) + ".mute", {
+                                            "type": "state",
+                                            "common": {
+                                                "name": "Stumm",
+                                                "role": "switch",
+                                                "type": "boolean",
+                                                "read": true,
+                                                "write": true
+                                            },
+                                            native: {
+                                                "target": audio.target
+                                            }
+                                        });
+                                        adapter.setState("audio.volume." + toSnakeCase(audio.target) + ".mute", { val: audio.mute, ack: true });
+                                    }
+                                });
+                            }
+                        });
+                    } else {
+                        adapter.log.error("Volume Information. Unknown content response " + JSON.stringify(audios));
+                    }
+                }).catch(err => {
+                    adapter.log.info("volumeInformation cannot be determined " + err);
                 });
             } else {
                 adapter.setState('info.powerStatusActive', { val: false, ack: true });
