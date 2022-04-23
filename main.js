@@ -4,8 +4,8 @@
 
 // you have to require the utils module and call adapter function
 const utils = require('@iobroker/adapter-core'); // Get common adapter utils
-const Controller = require(__dirname + '/lib/bravia');
-const ping = require(__dirname + '/lib/ping');
+const Controller = require(`${__dirname}/lib/bravia`);
+const ping = require(`${__dirname}/lib/ping`);
 // const objectHelper = require('@apollon/iobroker-tools').objectHelper; // Get common adapter utils
 const http = require('http');
 const { addAbortSignal } = require('stream');
@@ -119,7 +119,7 @@ function turnOverIfPowerIsActiv(id, value, turnOverCall) {
                 } else {
                     uri = obj.native.uri;
                 }
-                adapter.log.debug("Turn over to " + uri);
+                adapter.log.debug(`Turn over to ${uri}`);
                 turnOverCall(uri);
             }
         });
@@ -133,7 +133,7 @@ function turnVolume(id, targetCall) {
                 adapter.log.error(err);
             } else {
                 const target = obj.native.target;
-                adapter.log.debug("Controll volumne " + target);
+                adapter.log.debug(`Controll volumne ${target}`);
                 targetCall(target);
             }
         });
@@ -165,8 +165,8 @@ function createAppObjects() {
         if (Array.isArray(apps)) {
             apps.forEach(app => {
                 if (app.title && app.title.length > 1) {
-                    adapter.log.debug("Create App " + app.title + " at " + app.uri);
-                    adapter.setObjectNotExists("appControl.app." + toSnakeCase(app.title), {
+                    adapter.log.debug(`Create App ${app.title} at ${app.uri}`);
+                    adapter.setObjectNotExists(`appControl.app.${toSnakeCase(app.title)}`, {
                         "type": "state",
                         "common": {
                             "name": app.title,
@@ -182,10 +182,10 @@ function createAppObjects() {
                 }
             });
         } else {
-            adapter.log.error("Application List. Unknown content response " + JSON.stringify(scheme));
+            adapter.log.error(`Application List. Unknown content response ${JSON.stringify(scheme)}`);
         }
     }).catch(err => {
-        adapter.log.error("ApplicationList " + err);
+        adapter.log.error(`ApplicationList ${err}`);
     });
 }
 
@@ -196,14 +196,14 @@ function createAvContentObjects() {
                 device.getSourceList(schema.scheme).then(sources => {
                     createAvContentSourceObjects(schema, sources);
                 }).catch(err => {
-                    adapter.log.error("SourceList " + err);
+                    adapter.log.error(`SourceList ${err}`);
                 });
             });
         } else {
-            adapter.log.error("Scheme List. Unknown content response " + JSON.stringify(scheme));
+            adapter.log.error(`Scheme List. Unknown content response ${JSON.stringify(scheme)}`);
         }
     }).catch(err => {
-        adapter.log.error("SchemeList " + err);
+        adapter.log.error(`SchemeList ${err}`);
     });
 }
 
@@ -227,9 +227,9 @@ async function createAvContentSourceObjects(_schema, _sources) {
                 if (Array.isArray(channels)) {
                     channels.forEach(channel => {
                         if (channel.title && channel.title.length > 1) {
-                            adapter.log.debug("Create " + _schema.scheme + " AV Content " + channel.title + " at " + channel.uri);
+                            adapter.log.debug(`Create ${_schema.scheme} AV Content ${channel.title} at ${channel.uri}`);
                             var snakeTitle = toSnakeCase(channel.title);
-                            adapter.setObjectNotExists("avContent." + _schema.scheme + "." + snakeTitle, {
+                            adapter.setObjectNotExists(`avContent.${_schema.scheme}.${snakeTitle}`, {
                                 "type": "state",
                                 "common": {
                                     "name": channel.title,
@@ -247,26 +247,26 @@ async function createAvContentSourceObjects(_schema, _sources) {
                         }
                     });
                 } else {
-                    adapter.log.error("Content List. Unknown content response " + JSON.stringify(channels));
+                    adapter.log.error(`Content List. Unknown content response ${JSON.stringify(channels)}`);
                 }
             } catch (err) {
-                adapter.log.error("ContentList " + err);
+                adapter.log.error(`ContentList ${err}`);
             }
         }
-        adapter.setObject("avContent." + _schema.scheme + "Selection", werteliste);
+        adapter.setObject(`avContent.${_schema.scheme}Selection`, werteliste);
     } else {
-        adapter.log.error("Source List. Unknown content response " + JSON.stringify(_sources));
+        adapter.log.error(`Source List. Unknown content response ${JSON.stringify(_sources)}`);
     }
 }
 
 function checkStatus() {
     ping.probe(adapter.config.ip, { log: adapter.log.debug }, function (err, result) {
         if (err) {
-            adapter.log.info("ping cannot be executed " + err);
+            adapter.log.info(`ping cannot be executed ${err}`);
             setConnected(false);
         }
         if (result) {
-            adapter.log.debug("Ping result: " + JSON.stringify(result));
+            adapter.log.debug(`Ping result: ${JSON.stringify(result)}`);
 
             setConnected(result.alive);
 
@@ -276,11 +276,11 @@ function checkStatus() {
                     adapter.setState('info.powerStatusActive', { val: (states.result[0].status == 'active' ? true : false), ack: true });
                 }).catch(err => {
                     adapter.setState('info.powerStatusActive', { val: false, ack: true });
-                    adapter.log.info("powerStatus cannot be determined " + err);
+                    adapter.log.info(`powerStatus cannot be determined ${err}`);
                 })
 
                 device.getPlayingContentInfo().then(content => {
-                    adapter.log.debug("Aktiv content: " + JSON.stringify(content));
+                    adapter.log.debug(`Aktiv content: ${JSON.stringify(content)}`);
                     adapter.setState('info.playingContentInfo', { val: content.title, ack: true });
                     // TODO set StateSelector value
                     /* const snakeTitle = toSnakeCase(content.title);
@@ -288,7 +288,7 @@ function checkStatus() {
                     adapter.setState("avContent." + scheme + "Selection", { val: snakeTitle, ack: true }); */
                 }).catch(err => {
                     adapter.setState('info.playingContentInfo', { val: "Illegal State", ack: true });
-                    adapter.log.debug("contentInfo cannot be determined " + JSON.stringify(err));
+                    adapter.log.debug(`contentInfo cannot be determined ${JSON.stringify(err)}`);
                 });
 
                 device.getVolumeInformation().then(setups => {
@@ -297,14 +297,14 @@ function checkStatus() {
                             if (Array.isArray(setup)) {
                                 setup.forEach(audio => {
                                     if (audio.target && audio.target.length > 1) {
-                                        adapter.setObjectNotExists("audio.volume." + toSnakeCase(audio.target), {
+                                        adapter.setObjectNotExists(`audio.volume.${toSnakeCase(audio.target)}`, {
                                             "type": "channel",
                                             "common": {
                                                 "name": audio.target
                                             },
                                             native: {}
                                         });
-                                        adapter.setObjectNotExists("audio.volume." + toSnakeCase(audio.target) + ".volume", {
+                                        adapter.setObjectNotExists(`audio.volume.${toSnakeCase(audio.target)}.volume`, {
                                             "type": "state",
                                             "common": {
                                                 "name": "Volumen",
@@ -317,8 +317,8 @@ function checkStatus() {
                                                 "target": audio.target
                                             }
                                         });
-                                        adapter.setState("audio.volume." + toSnakeCase(audio.target) + ".volume", { val: audio.volume.toString(), ack: true });
-                                        adapter.setObjectNotExists("audio.volume." + toSnakeCase(audio.target) + ".mute", {
+                                        adapter.setState(`audio.volume.${toSnakeCase(audio.target)}.volume`, { val: audio.volume.toString(), ack: true });
+                                        adapter.setObjectNotExists(`audio.volume.${toSnakeCase(audio.target)}.mute`, {
                                             "type": "state",
                                             "common": {
                                                 "name": "Stumm",
@@ -331,16 +331,16 @@ function checkStatus() {
                                                 "target": audio.target
                                             }
                                         });
-                                        adapter.setState("audio.volume." + toSnakeCase(audio.target) + ".mute", { val: audio.mute, ack: true });
+                                        adapter.setState(`audio.volume.${toSnakeCase(audio.target)}.mute`, { val: audio.mute, ack: true });
                                     }
                                 });
                             }
                         });
                     } else {
-                        adapter.log.error("Volume Information. Unknown content response " + JSON.stringify(audios));
+                        adapter.log.error(`Volume Information. Unknown content response ${JSON.stringify(audios)}`);
                     }
                 }).catch(err => {
-                    adapter.log.info("volumeInformation cannot be determined " + err);
+                    adapter.log.info(`volumeInformation cannot be determined ${err}`);
                 });
             } else {
                 adapter.setState('info.powerStatusActive', { val: false, ack: true });
