@@ -26,7 +26,7 @@ This is an ioBroker adapter for your Sony Bravia Smart-TV with Android OS. Teste
 
 ## Changelog
 
-### __WORK IN PROGRRES__
+### __WORK IN PROGRESS__
 * (Apollon77) Fix tier definition
 
 ### 1.0.6 (2022-04-23)
