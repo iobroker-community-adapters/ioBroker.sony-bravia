@@ -134,7 +134,7 @@
     "type": "multimedia",
     "dataSource": "poll",
     "connectionType": "local",
-    "tier": "2",
+    "tier": 2,
     "dependencies": [
       {
         "js-controller": ">=2.0.0"
