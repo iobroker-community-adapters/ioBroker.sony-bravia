@@ -1,8 +1,20 @@
 {
   "common": {
     "name": "sony-bravia",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "news": {
+      "1.0.7": {
+        "en": "Fix tier definition",
+        "de": "Ebenendefinition korrigieren",
+        "ru": "Исправить определение уровня",
+        "pt": "Corrigir definição de nível",
+        "nl": "Tierdefinitie repareren",
+        "fr": "Correction de la définition de niveau",
+        "it": "Correggi la definizione del livello",
+        "es": "Fijar definición de nivel",
+        "pl": "Napraw definicję poziomu",
+        "zh-cn": "修复层定义"
+      },
       "1.0.6": {
         "en": "Audio volume/mute control\nvalue lists for AV Contents\nAdd Sentry error reporting",
         "de": "Lautstärkeregelung/Stummschaltung\nWertelisten für AV-Inhalte\nSentry-Fehlerberichterstattung hinzugefügt",
@@ -74,18 +86,6 @@
         "es": "Soporte de admin3",
         "pl": "Wsparcie dla admin3",
         "zh-cn": "支持admin3"
-      },
-      "0.1.0": {
-        "en": "Test phase terminated. Adapter enabled.",
-        "de": "Testphase beendet. Adapter freigegeben.",
-        "ru": "Тестовая фаза завершена. Адаптер включен.",
-        "pt": "Fase de teste encerrada. Adaptador habilitado.",
-        "fr": "Phase de test terminée. Adaptateur activé.",
-        "nl": "Testfase beëindigd. Adapter ingeschakeld.",
-        "pl": "Faza testowa została zakończona. Adapter włączony.",
-        "it": "Fase di prova terminata Adattatore abilitato.",
-        "es": "Fase de prueba terminada. Adaptador habilitado.",
-        "zh-cn": "测试阶段终止。 启用适配器。"
       }
     },
     "authors": [
