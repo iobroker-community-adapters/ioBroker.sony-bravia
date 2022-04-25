@@ -51,7 +51,7 @@ function startAdapter(options) {
                 }
                 else if (id && state) {
                     id = id.substring(id.lastIndexOf('.') + 1);
-                    device.send(id);
+                    device.send(id).catch(err => adapter.log.error(err));
                 }
             }
         },
