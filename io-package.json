@@ -1,8 +1,20 @@
 {
   "common": {
     "name": "sony-bravia",
-    "version": "1.0.7",
+    "version": "1.0.8",
     "news": {
+      "1.0.8": {
+        "en": "Fix crash cases reported by sentry",
+        "de": "Absturzfälle behoben, die von der Wache gemeldet wurden",
+        "ru": "Исправить случаи сбоев, о которых сообщил часовой",
+        "pt": "Corrigir casos de falha relatados pela sentinela",
+        "nl": "Herstel crashgevallen gemeld door schildwacht",
+        "fr": "Correction des cas de plantage signalés par la sentinelle",
+        "it": "Risolvi i casi di crash segnalati dalla sentinella",
+        "es": "Solucionar casos de bloqueo informados por centinela",
+        "pl": "Napraw przypadki awarii zgłoszone przez wartownika",
+        "zh-cn": "修复哨兵报告的崩溃案例"
+      },
       "1.0.7": {
         "en": "Fix tier definition",
         "de": "Ebenendefinition korrigieren",
@@ -74,18 +86,6 @@
         "es": "compatibilidad de modo compacto agregado",
         "pl": "Dodano kompatybilność w trybie kompaktowym",
         "zh-cn": "增加了紧凑模式兼容性"
-      },
-      "1.0.0": {
-        "en": "Support of admin3",
-        "de": "Unterstützung von admin3",
-        "ru": "Поддержка admin3",
-        "pt": "Suporte de admin3",
-        "nl": "Ondersteuning van admin3",
-        "fr": "Support de admin3",
-        "it": "Supporto di admin3",
-        "es": "Soporte de admin3",
-        "pl": "Wsparcie dla admin3",
-        "zh-cn": "支持admin3"
       }
     },
     "authors": [
