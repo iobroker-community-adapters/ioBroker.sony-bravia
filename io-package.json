@@ -1,8 +1,20 @@
 {
   "common": {
     "name": "sony-bravia",
-    "version": "1.0.8",
+    "version": "1.0.9",
     "news": {
+      "1.0.9": {
+        "en": "Fix crash case on send introduced with last version",
+        "de": "Reparieren Sie Crash-Fall auf Senden eingeführt mit der letzten Version",
+        "ru": "Исправление случай аварии на отправке введен с последней версией",
+        "pt": "Corrigir caso de acidente no envio introduzido com última versão",
+        "nl": "Vertaling:",
+        "fr": "Fix crash case on send introduced with last version",
+        "it": "Fix caso crash invio introdotto con ultima versione",
+        "es": "Caso de bloqueo fijo en enviar presentado con la última versión",
+        "pl": "Sprawa rozbicia Fix została wprowadzona z ostatnią wersją",
+        "zh-cn": "Fixcrash案,最后版本"
+      },
       "1.0.8": {
         "en": "Fix crash cases reported by sentry",
         "de": "Absturzfälle behoben, die von der Wache gemeldet wurden",
@@ -74,18 +86,6 @@
         "es": "info.powerStatusActive agregado y otras optimizaciones",
         "pl": "Dodano info.powerStatusActive i inne optymalizacje",
         "zh-cn": "已添加info.powerStatusActive和其他优化"
-      },
-      "1.0.1": {
-        "en": "compact mode compatibility added",
-        "de": "Kompaktmodus-Kompatibilität hinzugefügt",
-        "ru": "добавлена ​​совместимость с компактным режимом",
-        "pt": "compatibilidade de modo compacto adicionada",
-        "nl": "compatibiliteit met compacte modus toegevoegd",
-        "fr": "Compatibilité en mode compact ajoutée",
-        "it": "aggiunta la compatibilità in modalità compatta",
-        "es": "compatibilidad de modo compacto agregado",
-        "pl": "Dodano kompatybilność w trybie kompaktowym",
-        "zh-cn": "增加了紧凑模式兼容性"
       }
     },
     "authors": [
