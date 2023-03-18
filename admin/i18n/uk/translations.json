@@ -1,1 +1,7 @@
-{}
+{
+    "IP": "IP",
+    "on save adapter restarts with new config immediately": "при збережені, адаптер негайно перезавантажується з новою конфігурацією",
+    "Turn your TV on": "Увімкніть Ваш теревізор",
+    "Go to home network setup": "Перейдіть до налаштування домашньої мережі",
+    "Go to remote device/Renderer and enter the Pre-Shared Key \"0000\" (or whatever you want your PSK Key to be)": "Перейдіть до віддаленого пристрою/рендерера та введіть PSK ключ «0000» (або будь-яке інше значення, яке ви виберете для вашого PSK ключа)"
+}
