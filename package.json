@@ -18,6 +18,10 @@
     "url": "https://github.com/iobroker-community-adapters/ioBroker.sony-bravia"
   },
   "dependencies": {
+    "@iobroker/adapter-core": "^2.6.0",
+    "mqtt": "^5.0.5"
+  },
+  "dependencies": {
     "node-ssdp": "^4.0.1",
     "request": "^2.88.2",
     "xml2js": "^0.4.23",
