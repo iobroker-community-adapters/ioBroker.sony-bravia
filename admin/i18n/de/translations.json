@@ -9,5 +9,5 @@
     "Set remote device/Renderer on": "Remote-Gerät / Renderer einschalten",
     "TV Setup": "TV-Setup",
     "Turn your TV on": "Schalten Sie Ihren Fernseher ein",
-    "on save adapter restarts with new config immediately": "Beim Speichern von Einstellungen der Adapter wird sofort neu gestartet."
+    "on save adapter restarts with new config immediately": "Beim Speichern wird der Adapter sofort mit der neuen Konfiguration neu gestartet"
 }
