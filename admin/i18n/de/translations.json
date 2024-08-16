@@ -1,7 +1,7 @@
 {
     "Go to home network setup": "Gehen Sie zum Heimnetzwerk-Setup",
     "Go to remote device/Renderer and enter the Pre-Shared Key \"0000\" (or whatever you want your PSK Key to be)": "Gehen Sie zu Remote-Gerät / Renderer und geben Sie den Pre-Shared Schlüssel \"0000\" ein (oder was auch immer Sie als PSK-Schlüssel verwenden möchten).",
-    "IP": "IP",
+    "IP": "IP-Adresse",
     "IP Control - Authentication - Normal and Pre-Shared Key": "IP-Steuerung -> Authentifizierung -> Normal und Pre-Shared Schlüssel",
     "On the TV, go to Settings - Network - Home network setup": "Auf dem Fernsehgerät, gehen Sie zu Einstellungen -> Netzwerk -> Heimnetzwerk-Setup",
     "PSK Key": "PSK Schlüssel",
