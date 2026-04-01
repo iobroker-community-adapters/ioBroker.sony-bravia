@@ -7,8 +7,8 @@ const utils = require('@iobroker/adapter-core'); // Get common adapter utils
 const Controller = require(`${__dirname}/lib/bravia`);
 const ping = require(`${__dirname}/lib/ping`);
 // const objectHelper = require('@apollon/iobroker-tools').objectHelper; // Get common adapter utils
-const http = require('http');
-const { addAbortSignal } = require('stream');
+const http = require('node:http');
+const { addAbortSignal } = require('node:stream');
 
 let isConnected = null;
 let device;
