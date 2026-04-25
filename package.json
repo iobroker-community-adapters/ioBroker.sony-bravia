@@ -9,6 +9,7 @@
   "homepage": "https://github.com/iobroker-community-adapters/ioBroker.sony-bravia",
   "license": "MIT",
   "keywords": [
+    "ioBroker",
     "sony",
     "bravia",
     "smart-tv"
