@@ -18,7 +18,7 @@
     "url": "https://github.com/iobroker-community-adapters/ioBroker.sony-bravia"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=20"
   },
   "dependencies": {
     "node-ssdp": "^4.0.1",
