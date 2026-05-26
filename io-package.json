@@ -125,7 +125,6 @@
       "type": "free"
     },
     "icon": "sony-bravia.png",
-    "materialize": true,
     "enabled": true,
     "extIcon": "https://raw.githubusercontent.com/iobroker-community-adapters/ioBroker.sony-bravia/master/admin/sony-bravia.png",
     "keywords": [
@@ -153,6 +152,9 @@
       "sentry": {
         "dsn": "https://75d833308143465fb10a0bca4adf3c6a@sentry.iobroker.net/192"
       }
+    },
+    "adminUI": {
+      "config": "materialize"
     }
   },
   "native": {
