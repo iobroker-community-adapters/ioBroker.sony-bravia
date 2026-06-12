@@ -1,0 +1,115 @@
+{
+  "i18n": true,
+  "type": "panel",
+  "items": {
+    "ip": {
+      "type": "ip",
+      "label": "IP",
+      "placeholder": "192.168.x.x",
+      "xs": 12,
+      "sm": 6,
+      "md": 6,
+      "lg": 4,
+      "xl": 4
+    },
+    "psk": {
+      "type": "text",
+      "label": "PSK Key",
+      "placeholder": "0000",
+      "xs": 12,
+      "sm": 6,
+      "md": 6,
+      "lg": 4,
+      "xl": 4
+    },
+    "_tvSetup": {
+      "newLine": true,
+      "type": "staticText",
+      "text": "TV Setup",
+      "style": {
+        "fontSize": 20,
+        "fontWeight": "bold"
+      },
+      "xs": 12,
+      "sm": 12,
+      "md": 12,
+      "lg": 12,
+      "xl": 12
+    },
+    "_turnOnTv": {
+      "type": "staticText",
+      "text": "Turn your TV on",
+      "xs": 12,
+      "sm": 12,
+      "md": 12,
+      "lg": 12,
+      "xl": 12
+    },
+    "_networkSetup": {
+      "type": "staticText",
+      "text": "On the TV, go to Settings - Network - Home network setup",
+      "xs": 12,
+      "sm": 12,
+      "md": 12,
+      "lg": 12,
+      "xl": 12
+    },
+    "_renderer": {
+      "type": "staticText",
+      "text": "Set remote device/Renderer on",
+      "xs": 12,
+      "sm": 12,
+      "md": 12,
+      "lg": 12,
+      "xl": 12
+    },
+    "_goToNetworkSetup": {
+      "type": "staticText",
+      "text": "Go to home network setup",
+      "xs": 12,
+      "sm": 12,
+      "md": 12,
+      "lg": 12,
+      "xl": 12
+    },
+    "_ipControl": {
+      "type": "staticText",
+      "text": "IP Control - Authentication - Normal and Pre-Shared Key",
+      "xs": 12,
+      "sm": 12,
+      "md": 12,
+      "lg": 12,
+      "xl": 12
+    },
+    "_pskSetup": {
+      "type": "staticText",
+      "text": "Go to remote device/Renderer and enter the Pre-Shared Key \"0000\" (or whatever you want your PSK Key to be)",
+      "xs": 12,
+      "sm": 12,
+      "md": 12,
+      "lg": 12,
+      "xl": 12
+    },
+    "_simpleIpControl": {
+      "type": "staticText",
+      "text": "Set Simple IP Control on",
+      "xs": 12,
+      "sm": 12,
+      "md": 12,
+      "lg": 12,
+      "xl": 12
+    },
+    "_restartInfo": {
+      "type": "staticText",
+      "text": "on save adapter restarts with new config immediately",
+      "style": {
+        "fontStyle": "italic"
+      },
+      "xs": 12,
+      "sm": 12,
+      "md": 12,
+      "lg": 12,
+      "xl": 12
+    }
+  }
+}
