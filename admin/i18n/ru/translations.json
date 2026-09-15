@@ -9,5 +9,5 @@
     "Set remote device/Renderer on": "Установить удаленное устройство / рендерер на",
     "TV Setup": "Настройка телевизора",
     "Turn your TV on": "Включи телевизор",
-    "on save adapter restarts with new config immediately": "При сохранении адаптер перезапускается с новым конфигом немедленно."
+    "on save adapter restarts with new config immediately": "при сохранении адаптер немедленно перезагружается с новой конфигурацией"
 }
