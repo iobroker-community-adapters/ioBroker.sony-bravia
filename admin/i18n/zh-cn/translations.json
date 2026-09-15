@@ -9,5 +9,5 @@
     "Set remote device/Renderer on": "设置远程设备/渲染器",
     "TV Setup": "电视设置",
     "Turn your TV on": "打开电视",
-    "on save adapter restarts with new config immediately": "保存适配器立即重新启动新配置"
+    "on save adapter restarts with new config immediately": "保存适配器后立即使用新配置重新启动"
 }
