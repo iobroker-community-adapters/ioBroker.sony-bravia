@@ -154,8 +154,9 @@
       }
     },
     "adminUI": {
-      "config": "materialize"
-    }
+      "config": "json"
+    },
+    "nogit": true
   },
   "native": {
     "ip": "",

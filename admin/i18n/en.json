@@ -1,0 +1,12 @@
+{
+    "IP": "IP",
+    "PSK Key": "PSK Key",
+    "TV Setup": "TV Setup",
+    "Turn your TV on": "Turn your TV on",
+    "On the TV, go to Settings -> Network -> Home network setup": "On the TV, go to Settings -> Network -> Home network setup",
+    "Set remote device/Renderer on": "Set remote device/Renderer on",
+    "Go to home network setup": "Go to home network setup",
+    "IP Control -> Authentication -> Normal and Pre-Shared Key": "IP Control -> Authentication -> Normal and Pre-Shared Key",
+    "Go to remote device/Renderer and enter the Pre-Shared Key \"0000\" (or whatever you want your PSK Key to be)": "Go to remote device/Renderer and enter the Pre-Shared Key \"0000\" (or whatever you want your PSK Key to be)",
+    "Set Simple IP Control on": "Set Simple IP Control on"
+}

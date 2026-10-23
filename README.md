@@ -31,6 +31,8 @@ This is an ioBroker adapter for your Sony Bravia Smart-TV with Android OS. Teste
 -->
 
 ### **WORK IN PROGRESS**
+- (bluefox) The adapter was refactored to TypeScript and JsonConfig
+- (bluefox) Replaced the deprecated `request` library with `axios`
 - (copilot) Adapter requires node.js >= 22 now
 - (iobroker-bot) Adapter requires node.js >= 20 now.
 - (copilot) Adapter requires admin >= 7.7.22 now
