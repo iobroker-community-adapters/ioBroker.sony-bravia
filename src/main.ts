@@ -9,13 +9,10 @@ const STATUS_INTERVAL = 10_000; /* TODO: make this a config variable? */
 /** Number of channels read per source */
 const CONTENT_COUNT = 150; /* TODO: make this a config variable? */
 
+/** @returns '' if `str` contains no latin letters or digits (e.g. a title in Cyrillic or Chinese only) */
 const toSnakeCase = (str: string): string => {
     const parts = str.match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]+|[0-9]+/g);
-    if (!parts) {
-        // the old code crashed here with "Cannot read properties of null", which aborted the current loop
-        throw new TypeError(`Cannot convert "${str}" into an object ID`);
-    }
-    return parts.map(x => x.toLowerCase()).join('_');
+    return parts ? parts.map(x => x.toLowerCase()).join('_') : '';
 };
 
 class SonyBraviaAdapter extends utils.Adapter {
@@ -162,8 +159,13 @@ class SonyBraviaAdapter extends utils.Adapter {
             if (Array.isArray(apps)) {
                 for (const app of apps) {
                     if (app.title && app.title.length > 1) {
+                        const snakeTitle = toSnakeCase(app.title);
+                        if (!snakeTitle) {
+                            this.log.warn(`Cannot create an object ID for app "${app.title}", skipped`);
+                            continue;
+                        }
                         this.log.debug(`Create App ${app.title} at ${app.uri}`);
-                        await this.setObjectNotExistsAsync(`appControl.app.${toSnakeCase(app.title)}`, {
+                        await this.setObjectNotExistsAsync(`appControl.app.${snakeTitle}`, {
                             type: 'state',
                             common: {
                                 name: app.title,
@@ -219,8 +221,12 @@ class SonyBraviaAdapter extends utils.Adapter {
                 if (Array.isArray(channels)) {
                     for (const channel of channels) {
                         if (channel.title && channel.title.length > 1) {
-                            this.log.debug(`Create ${schema.scheme} AV Content ${channel.title} at ${channel.uri}`);
                             const snakeTitle = toSnakeCase(channel.title);
+                            if (!snakeTitle) {
+                                this.log.warn(`Cannot create an object ID for "${channel.title}", skipped`);
+                                continue;
+                            }
+                            this.log.debug(`Create ${schema.scheme} AV Content ${channel.title} at ${channel.uri}`);
                             await this.setObjectNotExistsAsync(`avContent.${schema.scheme}.${snakeTitle}`, {
                                 type: 'state',
                                 common: {
@@ -323,7 +329,7 @@ class SonyBraviaAdapter extends utils.Adapter {
                     continue;
                 }
                 for (const audio of setup) {
-                    if (audio.target && audio.target.length > 1) {
+                    if (audio.target && audio.target.length > 1 && toSnakeCase(audio.target)) {
                         const id = `audio.volume.${toSnakeCase(audio.target)}`;
                         await this.setObjectNotExistsAsync(id, {
                             type: 'channel',

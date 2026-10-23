@@ -37,8 +37,8 @@ const SERVICE_PROTOCOLS = [
 type ServiceProtocolName = (typeof SERVICE_PROTOCOLS)[number];
 
 const DEFAULT_TIME_BETWEEN_COMMANDS = 350;
-/** A raw IRCC code like `AAAAAQAAAAEAAAAuAw==`. Everything else is looked up by name. */
-const IRCC_CODE_REGEX = /^[A]{5}[a-zA-Z0-9]{13}={2}$/;
+/** A raw IRCC code (base64) like `AAAAAQAAAAEAAAAuAw==` or `AAAAAQAAAAEAAAA+Aw==`. Everything else is looked up by name. */
+const IRCC_CODE_REGEX = /^[A]{5}[a-zA-Z0-9+/]{13}={2}$/;
 
 /** Client for the Sony Bravia REST API (https://pro-bravia.sony.net/develop/integrate/rest-api/spec/) */
 export class Bravia {
