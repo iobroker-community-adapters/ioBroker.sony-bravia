@@ -57,6 +57,13 @@ The integration test caches the test installation in `%TEMP%/test-iobroker.sony-
   (custom JsonConfig component, `guiApi: 2` = `@iobroker/gui-components`, needs admin 8). Keys are the raw IRCC
   codes also used by the button states in `io-package.json`. Status via subscriptions of `info.connection`,
   `info.powerStatusActive`, `info.playingContentInfo`. Texts in `src-admin/src/i18n` (`custom_sonybravia_*`).
+- `src/lib/tv.ts` + `createTvObjects()` / `handleTvCommand()` in main.ts — channel `tv` for the device type `tv` of
+  `@iobroker/type-detector` (>= 6.2.0), parallel to the old objects: `power` (`switch.power`), `key` (`media.key`,
+  `TV_KEYS` → IRCC codes), `volume` (`level.volume`, speaker), `muted` (`media.mute`), `volumeUp`/`volumeDown`,
+  `input` (`media.input`, from the `extInput` URIs), `app` (`media.app`, installed apps matched by title),
+  `unreach`. Keys of `common.states` must be fixed values of the type-detector (`TV_KEYS`, `TV_INPUTS`, `TV_APPS`).
+  `.tv.` writes are dispatched first in `handleCommand` (its last branch sends any unknown ID as IRCC code).
+  The integration test runs the type-detector on the created objects.
 - `src/lib/types.ts` — API payloads. `src/lib/adapter-config.d.ts` — typed `this.config`; must match `native`
   in `io-package.json` and `admin/jsonConfig.json`.
 
