@@ -20,9 +20,12 @@
                 },
                 "ip": {
                     "newLine": true,
-                    "type": "text",
+                    "type": "autocompleteSendTo",
                     "label": "IP",
+                    "command": "discover",
+                    "freeSolo": true,
                     "maxLength": 15,
+                    "help": "TVs found in the network are offered for selection (the instance must be running)",
                     "xs": 12,
                     "sm": 12,
                     "md": 6,

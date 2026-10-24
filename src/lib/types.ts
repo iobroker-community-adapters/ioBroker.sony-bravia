@@ -86,6 +86,9 @@ export interface IrccCode {
 
 /** A TV found by `Bravia.discover()` */
 export interface DiscoveredDevice {
+    /** IP address (or host name) of the TV, what goes into `native.ip` */
+    ip: string;
+    /** host incl. port if it is not 80 */
     host: string;
     port: string | number;
     friendlyName: string;
@@ -101,7 +104,7 @@ export interface UpnpDescription {
         device: {
             friendlyName: string[];
             manufacturer: string[];
-            manufacturerURL: string[];
+            manufacturerURL?: string[];
             modelName: string[];
             UDN: string[];
             serviceList?: {

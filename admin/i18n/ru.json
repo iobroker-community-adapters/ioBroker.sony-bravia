@@ -10,5 +10,6 @@
     "Go to remote device/Renderer and enter the Pre-Shared Key \"0000\" (or whatever you want your PSK Key to be)": "Перейдите к удаленному устройству / средству визуализации и введите предварительный общий ключ «0000» (или любой другой ключ PSK)",
     "Set Simple IP Control on": "Установить простое управление IP на",
     "Settings": "Настройки",
-    "Remote control": "Пульт ДУ"
+    "Remote control": "Пульт ДУ",
+    "TVs found in the network are offered for selection (the instance must be running)": "Найденные в сети телевизоры предлагаются для выбора (экземпляр должен быть запущен)"
 }

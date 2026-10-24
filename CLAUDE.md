@@ -46,7 +46,8 @@ The integration test caches the test installation in `%TEMP%/test-iobroker.sony-
 - `src/lib/bravia.ts` — `Bravia`: REST client (`axios`). `jsonRequest()` for `/sony/<service>` JSON-RPC,
   `request()` for `/sony/IRCC` (SOAP) and `ServiceProtocol.invoke()`. `send()` accepts raw IRCC codes or names
   (resolved via `system/getRemoteControllerInfo`) and waits `delay` ms after every code.
-  `discover()` (SSDP, `node-ssdp` + `xml2js`) is not used by the adapter.
+  `discover()` (SSDP for the IRCC service, `node-ssdp` + `xml2js`) feeds the IP field: `sendTo` `discover` →
+  `[{ value: ip, label }]` for the `autocompleteSendTo` in `admin/jsonConfig.json`; skips unusable devices, dedupes by UDN.
 - `src/lib/service-protocol.ts` — generic `/sony/<service>` invoker (`getVersions`, `getMethodTypes`, `invoke`).
 - `src/lib/ping.ts` — spawns the OS ping command (Linux/Windows/macOS/FreeBSD).
   - `onMessage` (`common.messagebox: true`) serves the remote control: `remoteInfo` → `{ apps, inputs }` (from the

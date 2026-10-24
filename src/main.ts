@@ -17,7 +17,9 @@ interface RemoteMessage {
 }
 
 type RemoteResponse =
-    { result: 'ok' } | { apps: { id: string; name: string }[]; inputs: { id: string; name: string }[] };
+    | { result: 'ok' }
+    | { apps: { id: string; name: string }[]; inputs: { id: string; name: string }[] }
+    | { value: string; label: string }[];
 
 /** @returns '' if `str` contains no latin letters or digits (e.g. a title in Cyrillic or Chinese only) */
 const toSnakeCase = (str: string): string => {
@@ -45,6 +47,9 @@ class SonyBraviaAdapter extends utils.Adapter {
      * - `remote` `{ key }`: an IRCC code (raw or by name)
      * - `power` `{ on }`, `launchApp` `{ id }`, `input` `{ id }` (IDs relative to the namespace)
      *
+     * And of the IP field (`autocompleteSendTo` in admin/jsonConfig.json):
+     * - `discover` → `[{ value: ip, label }]`: TVs found via SSDP
+     *
      * Every command answers `{ result: 'ok' }` or `{ error }` once the TV answered.
      */
     private onMessage(obj: ioBroker.Message): void {
@@ -60,6 +65,14 @@ class SonyBraviaAdapter extends utils.Adapter {
 
     private async handleMessage(obj: ioBroker.Message): Promise<RemoteResponse> {
         const message = (obj.message || {}) as RemoteMessage;
+        if (obj.command === 'discover') {
+            const devices = await Bravia.discover(this);
+            this.log.debug(`Discovery: ${JSON.stringify(devices)}`);
+            return devices.map(device => ({
+                value: device.ip,
+                label: `${device.friendlyName || device.modelName} (${device.ip})`,
+            }));
+        }
         if (obj.command === 'remoteInfo') {
             return {
                 apps: await this.getButtons('appControl.app.'),

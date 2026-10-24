@@ -10,5 +10,6 @@
     "Go to remote device/Renderer and enter the Pre-Shared Key \"0000\" (or whatever you want your PSK Key to be)": "Allez au périphérique / moteur de rendu distant et entrez la clé pré-partagée \"0000\" (ou quelle que soit votre clé PSK)",
     "Set Simple IP Control on": "Activer le contrôle IP simple",
     "Settings": "Paramètres",
-    "Remote control": "Télécommande"
+    "Remote control": "Télécommande",
+    "TVs found in the network are offered for selection (the instance must be running)": "Les téléviseurs trouvés sur le réseau sont proposés à la sélection (l'instance doit être en cours d'exécution)"
 }

@@ -35,6 +35,7 @@ This is an ioBroker adapter for your Sony Bravia Smart-TV with Android OS. Teste
 - (bluefox) Replaced the deprecated `request` library with `axios`
 - (bluefox) Fixed the buttons PicOff, PictureOff, Teletext and WirelessSubwoofer (IRCC codes with `+` or `/`)
 - (bluefox) Apps and channels with non-latin titles no longer abort the creation of the remaining objects
+- (bluefox) The IP field offers the TVs found in the network
 - (bluefox) Added a remote control to the instance settings (tab "Remote control", requires admin 8)
 - (copilot) Adapter requires node.js >= 22 now
 - (iobroker-bot) Adapter requires node.js >= 20 now.

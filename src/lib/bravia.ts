@@ -77,76 +77,85 @@ export class Bravia {
         this.url = `http://${this.host}:${this.port}/sony`;
     }
 
-    /** Searches the network via SSDP for TVs. Not used by the adapter itself. */
+    /**
+     * Searches the network via SSDP for TVs with the IRCC service (used by the IP field of the settings).
+     * A device that answers with an unusable description is skipped (debug log), it does not fail the search.
+     */
     public static discover(adapter: ioBroker.Adapter, timeout = 3000): Promise<DiscoveredDevice[]> {
-        return new Promise((resolve, reject) => {
+        return new Promise(resolve => {
             const ssdp = new SsdpClient();
-            const discovered: DiscoveredDevice[] = [];
-            const timer = adapter.setTimeout(() => {
-                void ssdp.stop();
-                resolve(discovered);
-            }, timeout);
+            const discovered = new Map<string, DiscoveredDevice>();
+            const pending = new Set<string>();
 
-            const failed = (error: Error): void => {
-                void ssdp.stop();
-                adapter.clearTimeout(timer);
-                reject(error);
+            const skip = (address: string, reason: string): void =>
+                adapter.log.debug(`Discovery: device ${address} skipped: ${reason}`);
+
+            const addDevice = (location: string, address: string, xml: string): void => {
+                parseString(xml, (err: Error | null, result: UpnpDescription) => {
+                    if (err) {
+                        skip(address, `cannot parse the description: ${err.message}`);
+                        return;
+                    }
+                    try {
+                        const device = result.root.device[0];
+                        if (!device.serviceList) {
+                            // Not all devices return a serviceList (e.g. Philips Hue gateway responds without serviceList)
+                            return;
+                        }
+                        const service = device.serviceList[0].service.find(
+                            service => service.serviceType[0] === SSDP_SERVICE_TYPE,
+                        );
+                        if (!service) {
+                            skip(address, 'no IRCC service');
+                            return;
+                        }
+
+                        const api = new URL(service.controlURL[0], location);
+                        const udn = device.UDN[0];
+                        discovered.set(udn, {
+                            ip: api.hostname || address,
+                            host: api.host,
+                            port: api.port || 80,
+                            friendlyName: device.friendlyName[0],
+                            manufacturer: device.manufacturer[0],
+                            manufacturerURL: device.manufacturerURL?.[0] || '',
+                            modelName: device.modelName[0],
+                            UDN: udn,
+                        });
+                    } catch (e) {
+                        skip(address, `unexpected description: ${(e as Error).message}`);
+                    }
+                });
             };
 
             ssdp.on('response', (headers, statusCode, data) => {
-                if (statusCode !== 200) {
+                const location = String(headers.LOCATION || '');
+                // a TV answers once per service and network interface, read every description only once
+                if (statusCode !== 200 || !location || pending.has(location)) {
                     return;
                 }
+                pending.add(location);
                 axios
-                    .get<string>(String(headers.LOCATION), {
+                    .get<string>(location, {
+                        timeout,
+                        signal: AbortSignal.timeout(timeout),
                         responseType: 'text',
                         validateStatus: () => true,
                     })
                     .then(response => {
                         if (response.status !== 200) {
-                            failed(new Error(`Error retrieving the description metadata for device ${data.address}.`));
+                            skip(data.address, `description answered with status ${response.status}`);
                             return;
                         }
-                        const body = response.data;
-                        parseString(body, (err: Error | null, result: UpnpDescription) => {
-                            if (err) {
-                                failed(new Error(`Failed to parse the discovery response: ${body}.`));
-                                return;
-                            }
-                            try {
-                                const device = result.root.device[0];
-                                if (!device.serviceList) {
-                                    // Not all devices return a serviceList (e.g. Philips Hue gateway responds without serviceList)
-                                    return;
-                                }
-                                const service = device.serviceList[0].service.find(
-                                    service => service.serviceType[0] === SSDP_SERVICE_TYPE,
-                                );
-                                if (!service) {
-                                    throw new Error('IRCC service not found');
-                                }
-
-                                const api = new URL(service.controlURL[0]);
-                                discovered.push({
-                                    host: api.host,
-                                    port: api.port || 80,
-                                    friendlyName: device.friendlyName[0],
-                                    manufacturer: device.manufacturer[0],
-                                    manufacturerURL: device.manufacturerURL[0],
-                                    modelName: device.modelName[0],
-                                    UDN: device.UDN[0],
-                                });
-                            } catch {
-                                failed(
-                                    new Error(`Unexpected or malformed discovery response: ${JSON.stringify(result)}.`),
-                                );
-                            }
-                        });
+                        addDevice(location, data.address, response.data);
                     })
-                    .catch(() =>
-                        failed(new Error(`Error retrieving the description metadata for device ${data.address}.`)),
-                    );
+                    .catch(e => skip(data.address, `cannot read the description: ${(e as Error).message}`));
             });
+
+            adapter.setTimeout(() => {
+                void ssdp.stop();
+                resolve([...discovered.values()]);
+            }, timeout);
 
             void ssdp.search(SSDP_SERVICE_TYPE);
         });
