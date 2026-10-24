@@ -5,13 +5,13 @@ export default [
     {
         languageOptions: {
             parserOptions: {
-                projectService: { allowDefaultProject: ['*.mjs'] },
+                projectService: { allowDefaultProject: ['*.mjs', 'tasks.ts'] },
                 tsconfigRootDir: import.meta.dirname,
             },
         },
     },
     {
-        ignores: ['admin/**/*', 'node_modules/**/*', 'test/**/*', 'build/**/*', 'tmp/**/*', '.**/*'],
+        ignores: ['src-admin/**/*', 'admin/**/*', 'node_modules/**/*', 'test/**/*', 'build/**/*', 'tmp/**/*', '.**/*'],
     },
     {
         rules: {

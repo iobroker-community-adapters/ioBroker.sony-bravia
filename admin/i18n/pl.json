@@ -8,5 +8,7 @@
     "Go to home network setup": "Przejdź do konfiguracji sieci domowej",
     "IP Control -> Authentication -> Normal and Pre-Shared Key": "Kontrola IP -> Uwierzytelnianie -> Klucz normalny i wstępny",
     "Go to remote device/Renderer and enter the Pre-Shared Key \"0000\" (or whatever you want your PSK Key to be)": "Przejdź do zdalnego urządzenia / renderera i wprowadź klucz wstępny \"0000\" (lub jakikolwiek jest twój klucz PSK)",
-    "Set Simple IP Control on": "Włącz włączoną prostą kontrolę IP"
+    "Set Simple IP Control on": "Włącz włączoną prostą kontrolę IP",
+    "Settings": "Ustawienia",
+    "Remote control": "Pilot"
 }

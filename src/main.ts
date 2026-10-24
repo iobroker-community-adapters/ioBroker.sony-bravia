@@ -9,6 +9,16 @@ const STATUS_INTERVAL = 10_000; /* TODO: make this a config variable? */
 /** Number of channels read per source */
 const CONTENT_COUNT = 150; /* TODO: make this a config variable? */
 
+/** Payload of the `sendTo` commands of the remote control */
+interface RemoteMessage {
+    key?: string;
+    on?: boolean;
+    id?: string;
+}
+
+type RemoteResponse =
+    { result: 'ok' } | { apps: { id: string; name: string }[]; inputs: { id: string; name: string }[] };
+
 /** @returns '' if `str` contains no latin letters or digits (e.g. a title in Cyrillic or Chinese only) */
 const toSnakeCase = (str: string): string => {
     const parts = str.match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]+|[0-9]+/g);
@@ -25,7 +35,98 @@ class SonyBraviaAdapter extends utils.Adapter {
 
         this.on('ready', () => this.onReady());
         this.on('stateChange', (id, state) => this.onStateChange(id, state));
+        this.on('message', obj => this.onMessage(obj));
         this.on('unload', callback => this.onUnload(callback));
+    }
+
+    /**
+     * Commands of the remote control in the admin (src-admin/src/RemoteControlComponent.tsx):
+     * - `remoteInfo` → `{ apps, inputs }`: the app and external input objects to show as buttons
+     * - `remote` `{ key }`: an IRCC code (raw or by name)
+     * - `power` `{ on }`, `launchApp` `{ id }`, `input` `{ id }` (IDs relative to the namespace)
+     *
+     * Every command answers `{ result: 'ok' }` or `{ error }` once the TV answered.
+     */
+    private onMessage(obj: ioBroker.Message): void {
+        if (!obj?.callback) {
+            return;
+        }
+        this.handleMessage(obj)
+            .then(response => this.sendTo(obj.from, obj.command, response, obj.callback))
+            .catch(err =>
+                this.sendTo(obj.from, obj.command, { error: (err as Error).message || String(err) }, obj.callback),
+            );
+    }
+
+    private async handleMessage(obj: ioBroker.Message): Promise<RemoteResponse> {
+        const message = (obj.message || {}) as RemoteMessage;
+        if (obj.command === 'remoteInfo') {
+            return {
+                apps: await this.getButtons('appControl.app.'),
+                inputs: await this.getButtons('avContent.extInput.'),
+            };
+        }
+
+        const device = this.device;
+        if (!device) {
+            throw new Error('Please configure the Sony Bravia adapter');
+        }
+
+        switch (obj.command) {
+            case 'remote':
+                if (typeof message.key !== 'string' || !message.key) {
+                    throw new Error('No key given');
+                }
+                await device.send(message.key);
+                break;
+
+            case 'power':
+                await device.setPowerStatus(!!message.on);
+                this.checkStatusLater(500);
+                break;
+
+            case 'launchApp':
+            case 'input': {
+                const prefix = obj.command === 'launchApp' ? 'appControl.app.' : 'avContent.extInput.';
+                if (typeof message.id !== 'string' || !message.id.startsWith(prefix)) {
+                    throw new Error(`Invalid ID ${message.id}`);
+                }
+                const uri = await this.getUriIfPowerIsActive(`${this.namespace}.${message.id}`, null);
+                if (uri === null) {
+                    throw new Error('Device have to turned on');
+                }
+                if (obj.command === 'launchApp') {
+                    await device.setActiveApp(uri);
+                    this.checkStatusLater(2000);
+                } else {
+                    await device.setPlayContent(uri);
+                    this.checkStatusLater(500);
+                }
+                break;
+            }
+
+            default:
+                throw new Error(`Unknown command ${obj.command}`);
+        }
+        return { result: 'ok' };
+    }
+
+    /** All button states below `prefix` (e.g. `appControl.app.`), sorted by name */
+    private async getButtons(prefix: string): Promise<{ id: string; name: string }[]> {
+        const objects = await this.getObjectViewAsync('system', 'state', {
+            startkey: `${this.namespace}.${prefix}`,
+            endkey: `${this.namespace}.${prefix}香`,
+        });
+        return objects.rows
+            .filter(row => row.value?.native?.uri)
+            .map(row => {
+                const name = row.value.common.name;
+                return {
+                    id: row.id.substring(this.namespace.length + 1),
+                    name: typeof name === 'object' ? name.en : name,
+                };
+            })
+            .sort((a, b) => a.name.localeCompare(b.name));
     }
 
     private onReady(): void {

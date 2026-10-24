@@ -8,5 +8,7 @@
     "Go to home network setup": "Перейти к настройке домашней сети",
     "IP Control -> Authentication -> Normal and Pre-Shared Key": "Управление IP -> Аутентификация -> Нормальный и Общий ключ",
     "Go to remote device/Renderer and enter the Pre-Shared Key \"0000\" (or whatever you want your PSK Key to be)": "Перейдите к удаленному устройству / средству визуализации и введите предварительный общий ключ «0000» (или любой другой ключ PSK)",
-    "Set Simple IP Control on": "Установить простое управление IP на"
+    "Set Simple IP Control on": "Установить простое управление IP на",
+    "Settings": "Настройки",
+    "Remote control": "Пульт ДУ"
 }

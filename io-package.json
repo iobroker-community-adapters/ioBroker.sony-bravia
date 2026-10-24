@@ -137,6 +137,7 @@
     "type": "multimedia",
     "dataSource": "poll",
     "connectionType": "local",
+    "messagebox": true,
     "tier": 2,
     "dependencies": [
       {

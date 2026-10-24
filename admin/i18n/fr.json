@@ -8,5 +8,7 @@
     "Go to home network setup": "Aller à la configuration du réseau domestique",
     "IP Control -> Authentication -> Normal and Pre-Shared Key": "Contrôle IP -> Authentification -> Clé normale et pré-partagée",
     "Go to remote device/Renderer and enter the Pre-Shared Key \"0000\" (or whatever you want your PSK Key to be)": "Allez au périphérique / moteur de rendu distant et entrez la clé pré-partagée \"0000\" (ou quelle que soit votre clé PSK)",
-    "Set Simple IP Control on": "Activer le contrôle IP simple"
+    "Set Simple IP Control on": "Activer le contrôle IP simple",
+    "Settings": "Paramètres",
+    "Remote control": "Télécommande"
 }

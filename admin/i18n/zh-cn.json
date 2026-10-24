@@ -8,5 +8,7 @@
     "Go to home network setup": "转到家庭网络设置",
     "IP Control -> Authentication -> Normal and Pre-Shared Key": "IP控制 -> 验证 -> 正常和预共享密钥",
     "Go to remote device/Renderer and enter the Pre-Shared Key \"0000\" (or whatever you want your PSK Key to be)": "转到远程设备/渲染器并输入预共享密钥 \"0000\"（或任何您想要的PSK密钥）",
-    "Set Simple IP Control on": "设置简单IP控制"
+    "Set Simple IP Control on": "设置简单IP控制",
+    "Settings": "设置",
+    "Remote control": "遥控器"
 }

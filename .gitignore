@@ -12,3 +12,7 @@ admin/i18n/*/flat.txt
 .commitinfo
 build
 *.tsbuildinfo
+
+# built admin component (npm run build-admin)
+admin/custom/
+src-admin/build/

@@ -11,7 +11,10 @@ playing content and volume, and sends remote control (IRCC) codes when button st
 ## Commands
 
 ```bash
-npm run build              # tsc -p tsconfig.build.json: src/ -> build/ (gitignored, common.nogit: true)
+npm run build              # build-backend + build-admin
+npm run build-backend      # tsc -p tsconfig.build.json: src/ -> build/ (gitignored, common.nogit: true)
+npm run build-admin        # tsx tasks.ts: src-admin/ (vite, module federation) -> admin/custom/ (gitignored)
+npm run 0-clean|1-npm|2-build|3-copy   # single steps of build-admin
 npm run check              # type check only
 npm run lint               # eslint (@iobroker/eslint-config); fix with: npx eslint -c eslint.config.mjs --fix src
 npm test                   # = test:package
@@ -20,7 +23,10 @@ npm run translate          # translate admin/i18n/en.json into the other languag
 ```
 
 There is no `prepare` script on purpose: the build only runs via `npm run build` and in CI (`build: true`).
-There is no `tasks.ts`: the admin is pure JsonConfig, so nothing is left to do besides `tsc`.
+`tasks.ts` builds the custom JsonConfig component (the remote control) from `src-admin/` into `admin/custom/`.
+`src-admin/` is not linted / type-checked by the root config; check it with `cd src-admin && npx tsc`.
+The integration test caches the test installation in `%TEMP%/test-iobroker.sony-bravia`: after changing
+`io-package.json` (e.g. `messagebox`) delete that folder, otherwise the old instance object is used.
 
 ## Architecture
 
@@ -43,6 +49,13 @@ There is no `tasks.ts`: the admin is pure JsonConfig, so nothing is left to do b
   `discover()` (SSDP, `node-ssdp` + `xml2js`) is not used by the adapter.
 - `src/lib/service-protocol.ts` — generic `/sony/<service>` invoker (`getVersions`, `getMethodTypes`, `invoke`).
 - `src/lib/ping.ts` — spawns the OS ping command (Linux/Windows/macOS/FreeBSD).
+  - `onMessage` (`common.messagebox: true`) serves the remote control: `remoteInfo` → `{ apps, inputs }` (from the
+    objects `appControl.app.*` / `avContent.extInput.*`), `remote` `{ key }` (IRCC code), `power` `{ on }`,
+    `launchApp` / `input` `{ id }`. Answers `{ result: 'ok' }` or `{ error }`.
+- `src-admin/src/RemoteControlComponent.tsx` — remote control in the "Remote control" tab of the settings
+  (custom JsonConfig component, `guiApi: 2` = `@iobroker/gui-components`, needs admin 8). Keys are the raw IRCC
+  codes also used by the button states in `io-package.json`. Status via subscriptions of `info.connection`,
+  `info.powerStatusActive`, `info.playingContentInfo`. Texts in `src-admin/src/i18n` (`custom_sonybravia_*`).
 - `src/lib/types.ts` — API payloads. `src/lib/adapter-config.d.ts` — typed `this.config`; must match `native`
   in `io-package.json` and `admin/jsonConfig.json`.
 

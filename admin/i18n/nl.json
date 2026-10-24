@@ -8,5 +8,7 @@
     "Go to home network setup": "Ga naar de installatie van het thuisnetwerk",
     "IP Control -> Authentication -> Normal and Pre-Shared Key": "IP-controle -> Authenticatie -> Normale en vooraf gedeelde sleutel",
     "Go to remote device/Renderer and enter the Pre-Shared Key \"0000\" (or whatever you want your PSK Key to be)": "Ga naar remote device / renderer en voer de pre-shared key \"0000\" in (of wat je PSK Key ook mag zijn)",
-    "Set Simple IP Control on": "Stel Simple IP Control in"
+    "Set Simple IP Control on": "Stel Simple IP Control in",
+    "Settings": "Instellingen",
+    "Remote control": "Afstandsbediening"
 }
