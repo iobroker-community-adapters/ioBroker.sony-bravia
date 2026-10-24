@@ -1,0 +1,15 @@
+{
+    "IP": "IP",
+    "PSK Key": "Chiave PSK",
+    "TV Setup": "Impostazione TV",
+    "Turn your TV on": "Accendi la TV",
+    "On the TV, go to Settings -> Network -> Home network setup": "Sul televisore, vai su Impostazioni -> Rete -> Impostazione rete domestica",
+    "Set remote device/Renderer on": "Imposta il dispositivo / renderer remoto",
+    "Go to home network setup": "Vai alla configurazione della rete domestica",
+    "IP Control -> Authentication -> Normal and Pre-Shared Key": "Controllo IP -> Autenticazione -> Chiave normale e pre-condivisa",
+    "Go to remote device/Renderer and enter the Pre-Shared Key \"0000\" (or whatever you want your PSK Key to be)": "Vai al dispositivo / renderer remoto e inserisci la chiave pre-condivisa \"0000\" (o qualunque sia la tua chiave PSK)",
+    "Set Simple IP Control on": "Attiva Simple IP Control",
+    "Settings": "Impostazioni",
+    "Remote control": "Telecomando",
+    "TVs found in the network are offered for selection (the instance must be running)": "I TV trovati nella rete vengono proposti per la selezione (l'istanza deve essere in esecuzione)"
+}

@@ -1,0 +1,149 @@
+{
+    "i18n": true,
+    "type": "tabs",
+    "items": {
+        "_settings": {
+            "type": "panel",
+            "label": "Settings",
+            "items": {
+                "_logo": {
+                    "type": "staticImage",
+                    "src": "sony-bravia.png",
+                    "style": {
+                        "width": "64px"
+                    },
+                    "xs": 12,
+                    "sm": 12,
+                    "md": 12,
+                    "lg": 12,
+                    "xl": 12
+                },
+                "ip": {
+                    "newLine": true,
+                    "type": "autocompleteSendTo",
+                    "label": "IP",
+                    "command": "discover",
+                    "freeSolo": true,
+                    "maxLength": 15,
+                    "help": "TVs found in the network are offered for selection (the instance must be running)",
+                    "xs": 12,
+                    "sm": 12,
+                    "md": 6,
+                    "lg": 4,
+                    "xl": 4
+                },
+                "psk": {
+                    "type": "text",
+                    "label": "PSK Key",
+                    "maxLength": 15,
+                    "xs": 12,
+                    "sm": 12,
+                    "md": 6,
+                    "lg": 4,
+                    "xl": 4
+                },
+                "_setupHeader": {
+                    "newLine": true,
+                    "type": "header",
+                    "text": "TV Setup",
+                    "size": 4,
+                    "xs": 12,
+                    "sm": 12,
+                    "md": 12,
+                    "lg": 12,
+                    "xl": 12
+                },
+                "_setup1": {
+                    "newLine": true,
+                    "type": "staticText",
+                    "text": "Turn your TV on",
+                    "xs": 12,
+                    "sm": 12,
+                    "md": 12,
+                    "lg": 12,
+                    "xl": 12
+                },
+                "_setup2": {
+                    "newLine": true,
+                    "type": "staticText",
+                    "text": "On the TV, go to Settings -> Network -> Home network setup",
+                    "xs": 12,
+                    "sm": 12,
+                    "md": 12,
+                    "lg": 12,
+                    "xl": 12
+                },
+                "_setup3": {
+                    "newLine": true,
+                    "type": "staticText",
+                    "text": "Set remote device/Renderer on",
+                    "xs": 12,
+                    "sm": 12,
+                    "md": 12,
+                    "lg": 12,
+                    "xl": 12
+                },
+                "_setup4": {
+                    "newLine": true,
+                    "type": "staticText",
+                    "text": "Go to home network setup",
+                    "xs": 12,
+                    "sm": 12,
+                    "md": 12,
+                    "lg": 12,
+                    "xl": 12
+                },
+                "_setup5": {
+                    "newLine": true,
+                    "type": "staticText",
+                    "text": "IP Control -> Authentication -> Normal and Pre-Shared Key",
+                    "xs": 12,
+                    "sm": 12,
+                    "md": 12,
+                    "lg": 12,
+                    "xl": 12
+                },
+                "_setup6": {
+                    "newLine": true,
+                    "type": "staticText",
+                    "text": "Go to remote device/Renderer and enter the Pre-Shared Key \"0000\" (or whatever you want your PSK Key to be)",
+                    "xs": 12,
+                    "sm": 12,
+                    "md": 12,
+                    "lg": 12,
+                    "xl": 12
+                },
+                "_setup7": {
+                    "newLine": true,
+                    "type": "staticText",
+                    "text": "Set Simple IP Control on",
+                    "xs": 12,
+                    "sm": 12,
+                    "md": 12,
+                    "lg": 12,
+                    "xl": 12
+                }
+            }
+        },
+        "_remote": {
+            "type": "panel",
+            "label": "Remote control",
+            "items": {
+                "_remoteControl": {
+                    "type": "custom",
+                    "url": "custom/customComponents.js",
+                    "name": "ConfigCustomSonyBraviaSet/Components/RemoteControlComponent",
+                    "i18n": true,
+                    "guiApi": 2,
+                    "bundlerType": "module",
+                    "newLine": true,
+                    "xs": 12,
+                    "sm": 12,
+                    "md": 12,
+                    "lg": 12,
+                    "xl": 12
+                }
+            }
+        }
+    }
+}
