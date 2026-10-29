@@ -1,4 +1,9 @@
 # Older changes
+## 1.0.6 (2022-04-23)
+* (ThomasBra) Audio volume/mute control
+* (ThomasBra) value lists for AV Contents
+* (Apollon77) Add Sentry error reporting
+
 ## 1.0.5
 * (ThomasBra) Fix for content list request for older api versions
 

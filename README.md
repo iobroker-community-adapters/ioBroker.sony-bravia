@@ -46,8 +46,7 @@ and can control it:
     Placeholder for the next version (at the beginning of the line):
     ### **WORK IN PROGRESS**
 -->
-
-### **WORK IN PROGRESS**
+### 1.2.0 (2026-10-29)
 - (bluefox) The adapter was refactored to TypeScript and JsonConfig
 - (bluefox) Replaced the deprecated `request` library with `axios`
 - (bluefox) Fixed the buttons PicOff, PictureOff, Teletext and WirelessSubwoofer (IRCC codes with `+` or `/`)
@@ -73,11 +72,6 @@ and can control it:
 
 ### 1.0.7 (2022-04-24)
 * (Apollon77) Fix tier definition
-
-### 1.0.6 (2022-04-23)
-* (ThomasBra) Audio volume/mute control
-* (ThomasBra) value lists for AV Contents
-* (Apollon77) Add Sentry error reporting
 
 [Older changelogs can be found there](CHANGELOG_OLD.md)
 
