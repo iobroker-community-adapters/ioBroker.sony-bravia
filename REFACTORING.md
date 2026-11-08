@@ -149,7 +149,7 @@ jeweils aktuelle Stand):
     "test:package": "mocha test/packageFiles --exit",
     "test:integration": "mocha test/integrationAdapter --exit",
     "test": "npm run test:package",
-    "release": "release-script --noPush -y",
+    "release": "release-script",
     "release-patch": "release-script patch --yes",
     "release-minor": "release-script minor --yes",
     "release-major": "release-script major --yes",
