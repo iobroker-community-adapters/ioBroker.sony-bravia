@@ -118,7 +118,7 @@
       "pl": "Jest to adapter ioBroker do Twojego Sony Bravia Smart-TV z systemem operacyjnym Android. Testowane za pomocą KD-65X8507C.",
       "zh-cn": "这是适用于Android OS索尼Bravia智能电视的ioBroker适配器。 用KD-65X8507C测试。"
     },
-    "compact": true,
+    "compact": false,
     "platform": "Javascript/Node.js",
     "mode": "daemon",
     "licenseInformation": {
