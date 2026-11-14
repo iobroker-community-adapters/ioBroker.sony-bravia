@@ -57,11 +57,8 @@ and can control it:
 - (bluefox) The IP field offers the TVs found in the network
 - (bluefox) Added the channel `tv` for the device type `tv` of the type-detector, so visualizations can control the TV
 - (bluefox) Added a remote control to the instance settings (tab "Remote control", requires admin 8)
-- (copilot) Adapter requires node.js >= 22 now
-- (iobroker-bot) Adapter requires node.js >= 20 now.
+- (copilot) Adapter requires node.js >= 22.19.0 now
 - (copilot) Adapter requires admin >= 7.7.22 now
-- (copilot) Adapter requires js-controller >= 6.0.11 now
-- (copilot) Adapter requires admin >= 7.6.17 now
 
 ### 1.1.0 (2024-04-28)
 * (mcm1957) Adapter requires node.js >= 18 and js-controller >= 5 now
