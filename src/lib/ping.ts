@@ -55,19 +55,9 @@ export function probe(addr: string, config: PingConfig = {}): Promise<PingResult
             args = args.concat(extra);
             args.push(addr);
 
-            const allArgs = [
-                '/s', // leave quotes as they are
-                '/c', // run and exit
-                // !!! order of c and s is important - c must come last!!!
-                '"', // enforce starting quote
-                `${process.env.SystemRoot}\\system32\\ping.exe`, // command itself. Notice that you'll have to pass it quoted if it contains spaces
-            ]
-                .concat(args)
-                .concat('"'); // enforce closing quote
-
-            log(`System command: ${process.env.comspec || 'cmd.exe'} ${allArgs.join(' ')}`);
-            // switch the command to cmd shell instead of the original command
-            ls = spawn(process.env.comspec || 'cmd.exe', allArgs, { windowsVerbatimArguments: true });
+            log(`System command: ping ${args.join(' ')}`);
+            // ping.exe is found via PATH; verbatim arguments keep options like '-n 1' unquoted
+            ls = spawn('ping', args, { windowsVerbatimArguments: true });
         } else if (p === 'darwin' || p === 'freebsd') {
             // mac osx or freebsd
             let args: string[] = [];
