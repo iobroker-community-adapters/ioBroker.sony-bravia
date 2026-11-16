@@ -49,6 +49,9 @@ and can control it:
     Placeholder for the next version (at the beginning of the line):
     ### **WORK IN PROGRESS**
 -->
+### **WORK IN PROGRESS**
+- (bluefox) Removed usage of process.env (ping on Windows)
+
 ### 1.2.0 (2026-10-29)
 - (bluefox) The adapter was refactored to TypeScript and JsonConfig
 - (bluefox) Replaced the deprecated `request` library with `axios`
