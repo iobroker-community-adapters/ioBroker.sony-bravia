@@ -671,7 +671,12 @@ class SonyBraviaAdapter extends utils.Adapter {
                 }
             }
         } catch (err) {
-            this.log.info(`volumeInformation cannot be determined ${err}`);
+            const powerState = await this.getStateAsync('info.powerStatusActive');
+            if (powerState?.val) {
+                this.log.info(`volumeInformation cannot be determined ${err}`);
+            } else {
+                this.log.debug(`volumeInformation cannot be determined ${err}`);
+            }
         }
     }
 }

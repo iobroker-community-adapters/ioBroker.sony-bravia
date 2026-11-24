@@ -51,6 +51,7 @@ and can control it:
 -->
 ### **WORK IN PROGRESS**
 - (bluefox) Removed usage of process.env (ping on Windows)
+- (@GermanBluefox) Do not log 'not power-on' (error 7) of getVolumeInformation when the TV is in standby (#386)
 
 ### 1.2.0 (2026-10-29)
 - (bluefox) The adapter was refactored to TypeScript and JsonConfig

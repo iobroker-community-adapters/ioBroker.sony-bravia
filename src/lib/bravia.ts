@@ -280,15 +280,15 @@ export class Bravia {
     /**
      * https://pro-bravia.sony.net/develop/integrate/rest-api/spec/service/audio/v1_0/getVolumeInformation/
      *
-     * @returns `result` (one array of targets) or, if the display is turned off, the `error` tuple
+     * @returns `result` (one array of targets) or, if the display is turned off or the TV is in standby, the `error` tuple
      */
     public async getVolumeInformation(): Promise<(VolumeInformation[] | JsonRpcError[number])[]> {
         const body = await this.jsonRequest<VolumeInformation[]>('audio', 'getVolumeInformation');
         if (body.result) {
             return body.result;
         }
-        if (body.error && body.error[0] == 40005) {
-            // Display Is Turned off
+        if (body.error && (body.error[0] == 40005 || body.error[0] == 7)) {
+            // Display Is Turned off (40005) or TV in standby (7, "not power-on")
             return body.error;
         }
         throw new Error(`getVolumeInformation. Response error. Missing result. ${JSON.stringify(body)}`);
