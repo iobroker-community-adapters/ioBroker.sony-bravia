@@ -38,7 +38,7 @@
     "@iobroker/testing": "^6.3.2",
     "@iobroker/type-detector": "^6.2.0",
     "@iobroker/types": "^7.2.5",
-    "@tsconfig/node22": "^22.0.6",
+    "@tsconfig/node22": "^22.0.7",
     "@types/node": "^22.20.5",
     "@types/node-ssdp": "^4.0.5",
     "@types/xml2js": "^0.4.14",
